@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>44217EBC-6223-4739-BC1B-9E068B038640</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ThreeBar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>483B07913B1C73725242FDAF83A43730BF6B55ED</key>
+		<string>https://github.com/richard92m/three.bar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ThreeBar/ThreeBar.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>483B07913B1C73725242FDAF83A43730BF6B55ED</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/richard92m/three.bar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>483B07913B1C73725242FDAF83A43730BF6B55ED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>483B07913B1C73725242FDAF83A43730BF6B55ED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>three.bar</string>
+		</dict>
+	</array>
+</dict>
+</plist>
