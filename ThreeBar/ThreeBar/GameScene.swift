@@ -41,11 +41,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
+            
+            // Divide screen in half for controls
+            if location.x < size.width / 2 {
+                // Move
+                let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(1))
+                hero.runAction(moveAction)
+            } else {
+                // Shoot
+                hero.shoot(location, map: self)
+            }
 
-            let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(1))
-            
-            hero.runAction(moveAction)
-            
         }
     }
    
