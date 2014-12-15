@@ -19,22 +19,30 @@ class Hero: Actor {
         name = "heroNode"
     }
     
+    func move(location: CGPoint) {
+        let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(0.1))
+        runAction(moveAction)
+    }
+
     func shoot(direction: CGPoint, map: GameScene) {
         //TODO: fire projectile
         
         //TODO: Play sound effect
         
-        // Flash entire screen
-        let flash = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: map.size)
-        flash.position = CGPoint(x: map.size.width / 2, y: map.size.height / 2)
+        flashScreen(UIColor.redColor(), screen: map)
+    }
+    
+    // Flash the screen with color
+    func flashScreen(color: UIColor, screen: SKScene) {
+        let flash = SKSpriteNode(texture: nil, color: color, size: screen.size)
+        flash.position = CGPoint(x: screen.size.width / 2, y: screen.size.height / 2)
         flash.zPosition = 999  // Covers everything but the hero
         
         runAction(SKAction.sequence([
-            SKAction.runBlock({ map.addChild(flash) }),
+            SKAction.runBlock({ screen.addChild(flash) }),
             SKAction.waitForDuration(0.03),
             SKAction.runBlock({ flash.removeFromParent() })
             ]))
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
