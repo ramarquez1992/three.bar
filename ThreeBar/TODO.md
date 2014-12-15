@@ -2,16 +2,14 @@
 
 ---
 
-## Launch
-* logo
-* start button -> segue
-* copyright
+## LaunchScene
+* color
+* procedurally generated bg (e.g. stars)
 
 ## Onboarding
 * static screen if first launch
 
 ## Level
-* container
 * doors
 * change level
 
