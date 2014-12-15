@@ -41,15 +41,24 @@ class LaunchScene: SKScene {
             
             // Start new game when start button is pressed
             if node.name == "startButton" {
-                if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-                    let skView = self.view! as SKView
+                let skView = self.view! as SKView
+                
+                //skView.showsFPS = true
+                //skView.showsNodeCount = true
+                
+                skView.ignoresSiblingOrder = true
+                
+                // Onboarding
+                //NSUserDefaults.standardUserDefaults().removeObjectForKey("firstRun")
+                if NSUserDefaults.standardUserDefaults().objectForKey("firstRun") == nil {
+                    if let scene = OnboardingScene.unarchiveFromFile("OnboardingScene") as? OnboardingScene {
+                        scene.scaleMode = .AspectFill
+                        skView.presentScene(scene)
+                    }
                     
-                    //skView.showsFPS = true
-                    //skView.showsNodeCount = true
-                    
-                    skView.ignoresSiblingOrder = true
+                    NSUserDefaults.standardUserDefaults().setObject(false, forKey: "firstRun")
+                } else if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
                     scene.scaleMode = .AspectFill
-                    
                     skView.presentScene(scene)
                 }
             }

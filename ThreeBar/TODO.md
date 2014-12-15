@@ -16,7 +16,6 @@
 
 ## Controls
 * move
-* fire
 * teleport
 
 ## Actor
@@ -49,5 +48,4 @@
 
 ## Miscellaneous
 * show score
-* show time
 

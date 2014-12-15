@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		201DA1901A3E854E002486FA /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DA18F1A3E854E002486FA /* Actor.swift */; };
 		201DA1921A3E89E3002486FA /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DA1911A3E89E3002486FA /* Physics.swift */; };
+		2040F6621A3EAAA300799366 /* OnboardingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2040F6611A3EAAA300799366 /* OnboardingScene.sks */; };
+		2040F6641A3EAAB600799366 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040F6631A3EAAB600799366 /* OnboardingScene.swift */; };
 		209786241A3E4D9F002CC759 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209786231A3E4D9F002CC759 /* GameKit.framework */; };
 		209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209786251A3E4EB0002CC759 /* LaunchScene.swift */; };
 		209786281A3E4F3E002CC759 /* LaunchScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 209786271A3E4F3E002CC759 /* LaunchScene.sks */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		201DA18F1A3E854E002486FA /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		201DA1911A3E89E3002486FA /* Physics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
+		2040F6611A3EAAA300799366 /* OnboardingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OnboardingScene.sks; sourceTree = "<group>"; };
+		2040F6631A3EAAB600799366 /* OnboardingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		209786231A3E4D9F002CC759 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		209786251A3E4EB0002CC759 /* LaunchScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
 		209786271A3E4F3E002CC759 /* LaunchScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaunchScene.sks; sourceTree = "<group>"; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2040F6651A3EAABF00799366 /* OnboardingScene */ = {
+			isa = PBXGroup;
+			children = (
+				2040F6631A3EAAB600799366 /* OnboardingScene.swift */,
+				2040F6611A3EAAA300799366 /* OnboardingScene.sks */,
+			);
+			name = OnboardingScene;
+			sourceTree = "<group>";
+		};
 		209786291A3E51F4002CC759 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 				20D386AD1A3E811600DAE896 /* Hero.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
 				209786291A3E51F4002CC759 /* GameScene */,
+				2040F6651A3EAABF00799366 /* OnboardingScene */,
 				2097862A1A3E51FD002CC759 /* LaunchScene */,
 				209C60571A3D5AC5009BA5D1 /* Main.storyboard */,
 				209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */,
@@ -262,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				209786331A3E5B77002CC759 /* ygrid.ttf in Resources */,
+				2040F6621A3EAAA300799366 /* OnboardingScene.sks in Resources */,
 				209786311A3E5B77002CC759 /* OXYGENE1.ttf in Resources */,
 				209786301A3E5B77002CC759 /* Masaaki-Regular.otf in Resources */,
 				209C605E1A3D5AC5009BA5D1 /* LaunchScreen.xib in Resources */,
@@ -288,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20D386AE1A3E811600DAE896 /* Hero.swift in Sources */,
+				2040F6641A3EAAB600799366 /* OnboardingScene.swift in Sources */,
 				209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */,
 				209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */,
 				201DA1901A3E854E002486FA /* Actor.swift in Sources */,
