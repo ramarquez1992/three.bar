@@ -9,9 +9,17 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    let heroNode = Hero()
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+        addHero()
+    }
+    
+    func addHero() {
+        //TODO: get valid random position
+        heroNode.position = CGPoint(x: size.width * 0.8, y: size.height / 2)
         
+        addChild(heroNode)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -37,4 +45,5 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
+
 }

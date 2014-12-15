@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201DA1901A3E854E002486FA /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DA18F1A3E854E002486FA /* Actor.swift */; };
 		209786241A3E4D9F002CC759 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209786231A3E4D9F002CC759 /* GameKit.framework */; };
 		209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209786251A3E4EB0002CC759 /* LaunchScene.swift */; };
 		209786281A3E4F3E002CC759 /* LaunchScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 209786271A3E4F3E002CC759 /* LaunchScene.sks */; };
@@ -22,6 +23,7 @@
 		209C605B1A3D5AC5009BA5D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209C605A1A3D5AC5009BA5D1 /* Images.xcassets */; };
 		209C605E1A3D5AC5009BA5D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */; };
 		209C606A1A3D5AC6009BA5D1 /* ThreeBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */; };
+		20D386AE1A3E811600DAE896 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D386AD1A3E811600DAE896 /* Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201DA18F1A3E854E002486FA /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		209786231A3E4D9F002CC759 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		209786251A3E4EB0002CC759 /* LaunchScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
 		209786271A3E4F3E002CC759 /* LaunchScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaunchScene.sks; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		209C60631A3D5AC6009BA5D1 /* ThreeBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		209C60681A3D5AC6009BA5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBarTests.swift; sourceTree = "<group>"; };
+		20D386AD1A3E811600DAE896 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		20EC54AE1A3D7B410057A928 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,8 +134,10 @@
 			children = (
 				209C604F1A3D5AC5009BA5D1 /* AppDelegate.swift */,
 				209C60551A3D5AC5009BA5D1 /* GameViewController.swift */,
-				2097862A1A3E51FD002CC759 /* LaunchScene */,
+				201DA18F1A3E854E002486FA /* Actor.swift */,
+				20D386AD1A3E811600DAE896 /* Hero.swift */,
 				209786291A3E51F4002CC759 /* GameScene */,
+				2097862A1A3E51FD002CC759 /* LaunchScene */,
 				209C60571A3D5AC5009BA5D1 /* Main.storyboard */,
 				209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */,
 				209C604D1A3D5AC5009BA5D1 /* Supporting Files */,
@@ -278,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D386AE1A3E811600DAE896 /* Hero.swift in Sources */,
 				209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */,
 				209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */,
+				201DA1901A3E854E002486FA /* Actor.swift in Sources */,
 				209C60561A3D5AC5009BA5D1 /* GameViewController.swift in Sources */,
 				209C60501A3D5AC5009BA5D1 /* AppDelegate.swift in Sources */,
 			);

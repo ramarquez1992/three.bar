@@ -24,6 +24,7 @@
 * movement
 * projectile
 * health
+* can pass over each other
 
 ## Protagonist
 * strengthen on death
