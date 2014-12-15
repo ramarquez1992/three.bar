@@ -11,21 +11,21 @@ import SpriteKit
 class LaunchScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        createTitle()
-        createStartButton()
+        addTitle()
+        addStartButton()
     }
     
-    func createTitle() {
+    func addTitle() {
         let titleLabel = SKLabelNode(fontNamed:"Way beyond blue")
         titleLabel.name = "titleLabel"
-        titleLabel.text = "4Bar";
+        titleLabel.text = "4BAR";
         titleLabel.fontSize = 200;
         titleLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) + 70);
         
         self.addChild(titleLabel)
     }
     
-    func createStartButton() {
+    func addStartButton() {
         let startButton = SKLabelNode(fontNamed:"Masaaki")
         startButton.name = "startButton"
         startButton.text = "START";
@@ -36,22 +36,18 @@ class LaunchScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
         for touch: AnyObject in touches {
             let node = self.nodeAtPoint(touch.locationInNode(self))
             
+            // Start new game when start button is pressed
             if node.name == "startButton" {
                 if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-                    // Configure the view.
                     let skView = self.view! as SKView
-                    skView.showsFPS = true
-                    skView.showsNodeCount = true
                     
-                    /* Sprite Kit applies additional optimizations to improve rendering performance */
+                    //skView.showsFPS = true
+                    //skView.showsNodeCount = true
+                    
                     skView.ignoresSiblingOrder = true
-                    
-                    /* Set the scale mode to scale to fit the window */
                     scene.scaleMode = .AspectFill
                     
                     skView.presentScene(scene)

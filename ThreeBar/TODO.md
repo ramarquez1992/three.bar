@@ -5,6 +5,7 @@
 ## LaunchScene
 * color
 * procedurally generated bg (e.g. stars)
+* increase start button touch size
 
 ## Onboarding
 * static screen if first launch
@@ -14,7 +15,6 @@
 * change level
 
 ## Controls
-* turn
 * move
 * fire
 * teleport

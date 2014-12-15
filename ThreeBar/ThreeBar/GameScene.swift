@@ -15,13 +15,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         addHero()
+        addScoreLabel()
     }
     
     func addHero() {
-        //TODO: get valid random position
-        hero.position = CGPoint(x: size.width * 0.8, y: size.height / 2)
+        // Position hero at random point on map
+        let xPos = CGFloat(size.width) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
+        let yPos = CGFloat(size.height) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
+        hero.position = CGPoint(x: xPos, y: yPos)
         
         addChild(hero)
+    }
+    
+    func addScoreLabel() {
+        let scoreLabel = SKLabelNode(fontNamed:"Masaaki")
+        scoreLabel.name = "scoreLabel"
+        scoreLabel.text = "0007300";
+        scoreLabel.fontSize = 50;
+        scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:10);
+        
+        self.addChild(scoreLabel)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
