@@ -20,8 +20,6 @@
 * teleport
 
 ## Actor
-* sprite
-* movement
 * projectile
 * health
 * can pass over each other

@@ -18,9 +18,10 @@ class Actor: SKSpriteNode {
     }
     
     private func setPhysics() {
-        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        physicsBody = SKPhysicsBody(texture: texture, size: size)
         
-        physicsBody?.dynamic = true
+        physicsBody?.dynamic                       = true
+        physicsBody?.allowsRotation                = false
         physicsBody?.usesPreciseCollisionDetection = true
         
         physicsBody?.categoryBitMask    = PhysicsCategory.Actor

@@ -11,7 +11,9 @@ import SpriteKit
 
 class Hero: Actor {
     init() {
-        super.init(texture: nil, color: UIColor.yellowColor(), size: CGSize(width: 100.0, height: 100.0))
+        super.init(texture: SKTexture(imageNamed: "hero"),
+            color: UIColor.yellowColor(),
+            size: CGSize(width: 100.0, height: 100.0))
         
         name = "heroNode"
     }
