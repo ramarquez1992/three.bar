@@ -12,6 +12,22 @@ import SpriteKit
 class Actor: SKSpriteNode {
     override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
+        
+        setPhysics()
+        
+    }
+    
+    private func setPhysics() {
+        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        
+        physicsBody?.dynamic = true
+        physicsBody?.usesPreciseCollisionDetection = true
+        
+        physicsBody?.categoryBitMask    = PhysicsCategory.Actor
+        physicsBody?.contactTestBitMask = PhysicsCategory.Projectile
+        physicsBody?.collisionBitMask   = PhysicsCategory.All   -
+                                          PhysicsCategory.Actor -
+                                          PhysicsCategory.Projectile
     }
     
     required init?(coder aDecoder: NSCoder) {

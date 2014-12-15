@@ -8,37 +8,31 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
-    let heroNode = Hero()
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    let hero = Hero()
     
     override func didMoveToView(view: SKView) {
+        physicsWorld.contactDelegate = self
+        
         addHero()
     }
     
     func addHero() {
         //TODO: get valid random position
-        heroNode.position = CGPoint(x: size.width * 0.8, y: size.height / 2)
+        hero.position = CGPoint(x: size.width * 0.8, y: size.height / 2)
         
-        addChild(heroNode)
+        addChild(hero)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
         
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
+
+            let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(1))
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
+            hero.runAction(moveAction)
             
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
         }
     }
    
