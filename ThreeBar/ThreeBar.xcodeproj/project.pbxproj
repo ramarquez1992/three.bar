@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209786241A3E4D9F002CC759 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209786231A3E4D9F002CC759 /* GameKit.framework */; };
+		209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209786251A3E4EB0002CC759 /* LaunchScene.swift */; };
+		209786281A3E4F3E002CC759 /* LaunchScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 209786271A3E4F3E002CC759 /* LaunchScene.sks */; };
+		209786301A3E5B77002CC759 /* Masaaki-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2097862C1A3E5B77002CC759 /* Masaaki-Regular.otf */; };
+		209786311A3E5B77002CC759 /* OXYGENE1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2097862D1A3E5B77002CC759 /* OXYGENE1.ttf */; };
+		209786321A3E5B77002CC759 /* WayBeyondBlue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2097862E1A3E5B77002CC759 /* WayBeyondBlue.ttf */; };
+		209786331A3E5B77002CC759 /* ygrid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2097862F1A3E5B77002CC759 /* ygrid.ttf */; };
 		209C60501A3D5AC5009BA5D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C604F1A3D5AC5009BA5D1 /* AppDelegate.swift */; };
 		209C60521A3D5AC5009BA5D1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 209C60511A3D5AC5009BA5D1 /* GameScene.sks */; };
 		209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C60531A3D5AC5009BA5D1 /* GameScene.swift */; };
@@ -28,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		209786231A3E4D9F002CC759 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		209786251A3E4EB0002CC759 /* LaunchScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
+		209786271A3E4F3E002CC759 /* LaunchScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaunchScene.sks; sourceTree = "<group>"; };
+		2097862C1A3E5B77002CC759 /* Masaaki-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Masaaki-Regular.otf"; sourceTree = "<group>"; };
+		2097862D1A3E5B77002CC759 /* OXYGENE1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OXYGENE1.ttf; sourceTree = "<group>"; };
+		2097862E1A3E5B77002CC759 /* WayBeyondBlue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WayBeyondBlue.ttf; sourceTree = "<group>"; };
+		2097862F1A3E5B77002CC759 /* ygrid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ygrid.ttf; sourceTree = "<group>"; };
 		209C604A1A3D5AC5009BA5D1 /* ThreeBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209C604E1A3D5AC5009BA5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209C604F1A3D5AC5009BA5D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +54,7 @@
 		209C60631A3D5AC6009BA5D1 /* ThreeBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		209C60681A3D5AC6009BA5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBarTests.swift; sourceTree = "<group>"; };
+		20EC54AE1A3D7B410057A928 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209786241A3E4D9F002CC759 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +76,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		209786291A3E51F4002CC759 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				209C60531A3D5AC5009BA5D1 /* GameScene.swift */,
+				209C60511A3D5AC5009BA5D1 /* GameScene.sks */,
+			);
+			name = GameScene;
+			sourceTree = "<group>";
+		};
+		2097862A1A3E51FD002CC759 /* LaunchScene */ = {
+			isa = PBXGroup;
+			children = (
+				209786251A3E4EB0002CC759 /* LaunchScene.swift */,
+				209786271A3E4F3E002CC759 /* LaunchScene.sks */,
+			);
+			name = LaunchScene;
+			sourceTree = "<group>";
+		};
+		2097862B1A3E59A4002CC759 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2097862C1A3E5B77002CC759 /* Masaaki-Regular.otf */,
+				2097862D1A3E5B77002CC759 /* OXYGENE1.ttf */,
+				2097862E1A3E5B77002CC759 /* WayBeyondBlue.ttf */,
+				2097862F1A3E5B77002CC759 /* ygrid.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		209C60411A3D5AC5009BA5D1 = {
 			isa = PBXGroup;
 			children = (
+				20EC54AE1A3D7B410057A928 /* TODO.md */,
 				209C604C1A3D5AC5009BA5D1 /* ThreeBar */,
 				209C60661A3D5AC6009BA5D1 /* ThreeBarTests */,
 				209C604B1A3D5AC5009BA5D1 /* Products */,
+				209786231A3E4D9F002CC759 /* GameKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,11 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				209C604F1A3D5AC5009BA5D1 /* AppDelegate.swift */,
-				209C60511A3D5AC5009BA5D1 /* GameScene.sks */,
-				209C60531A3D5AC5009BA5D1 /* GameScene.swift */,
 				209C60551A3D5AC5009BA5D1 /* GameViewController.swift */,
+				2097862A1A3E51FD002CC759 /* LaunchScene */,
+				209786291A3E51F4002CC759 /* GameScene */,
 				209C60571A3D5AC5009BA5D1 /* Main.storyboard */,
-				209C605A1A3D5AC5009BA5D1 /* Images.xcassets */,
 				209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */,
 				209C604D1A3D5AC5009BA5D1 /* Supporting Files */,
 			);
@@ -97,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				209C604E1A3D5AC5009BA5D1 /* Info.plist */,
+				209C605A1A3D5AC5009BA5D1 /* Images.xcassets */,
+				2097862B1A3E59A4002CC759 /* fonts */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,6 +216,11 @@
 					209C60491A3D5AC5009BA5D1 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 7ST8J4RWLW;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					209C60621A3D5AC6009BA5D1 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -199,10 +252,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209786331A3E5B77002CC759 /* ygrid.ttf in Resources */,
+				209786311A3E5B77002CC759 /* OXYGENE1.ttf in Resources */,
+				209786301A3E5B77002CC759 /* Masaaki-Regular.otf in Resources */,
 				209C605E1A3D5AC5009BA5D1 /* LaunchScreen.xib in Resources */,
+				209786281A3E4F3E002CC759 /* LaunchScene.sks in Resources */,
 				209C605B1A3D5AC5009BA5D1 /* Images.xcassets in Resources */,
 				209C60521A3D5AC5009BA5D1 /* GameScene.sks in Resources */,
 				209C60591A3D5AC5009BA5D1 /* Main.storyboard in Resources */,
+				209786321A3E5B77002CC759 /* WayBeyondBlue.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */,
+				209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */,
 				209C60561A3D5AC5009BA5D1 /* GameViewController.swift in Sources */,
 				209C60501A3D5AC5009BA5D1 /* AppDelegate.swift in Sources */,
 			);
@@ -348,9 +407,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ThreeBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -359,9 +420,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ThreeBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -418,6 +481,7 @@
 				209C606F1A3D5AC6009BA5D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		209C60701A3D5AC6009BA5D1 /* Build configuration list for PBXNativeTarget "ThreeBarTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +490,7 @@
 				209C60721A3D5AC6009BA5D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
