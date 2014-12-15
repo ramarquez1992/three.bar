@@ -7,9 +7,6 @@
 * procedurally generated bg (e.g. stars)
 * increase start button touch size
 
-## Onboarding
-* static screen if first launch
-
 ## Level
 * doors
 * change level
@@ -20,7 +17,7 @@
 
 ## Actor
 * projectile
-* health
+* health (or one-hit zap e.g. Berzerk)
 * can pass over each other
 
 ## Protagonist

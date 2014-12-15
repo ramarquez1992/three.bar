@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ThreeBarOSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2040F6691A3EB6D500799366</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2040F67C1A3EB6D600799366</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>209C60491A3D5AC5009BA5D1</key>
 		<dict>
 			<key>primary</key>

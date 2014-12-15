@@ -39,19 +39,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        for touch: AnyObject in touches {
+        for touch in touches {
             let location = touch.locationInNode(self)
             
-            // Divide screen in half for controls
-            if location.x < size.width / 2 {
-                // Move
-                let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(1))
-                hero.runAction(moveAction)
-            } else {
-                // Shoot
+            // Shoot if right side touched
+            if location.x > size.width / 2 {
                 hero.shoot(location, map: self)
             }
 
+        }
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            
+            // Continuously move hero if touch is held on left side
+            if location.x < size.width / 2 {
+                let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(0.1))
+                hero.runAction(moveAction)
+            }
         }
     }
    
@@ -60,3 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
 }
+
+
+
+
