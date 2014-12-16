@@ -4,5 +4,39 @@
 <dict>
 	<key>heroSize</key>
 	<integer>100</integer>
+	<key>heroTeleportTime</key>
+	<integer>3</integer>
+	<key>heroSprite</key>
+	<string>hero</string>
+	<key>heroMoveDistance</key>
+	<integer>30</integer>
+	<key>heroMoveSpeed</key>
+	<real>0.05</real>
+	<key>flashDuration</key>
+	<real>0.03</real>
+	<key>scoreFont</key>
+	<string>Masaaki</string>
+	<key>scoreSize</key>
+	<integer>50</integer>
+	<key>onboardingFont</key>
+	<string>Masaaki</string>
+	<key>onboardingSize</key>
+	<integer>150</integer>
+	<key>onboardingShootText</key>
+	<string>SHOOT</string>
+	<key>onboardingMoveText</key>
+	<string>MOVE</string>
+	<key>titleFont</key>
+	<string>Way beyond blue</string>
+	<key>titleSize</key>
+	<integer>200</integer>
+	<key>titleText</key>
+	<string>4BAR</string>
+	<key>startButtonFont</key>
+	<string>Masaaki</string>
+	<key>startButtonSize</key>
+	<integer>65</integer>
+	<key>startButtonText</key>
+	<string>START</string>
 </dict>
 </plist>

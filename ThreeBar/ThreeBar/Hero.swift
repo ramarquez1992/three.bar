@@ -14,14 +14,14 @@ class Hero: Actor {
     var canTeleport = false
     
     init() {
-        super.init(texture: SKTexture(imageNamed: "hero"),
+        super.init(texture: SKTexture(imageNamed: _magic.heroSprite),
             color: UIColor.yellowColor(),
-            size: CGSize(width: _magic.heroSize, height: _magic.heroSize))
+            size: CGSize(width: CGFloat(_magic.heroSize), height: CGFloat(_magic.heroSize)))
         
         zPosition = 1000  // Hero is always visible
         name = "heroNode"
         
-        let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
+        let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.heroTeleportTime), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
 
     }
     
@@ -30,11 +30,11 @@ class Hero: Actor {
         let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
         
         // Calculate azimuth of location from center
-        let magicDistance = CGFloat(30)
+        let magicDistance = CGFloat(_magic.heroMoveDistance)
         let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
         
         // Using moveTo() rather than manually updating position for smoother animation
-        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(0.05))
+        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.heroMoveSpeed))
         runAction(moveAction)
     }
 
@@ -54,7 +54,7 @@ class Hero: Actor {
         
         runAction(SKAction.sequence([
             SKAction.runBlock({ screen.addChild(flash) }),
-            SKAction.waitForDuration(0.03),
+            SKAction.waitForDuration(NSTimeInterval(_magic.flashDuration)),
             SKAction.runBlock({ flash.removeFromParent() })
             ]))
     }

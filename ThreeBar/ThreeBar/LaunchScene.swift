@@ -16,21 +16,21 @@ class LaunchScene: SKScene {
     }
     
     func addTitle() {
-        let titleLabel = SKLabelNode(fontNamed:"Way beyond blue")
+        let titleLabel = SKLabelNode(fontNamed: _magic.titleFont)
         titleLabel.name = "titleLabel"
-        titleLabel.text = "4BAR";
-        titleLabel.fontSize = 200;
-        titleLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) + 70);
+        titleLabel.text = _magic.titleText
+        titleLabel.fontSize = CGFloat(_magic.titleSize)
+        titleLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 70)
         
         self.addChild(titleLabel)
     }
     
     func addStartButton() {
-        let startButton = SKLabelNode(fontNamed:"Masaaki")
+        let startButton = SKLabelNode(fontNamed: _magic.startButtonFont)
         startButton.name = "startButton"
-        startButton.text = "START";
-        startButton.fontSize = 65;
-        startButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 175);
+        startButton.text = _magic.startButtonText
+        startButton.fontSize = CGFloat(_magic.startButtonSize)
+        startButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 175)
         
         self.addChild(startButton)
     }

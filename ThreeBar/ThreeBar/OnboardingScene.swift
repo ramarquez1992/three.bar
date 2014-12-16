@@ -16,23 +16,23 @@ class OnboardingScene: SKScene {
     }
     
     func addMoveLabel() {
-        let moveLabel = SKLabelNode(fontNamed:"Masaaki")
+        let moveLabel = SKLabelNode(fontNamed:_magic.onboardingFont)
         moveLabel.name = "moveLabel"
-        moveLabel.text = "MOVE";
-        moveLabel.fontSize = 150;
+        moveLabel.text = _magic.onboardingMoveText
+        moveLabel.fontSize = CGFloat(_magic.onboardingSize)
         moveLabel.position = CGPoint(x:CGRectGetMidX(self.frame) / 2,
-            y:CGRectGetMidY(self.frame));
+            y:CGRectGetMidY(self.frame))
         
         self.addChild(moveLabel)
     }
     
     func addShootLabel() {
-        let shootLabel = SKLabelNode(fontNamed:"Masaaki")
+        let shootLabel = SKLabelNode(fontNamed:_magic.onboardingFont)
         shootLabel.name = "shootLabel"
-        shootLabel.text = "SHOOT";
-        shootLabel.fontSize = 150;
+        shootLabel.text = _magic.onboardingShootText
+        shootLabel.fontSize = CGFloat(_magic.onboardingSize)
         shootLabel.position = CGPoint(x:CGRectGetMidX(self.frame) + CGRectGetMidX(self.frame) / 2,
-            y:CGRectGetMidY(self.frame));
+            y:CGRectGetMidY(self.frame))
         
         self.addChild(shootLabel)
     }

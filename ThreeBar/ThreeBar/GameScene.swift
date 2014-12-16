@@ -33,11 +33,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addScoreLabel() {
-        let scoreLabel = SKLabelNode(fontNamed:"Masaaki")
-        scoreLabel.name = "scoreLabel"
-        scoreLabel.text = "0007300";
-        scoreLabel.fontSize = 50;
-        scoreLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:10);
+        let scoreLabel      = SKLabelNode(fontNamed: _magic.scoreFont)
+        scoreLabel.name     = "scoreLabel"
+        scoreLabel.text     = "0007300"
+        scoreLabel.fontSize = CGFloat(_magic.scoreSize)
+        scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
         
         self.addChild(scoreLabel)
     }
