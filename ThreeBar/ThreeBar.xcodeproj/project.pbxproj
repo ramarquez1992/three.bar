@@ -29,6 +29,7 @@
 		20D386AE1A3E811600DAE896 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D386AD1A3E811600DAE896 /* Hero.swift */; };
 		20FAB93E1A40D5430003970C /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB93D1A40D5430003970C /* Magic.swift */; };
 		20FAB9401A40D64C0003970C /* Magic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20FAB93F1A40D64C0003970C /* Magic.plist */; };
+		20FAB9421A40E6020003970C /* Mob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB9411A40E6020003970C /* Mob.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		20EC54AE1A3D7B410057A928 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		20FAB93D1A40D5430003970C /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		20FAB93F1A40D64C0003970C /* Magic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Magic.plist; sourceTree = "<group>"; };
+		20FAB9411A40E6020003970C /* Mob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mob.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				209C60551A3D5AC5009BA5D1 /* GameViewController.swift */,
 				201DA18F1A3E854E002486FA /* Actor.swift */,
 				20D386AD1A3E811600DAE896 /* Hero.swift */,
+				20FAB9411A40E6020003970C /* Mob.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
 				20FAB93D1A40D5430003970C /* Magic.swift */,
 				20FAB93F1A40D64C0003970C /* Magic.plist */,
@@ -313,6 +316,7 @@
 				2040F6641A3EAAB600799366 /* OnboardingScene.swift in Sources */,
 				209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */,
 				209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */,
+				20FAB9421A40E6020003970C /* Mob.swift in Sources */,
 				20FAB93E1A40D5430003970C /* Magic.swift in Sources */,
 				201DA1901A3E854E002486FA /* Actor.swift in Sources */,
 				209C60561A3D5AC5009BA5D1 /* GameViewController.swift in Sources */,

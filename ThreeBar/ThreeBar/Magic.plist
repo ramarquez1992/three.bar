@@ -38,5 +38,9 @@
 	<integer>65</integer>
 	<key>startButtonText</key>
 	<string>START</string>
+	<key>mobSprite</key>
+	<string>mob</string>
+	<key>mobSize</key>
+	<integer>100</integer>
 </dict>
 </plist>

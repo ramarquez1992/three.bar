@@ -10,6 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let hero = Hero()
+    var mobs = [Mob]()
     
     override func didMoveToView(view: SKView) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMotionShake:", name:"MotionShake", object: nil)
@@ -17,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addHero()
         addScoreLabel()
+        
+        populateWithMobs()
     }
     
     func getRandomPosition() -> CGPoint {
@@ -30,6 +33,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero.position = getRandomPosition()
         
         addChild(hero)
+    }
+    
+    func populateWithMobs() {
+        let m1 = Mob()
+        m1.position = getRandomPosition()
+        
+        let m2 = Mob()
+        m2.position = getRandomPosition()
+        
+        let m3 = Mob()
+        m3.position = getRandomPosition()
+        
+        mobs.append(m1)
+        mobs.append(m2)
+        mobs.append(m3)
+        
+        for mob in mobs {
+            addChild(mob)
+        }
     }
     
     func addScoreLabel() {

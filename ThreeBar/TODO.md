@@ -8,7 +8,6 @@
 ## LaunchScene
 * color
 * procedurally generated bg (e.g. stars)
-* increase start button touch size
 
 ## Level
 * doors
@@ -21,11 +20,11 @@
 
 ## Hero
 * strengthen on death
+* regain health on ?combo?
 
 ## Mobs
 * hive
 * AI
-* regain health on ?combo?
 
 ## Score
 * calculate

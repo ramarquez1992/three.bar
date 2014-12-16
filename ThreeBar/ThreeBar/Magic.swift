@@ -33,8 +33,10 @@ class Magic {
     let heroTeleportTime = Float()
     let heroMoveDistance = Float()
     let heroMoveSpeed    = Float()
+    let flashDuration    = Float()
     
-    let flashDuration = Float()
+    let mobSprite = String()
+    let mobSize   = Float()
 
     
     init() {
@@ -62,8 +64,10 @@ class Magic {
                 heroTeleportTime = dict["heroTeleportTime"] as Float
                 heroMoveDistance = dict["heroMoveDistance"] as Float
                 heroMoveSpeed    = dict["heroMoveSpeed"] as Float
-                
                 flashDuration    = dict["flashDuration"] as Float
+                
+                mobSprite = dict["mobSprite"] as String
+                mobSize   = dict["mobSize"] as Float
             
             } else { fatalError("Failed to load \"Magic\" dictionary") }
         } else { fatalError("Failed to load \"Magic.plist\"") }
