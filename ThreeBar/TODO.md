@@ -21,6 +21,7 @@
 ## Hero
 * strengthen on death
 * regain health on ?combo?
+* teleport minDistance away from current position
 
 ## Mobs
 * hive

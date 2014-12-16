@@ -28,6 +28,8 @@ class Magic {
     let scoreFont = String()
     let scoreSize = Float()
     
+    let controlCenter = Float()
+    
     let heroSprite       = String()
     let heroSize         = Float()
     let heroTeleportTime = Float()
@@ -58,6 +60,8 @@ class Magic {
                 
                 scoreFont = dict["scoreFont"] as String
                 scoreSize = dict["scoreSize"] as Float
+                
+                controlCenter = dict["controlCenter"] as Float
                 
                 heroSprite       = dict["heroSprite"] as String
                 heroSize         = dict["heroSize"] as Float

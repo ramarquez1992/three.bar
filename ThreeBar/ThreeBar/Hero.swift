@@ -27,7 +27,8 @@ class Hero: Actor {
     
     func move(location: CGPoint, map: GameScene) {
         // Get center point of left side of screen
-        let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
+        //let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
+        let controlCenter = CGPoint(x: CGFloat(_magic.controlCenter), y: CGFloat(_magic.controlCenter))
         
         // Calculate azimuth of location from center
         let magicDistance = CGFloat(_magic.heroMoveDistance)
