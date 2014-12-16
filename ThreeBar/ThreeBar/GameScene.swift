@@ -89,6 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if let location = hero.moving {
+            hero.facing = location
             hero.move(location, map: self)
         }
     }

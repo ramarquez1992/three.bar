@@ -15,7 +15,6 @@
 * change level
 
 ## Actor
-* "pointing in direction" var
 * projectile
 * health (or one-hit zap e.g. Berzerk)
 * can pass over each other
@@ -27,6 +26,10 @@
 * hive
 * AI
 * regain health on ?combo?
+
+## Score
+* calculate
+* show
 
 ## Pause
 * pause button
@@ -44,5 +47,5 @@
 * high scores
 
 ## Miscellaneous
-* show score
+* 
 

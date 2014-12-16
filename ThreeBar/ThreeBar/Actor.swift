@@ -10,6 +10,8 @@ import Foundation
 import SpriteKit
 
 class Actor: SKSpriteNode {
+    var facing = CGPoint(x: 0, y: 0)
+    
     override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         
