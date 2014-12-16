@@ -16,7 +16,7 @@ class Hero: Actor {
     init() {
         super.init(texture: SKTexture(imageNamed: "hero"),
             color: UIColor.yellowColor(),
-            size: CGSize(width: 100.0, height: 100.0))
+            size: CGSize(width: _magic.heroSize, height: _magic.heroSize))
         
         zPosition = 1000  // Hero is always visible
         name = "heroNode"
