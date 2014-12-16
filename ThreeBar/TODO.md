@@ -12,17 +12,18 @@
 * change level
 
 ## Controls
-* teleport
+* teleport on shake (motionbegan() UIEventSubtypeMotionShake)
 
 ## Actor
+* "pointing in direction" var
 * projectile
 * health (or one-hit zap e.g. Berzerk)
 * can pass over each other
 
-## Protagonist
+## Hero
 * strengthen on death
 
-## Antagonists
+## Mobs
 * hive
 * AI
 * regain health on ?combo?

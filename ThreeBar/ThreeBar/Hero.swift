@@ -10,6 +10,8 @@ import Foundation
 import SpriteKit
 
 class Hero: Actor {
+    var moving:CGPoint? = nil  // Direction moving, or nil if not moving
+    
     init() {
         super.init(texture: SKTexture(imageNamed: "hero"),
             color: UIColor.yellowColor(),
