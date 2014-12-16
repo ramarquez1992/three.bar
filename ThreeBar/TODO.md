@@ -12,7 +12,6 @@
 * change level
 
 ## Controls
-* move
 * teleport
 
 ## Actor
