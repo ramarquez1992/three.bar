@@ -19,8 +19,19 @@ class Hero: Actor {
         name = "heroNode"
     }
     
-    func move(location: CGPoint) {
-        let moveAction = SKAction.moveTo(location, duration: NSTimeInterval(0.1))
+    func move(location: CGPoint, map: GameScene) {
+        //get center point of left side of screen
+        
+        //calculate azimuth of location from center
+        
+        let magicDistance = 1
+        //set newLocation to currentLocation+magicDistance in direction of azimuth
+        let newLocation = location
+        
+        
+        let magicSpeed = NSTimeInterval(0.1)
+        
+        let moveAction = SKAction.moveTo(newLocation, duration: magicSpeed)
         runAction(moveAction)
     }
 

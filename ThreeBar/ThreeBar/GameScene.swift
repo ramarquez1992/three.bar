@@ -44,7 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Move if left side touched
             if location.x < size.width / 2 {
-                hero.move(location)
+                hero.move(location, map: self)
             } else {
                 // Shoot if right side touched
                 hero.shoot(location, map: self)
@@ -58,7 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Continuously move hero if touch is held on left side
             if location.x < size.width / 2 {
-                hero.move(location)
+                hero.move(location, map: self)
             }
         }
     }
