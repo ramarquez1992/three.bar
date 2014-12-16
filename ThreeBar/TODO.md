@@ -2,8 +2,8 @@
 
 ---
 
-## NEED
-* 
+## Miscellaneous
+* cross indicating move control center
 
 ## LaunchScene
 * color
@@ -45,7 +45,4 @@
 
 ## Game Center
 * high scores
-
-## Miscellaneous
-* 
-
+* achievements

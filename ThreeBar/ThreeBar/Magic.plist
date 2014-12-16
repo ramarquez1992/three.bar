@@ -17,7 +17,7 @@
 	<key>scoreFont</key>
 	<string>Masaaki</string>
 	<key>scoreSize</key>
-	<integer>50</integer>
+	<integer>55</integer>
 	<key>onboardingFont</key>
 	<string>Masaaki</string>
 	<key>onboardingSize</key>
@@ -43,6 +43,6 @@
 	<key>mobSize</key>
 	<integer>75</integer>
 	<key>controlCenter</key>
-	<integer>125</integer>
+	<integer>130</integer>
 </dict>
 </plist>

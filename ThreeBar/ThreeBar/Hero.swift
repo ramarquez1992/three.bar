@@ -20,6 +20,7 @@ class Hero: Actor {
         
         zPosition = 1000  // Hero is always visible
         name = "heroNode"
+        physicsBody?.categoryBitMask = PhysicsCategory.Hero
         
         let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.heroTeleportTime), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
 

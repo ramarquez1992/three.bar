@@ -14,7 +14,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMotionShake:", name:"MotionShake", object: nil)
+        
         physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVectorMake(0, 0)
         
         addHero()
         addScoreLabel()
@@ -106,6 +108,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.position = getRandomPosition()
             hero.canTeleport = false
         }
+    }
+    
+    func heroDidCollideWithMob(mob: Mob) {
+        mob.removeFromParent()
+        //TODO: also remove from mobs[]
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        // Put bodies in ascending PhysicsCategory order
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if (firstBody.categoryBitMask & PhysicsCategory.Hero) != 0 {
+            
+            if (secondBody.categoryBitMask & PhysicsCategory.Mob) != 0 {
+                heroDidCollideWithMob(secondBody.node as Mob)
+            }
+
+        }
+        
     }
    
     override func update(currentTime: CFTimeInterval) {

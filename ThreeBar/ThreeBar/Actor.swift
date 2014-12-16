@@ -28,9 +28,14 @@ class Actor: SKSpriteNode {
         physicsBody?.usesPreciseCollisionDetection = true
         
         physicsBody?.categoryBitMask    = PhysicsCategory.Actor
-        physicsBody?.contactTestBitMask = PhysicsCategory.Projectile
+        physicsBody?.contactTestBitMask = PhysicsCategory.Projectile +
+                                          PhysicsCategory.Actor +
+                                          PhysicsCategory.Hero +
+                                          PhysicsCategory.Mob
         physicsBody?.collisionBitMask   = PhysicsCategory.All   -
                                           PhysicsCategory.Actor -
+                                          PhysicsCategory.Hero -
+                                          PhysicsCategory.Mob -
                                           PhysicsCategory.Projectile
     }
     

@@ -9,17 +9,17 @@
 import Foundation
 import SpriteKit
 
-class Mob: Actor {
-    var moving:CGPoint? = nil  // Direction moving, or nil if not moving
-    
+class Mob: Actor {    
     init() {
-        //super.init(texture: SKTexture(imageNamed: _magic.mobSprite),
-        super.init(texture: nil,
+        super.init(texture: SKTexture(imageNamed: _magic.mobSprite),
+        //super.init(texture: nil,
             color: UIColor.purpleColor(),
             size: CGSize(width: CGFloat(_magic.mobSize), height: CGFloat(_magic.mobSize)))
         
         zPosition = 800  // Below hero
         name = "mobNode"
+        physicsBody?.categoryBitMask = PhysicsCategory.Mob
+
     }
     
     func move(location: CGPoint, map: GameScene) {
