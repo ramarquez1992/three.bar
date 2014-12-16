@@ -2,6 +2,9 @@
 
 ---
 
+## NEED
+* separate "magic values" into .plist
+
 ## LaunchScene
 * color
 * procedurally generated bg (e.g. stars)
@@ -10,9 +13,6 @@
 ## Level
 * doors
 * change level
-
-## Controls
-* teleport timer
 
 ## Actor
 * "pointing in direction" var

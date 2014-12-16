@@ -11,6 +11,7 @@ import SpriteKit
 
 class Hero: Actor {
     var moving:CGPoint? = nil  // Direction moving, or nil if not moving
+    var canTeleport = false
     
     init() {
         super.init(texture: SKTexture(imageNamed: "hero"),
@@ -19,6 +20,9 @@ class Hero: Actor {
         
         zPosition = 1000  // Hero is always visible
         name = "heroNode"
+        
+        let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
+
     }
     
     func move(location: CGPoint, map: GameScene) {
@@ -53,6 +57,10 @@ class Hero: Actor {
             SKAction.waitForDuration(0.03),
             SKAction.runBlock({ flash.removeFromParent() })
             ]))
+    }
+    
+    func allowTeleport() {
+        canTeleport = true
     }
     
     required init?(coder aDecoder: NSCoder) {

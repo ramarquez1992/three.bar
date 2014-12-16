@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {        
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch in touches {
             let location = touch.locationInNode(self)
             
@@ -80,7 +80,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Teleport hero on shake
     func onMotionShake(notification: NSNotification) {
-        hero.position = getRandomPosition()
+        if hero.canTeleport {
+            hero.position = getRandomPosition()
+            hero.canTeleport = false
+        }
     }
    
     override func update(currentTime: CFTimeInterval) {
