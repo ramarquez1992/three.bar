@@ -42,8 +42,21 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
         }
+        
+        becomeFirstResponder()  // needed to handle motion events
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
     }
 
+    // Pass off motion detection to whomever is listening
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if motion == .MotionShake {
+            NSNotificationCenter.defaultCenter().postNotificationName("MotionShake", object: nil)
+        }
+    }
+    
     override func shouldAutorotate() -> Bool {
         return true
     }

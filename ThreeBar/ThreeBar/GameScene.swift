@@ -12,17 +12,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let hero = Hero()
     
     override func didMoveToView(view: SKView) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMotionShake:", name:"MotionShake", object: nil)
         physicsWorld.contactDelegate = self
         
         addHero()
         addScoreLabel()
     }
     
+    func getRandomPosition() -> CGPoint {
+        let x = CGFloat(size.width) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
+        let y = CGFloat(size.height) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
+        
+        return CGPoint(x: x, y: y)
+    }
+    
     func addHero() {
-        // Position hero at random point on map
-        let xPos = CGFloat(size.width) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
-        let yPos = CGFloat(size.height) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
-        hero.position = CGPoint(x: xPos, y: yPos)
+        hero.position = getRandomPosition()
         
         addChild(hero)
     }
@@ -37,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {        
         for touch in touches {
             let location = touch.locationInNode(self)
             
@@ -71,6 +76,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 hero.moving = location
             }
         }
+    }
+    
+    // Teleport hero on shake
+    func onMotionShake(notification: NSNotification) {
+        hero.position = getRandomPosition()
     }
    
     override func update(currentTime: CFTimeInterval) {

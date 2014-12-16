@@ -12,7 +12,7 @@
 * change level
 
 ## Controls
-* teleport on shake (motionbegan() UIEventSubtypeMotionShake)
+* teleport timer
 
 ## Actor
 * "pointing in direction" var
