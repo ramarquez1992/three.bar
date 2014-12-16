@@ -3,7 +3,7 @@
 ---
 
 ## NEED
-* separate "magic values" into .plist
+* 
 
 ## LaunchScene
 * color

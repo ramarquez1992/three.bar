@@ -37,10 +37,12 @@ class LaunchScene: SKScene {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
+            // Start new game if start button is pressed
             let node = self.nodeAtPoint(touch.locationInNode(self))
+            //if node.name == "startButton" {
             
-            // Start new game when start button is pressed
-            if node.name == "startButton" {
+            // Start new game if screen is touched at all
+            if true {
                 let skView = self.view! as SKView
                 skView.ignoresSiblingOrder = true
 
