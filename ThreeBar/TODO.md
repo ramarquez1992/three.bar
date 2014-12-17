@@ -27,7 +27,8 @@
 * AI
 
 ## Score
-* 
+* destroy mob
+* beat room
 
 ## Pause
 * pause button
@@ -36,7 +37,6 @@
 * quit button
 
 ## Endgame
-* branding
 * psychedelic flashes
 
 ## Game Center

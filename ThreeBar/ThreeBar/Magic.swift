@@ -39,8 +39,9 @@ class Magic {
     let heroMoveSpeed           = Float()
     let flashDuration           = Float()
     
-    let mobSprite = String()
-    let mobSize   = Float()
+    let mobSprite      = String()
+    let mobSize        = Float()
+    let mobMinDistance = Float()
     
     let endgameScoreFont = String()
     let endgameScoreSize = Float()
@@ -81,8 +82,9 @@ class Magic {
                 heroMoveSpeed           = dict["heroMoveSpeed"] as Float
                 flashDuration           = dict["flashDuration"] as Float
                 
-                mobSprite = dict["mobSprite"] as String
-                mobSize   = dict["mobSize"] as Float
+                mobSprite      = dict["mobSprite"] as String
+                mobSize        = dict["mobSize"] as Float
+                mobMinDistance = dict["mobMinDistance"] as Float
                 
                 endgameScoreFont    = dict["endgameScoreFont"] as String
                 endgameScoreSize    = dict["endgameScoreSize"] as Float

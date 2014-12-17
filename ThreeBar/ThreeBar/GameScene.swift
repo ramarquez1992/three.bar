@@ -38,11 +38,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(moveControl)
     }
     
-    func getRandomPosition() -> CGPoint {
-        let x = CGFloat(size.width) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
-        let y = CGFloat(size.height) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
+
+    func getRandomPosition(fromPoint: CGPoint = CGPoint(), minDistance: CGFloat = 0.0) -> CGPoint {
+        var possiblePosition: CGPoint
+        var possibleLength: CGFloat
+        var currentLength = fromPoint.length()
+        var distance: CGFloat = 0.0
         
-        return CGPoint(x: x, y: y)
+        do {
+            possiblePosition = CGPoint(x: CGFloat(size.width) * (CGFloat(arc4random()) / CGFloat(UInt32.max)),
+                y: CGFloat(size.height) * (CGFloat(arc4random()) / CGFloat(UInt32.max)))
+            
+            possibleLength = possiblePosition.length()
+            distance = abs(currentLength - possibleLength)
+        } while distance < CGFloat(minDistance)
+        
+        return possiblePosition
     }
     
     func addHero() {
@@ -53,13 +64,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func populateWithMobs() {
         let m1 = Mob()
-        m1.position = getRandomPosition()
+        m1.position = getRandomPosition(fromPoint: hero.position, minDistance: CGFloat(_magic.mobMinDistance))
         
         let m2 = Mob()
-        m2.position = getRandomPosition()
+        m2.position = getRandomPosition(fromPoint: hero.position, minDistance: CGFloat(_magic.mobMinDistance))
         
         let m3 = Mob()
-        m3.position = getRandomPosition()
+        m3.position = getRandomPosition(fromPoint: hero.position, minDistance: CGFloat(_magic.mobMinDistance))
         
         mobs.append(m1)
         mobs.append(m2)

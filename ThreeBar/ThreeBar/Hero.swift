@@ -43,18 +43,7 @@ class Hero: Actor {
     func teleport(map: GameScene) {
         //
         if canTeleport {
-            var possiblePosition: CGPoint
-            var teleportLength: CGFloat
-            var currentLength = position.length()
-            var distance: CGFloat = 0.0
-            
-            do {
-                possiblePosition = map.getRandomPosition()
-                teleportLength = possiblePosition.length()
-                distance = abs(currentLength - teleportLength)
-            } while distance < CGFloat(_magic.heroTeleportMinDistance)
-            
-            position = possiblePosition
+            position = map.getRandomPosition(fromPoint: position, minDistance: CGFloat(_magic.heroTeleportMinDistance))
             canTeleport = false
         }
     }
