@@ -20,8 +20,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addHero()
         addScoreLabel()
+        addMoveControl()
         
         populateWithMobs()
+    }
+    
+    func addMoveControl() {
+        let moveControl = SKSpriteNode(texture: SKTexture(imageNamed: _magic.controlImage),
+            color: UIColor.yellowColor(),
+            size: CGSize(width: CGFloat(_magic.heroSize), height: CGFloat(_magic.heroSize)))
+        
+        moveControl.position = CGPoint(x: CGFloat(_magic.controlCenter), y: CGFloat(_magic.controlCenter))
+        
+        addChild(moveControl)
     }
     
     func getRandomPosition() -> CGPoint {
@@ -145,7 +156,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask & PhysicsCategory.Hero) != 0 {
             
             if (secondBody.categoryBitMask & PhysicsCategory.Mob) != 0 {
-                heroDidCollideWithMob(secondBody.node as Mob)
+                //!! why did I not have to do this check when 
+                //   testing on physical device??
+                if let n = secondBody.node {
+                    heroDidCollideWithMob(n as Mob)
+                }
             }
 
         }
@@ -161,8 +176,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endgame() {
-        println("ending game")
-        // Start new game
         if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
             let skView = self.view! as SKView
             

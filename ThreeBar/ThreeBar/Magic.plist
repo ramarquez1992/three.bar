@@ -41,8 +41,10 @@
 	<key>mobSprite</key>
 	<string>mob</string>
 	<key>mobSize</key>
-	<integer>75</integer>
+	<integer>125</integer>
 	<key>controlCenter</key>
 	<integer>130</integer>
+	<key>controlImage</key>
+	<string>moveControl</string>
 </dict>
 </plist>

@@ -10,7 +10,6 @@ import SpriteKit
 
 class EndgameScene: SKScene {
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
         addTitle()
     }
     

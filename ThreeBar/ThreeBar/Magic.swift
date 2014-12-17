@@ -29,6 +29,7 @@ class Magic {
     let scoreSize = Float()
     
     let controlCenter = Float()
+    let controlImage  = String()
     
     let heroSprite       = String()
     let heroSize         = Float()
@@ -62,6 +63,7 @@ class Magic {
                 scoreSize = dict["scoreSize"] as Float
                 
                 controlCenter = dict["controlCenter"] as Float
+                controlImage  = dict["controlImage"] as String
                 
                 heroSprite       = dict["heroSprite"] as String
                 heroSize         = dict["heroSize"] as Float
