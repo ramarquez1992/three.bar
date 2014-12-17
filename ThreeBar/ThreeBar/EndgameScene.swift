@@ -19,8 +19,6 @@ class EndgameScene: SKScene {
         addScore()
         addTime()
         
-        let blinkTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.endgameBlinkSpeed), target: self, selector:Selector("blink"), userInfo: nil, repeats: true)
-
     }
     
     func blink() {
@@ -99,5 +97,6 @@ class EndgameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        blink()
     }
 }

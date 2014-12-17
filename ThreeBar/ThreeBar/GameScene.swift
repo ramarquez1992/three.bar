@@ -139,8 +139,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func heroDidCollideWithMob(mob: Mob) {
-        changeScore(100)
-        
         mob.removeFromParent()
         
         var i = 0

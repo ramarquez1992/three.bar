@@ -3,7 +3,7 @@
 ---
 
 ## Miscellaneous
-* 
+* MEMORY LEAK
 
 ## LaunchScene
 * color
@@ -31,8 +31,7 @@
 * beat room
 
 ## Pause
-* pause button
-* pause action
+* pause button (GameScene.paused)
 * click anywhere to resume
 * quit button
 
