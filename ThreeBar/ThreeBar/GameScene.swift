@@ -54,6 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for mob in mobs {
             addChild(mob)
         }
+        
     }
     
     func addScoreLabel() {
@@ -112,7 +113,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func heroDidCollideWithMob(mob: Mob) {
         mob.removeFromParent()
-        //TODO: also remove from mobs[]
+        
+        var i = 0
+        for inArray in mobs {
+            if inArray == mob {
+                mobs.removeAtIndex(i)
+                
+                if mobs.count == 0 {
+                    endgame()
+                }
+            }
+            
+            ++i
+        }
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -143,6 +157,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let location = hero.moving {
             hero.facing = location
             hero.move(location, map: self)
+        }
+    }
+    
+    func endgame() {
+        println("ending game")
+        // Start new game
+        if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
+            let skView = self.view! as SKView
+            
+            skView.ignoresSiblingOrder = true
+            scene.scaleMode = .AspectFill
+            
+            skView.presentScene(scene)
         }
     }
 
