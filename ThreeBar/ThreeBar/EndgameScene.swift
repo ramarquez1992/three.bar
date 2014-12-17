@@ -50,11 +50,11 @@ class EndgameScene: SKScene {
         var minutesRaw = Int(difference / 60)
         var secondsRaw = Int(difference % 60)
         
-        var minutes = String()
-        var seconds = String()
+        var minutes = String(minutesRaw)
+        var seconds = String(secondsRaw)
         
-        if minutesRaw < 10 { minutes = "0\(minutesRaw)" }
-        if secondsRaw < 10 { seconds = "0\(secondsRaw)" }
+        if minutesRaw < 10 { minutes = "0\(minutes)" }
+        if secondsRaw < 10 { seconds = "0\(seconds)" }
         
         timeLabel.text = "\(minutes):\(seconds)"
         
