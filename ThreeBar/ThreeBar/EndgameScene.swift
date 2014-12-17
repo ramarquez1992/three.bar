@@ -11,15 +11,32 @@ import SpriteKit
 class EndgameScene: SKScene {
     var score: Int!
     var startTime: NSDate!
+    var titleLabel = SKLabelNode()
+    
     
     override func didMoveToView(view: SKView) {
         addTitle()
         addScore()
         addTime()
+        
+        let blinkTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.endgameBlinkSpeed), target: self, selector:Selector("blink"), userInfo: nil, repeats: true)
+
+    }
+    
+    func blink() {
+        titleLabel.fontColor = getRandomColor()
+    }
+    
+    func getRandomColor() -> UIColor {
+        var randomRed    = CGFloat(drand48())
+        var randomGreen  = CGFloat(drand48())
+        var randomBlue   = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     
     func addTitle() {
-        let titleLabel = SKLabelNode(fontNamed: _magic.titleFont)
+        titleLabel.fontName = _magic.titleFont
         titleLabel.name = "titleLabel"
         titleLabel.text = _magic.endgameTitleText
         titleLabel.fontSize = CGFloat(_magic.endgameTitleSize)

@@ -37,7 +37,7 @@
 * quit button
 
 ## Endgame
-* psychedelic flashes
+* 
 
 ## Game Center
 * high scores

@@ -62,5 +62,7 @@
 	<integer>75</integer>
 	<key>endgameTitleText</key>
 	<string>4BAR4BAR4BAR4BAR4BAR4BAR4BAR4BAR</string>
+	<key>endgameBlinkSpeed</key>
+	<real>0.02</real>
 </dict>
 </plist>

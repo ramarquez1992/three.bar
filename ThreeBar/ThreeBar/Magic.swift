@@ -43,12 +43,13 @@ class Magic {
     let mobSize        = Float()
     let mobMinDistance = Float()
     
-    let endgameScoreFont = String()
-    let endgameScoreSize = Float()
-    let endgameTimeFont  = String()
-    let endgameTimeSize  = Float()
-    let endgameTitleSize = Float()
-    let endgameTitleText = String()
+    let endgameScoreFont  = String()
+    let endgameScoreSize  = Float()
+    let endgameTimeFont   = String()
+    let endgameTimeSize   = Float()
+    let endgameTitleSize  = Float()
+    let endgameTitleText  = String()
+    let endgameBlinkSpeed = Float()
 
     
     init() {
@@ -86,12 +87,13 @@ class Magic {
                 mobSize        = dict["mobSize"] as Float
                 mobMinDistance = dict["mobMinDistance"] as Float
                 
-                endgameScoreFont    = dict["endgameScoreFont"] as String
-                endgameScoreSize    = dict["endgameScoreSize"] as Float
-                endgameTimeFont     = dict["endgameTimeFont"] as String
-                endgameTimeSize     = dict["endgameTimeSize"] as Float
-                endgameTitleSize    = dict["endgameTitleSize"] as Float
-                endgameTitleText    = dict["endgameTitleText"] as String
+                endgameScoreFont     = dict["endgameScoreFont"] as String
+                endgameScoreSize     = dict["endgameScoreSize"] as Float
+                endgameTimeFont      = dict["endgameTimeFont"] as String
+                endgameTimeSize      = dict["endgameTimeSize"] as Float
+                endgameTitleSize     = dict["endgameTitleSize"] as Float
+                endgameTitleText     = dict["endgameTitleText"] as String
+                endgameBlinkSpeed    = dict["endgameBlinkSpeed"] as Float
 
             
             } else { fatalError("Failed to load \"Magic\" dictionary") }
