@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let hero = Hero()
     var mobs = [Mob]()
+    var score: Int = 0
+    let scoreLabel = SKLabelNode()
     
     override func didMoveToView(view: SKView) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMotionShake:", name:"MotionShake", object: nil)
@@ -68,10 +70,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func changeScore(changeBy: Int) {
+        score += changeBy
+        scoreLabel.text = String(score)
+    }
+    
     func addScoreLabel() {
-        let scoreLabel      = SKLabelNode(fontNamed: _magic.scoreFont)
+        scoreLabel.fontName = _magic.scoreFont
         scoreLabel.name     = "scoreLabel"
-        scoreLabel.text     = "0007300"
+        scoreLabel.text     = String(score)
         scoreLabel.fontSize = CGFloat(_magic.scoreSize)
         scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
         
@@ -123,6 +130,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func heroDidCollideWithMob(mob: Mob) {
+        changeScore(100)
+        
         mob.removeFromParent()
         
         var i = 0

@@ -3,7 +3,7 @@
 ---
 
 ## Miscellaneous
-* cross indicating move control center
+* 
 
 ## LaunchScene
 * color
@@ -16,7 +16,7 @@
 ## Actor
 * projectile
 * health (or one-hit zap e.g. Berzerk)
-* can pass over each other
+* can pass over each other?
 
 ## Hero
 * strengthen on death
