@@ -124,10 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Teleport hero on shake
     func onMotionShake(notification: NSNotification) {
-        if hero.canTeleport {
-            hero.position = getRandomPosition()
-            hero.canTeleport = false
-        }
+        hero.teleport(self)
     }
     
     func heroDidCollideWithMob(mob: Mob) {

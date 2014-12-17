@@ -6,6 +6,8 @@
 	<integer>100</integer>
 	<key>heroTeleportTime</key>
 	<integer>3</integer>
+	<key>heroTeleportMinDistance</key>
+	<integer>500</integer>
 	<key>heroSprite</key>
 	<string>hero</string>
 	<key>heroMoveDistance</key>

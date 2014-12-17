@@ -31,12 +31,13 @@ class Magic {
     let controlCenter = Float()
     let controlImage  = String()
     
-    let heroSprite       = String()
-    let heroSize         = Float()
-    let heroTeleportTime = Float()
-    let heroMoveDistance = Float()
-    let heroMoveSpeed    = Float()
-    let flashDuration    = Float()
+    let heroSprite              = String()
+    let heroSize                = Float()
+    let heroTeleportTime        = Float()
+    let heroTeleportMinDistance = Float()
+    let heroMoveDistance        = Float()
+    let heroMoveSpeed           = Float()
+    let flashDuration           = Float()
     
     let mobSprite = String()
     let mobSize   = Float()
@@ -72,12 +73,13 @@ class Magic {
                 controlCenter = dict["controlCenter"] as Float
                 controlImage  = dict["controlImage"] as String
                 
-                heroSprite       = dict["heroSprite"] as String
-                heroSize         = dict["heroSize"] as Float
-                heroTeleportTime = dict["heroTeleportTime"] as Float
-                heroMoveDistance = dict["heroMoveDistance"] as Float
-                heroMoveSpeed    = dict["heroMoveSpeed"] as Float
-                flashDuration    = dict["flashDuration"] as Float
+                heroSprite              = dict["heroSprite"] as String
+                heroSize                = dict["heroSize"] as Float
+                heroTeleportTime        = dict["heroTeleportTime"] as Float
+                heroTeleportMinDistance = dict["heroTeleportMinDistance"] as Float
+                heroMoveDistance        = dict["heroMoveDistance"] as Float
+                heroMoveSpeed           = dict["heroMoveSpeed"] as Float
+                flashDuration           = dict["flashDuration"] as Float
                 
                 mobSprite = dict["mobSprite"] as String
                 mobSize   = dict["mobSize"] as Float
