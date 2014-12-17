@@ -40,6 +40,13 @@ class Magic {
     
     let mobSprite = String()
     let mobSize   = Float()
+    
+    let endgameScoreFont = String()
+    let endgameScoreSize = Float()
+    let endgameTimeFont  = String()
+    let endgameTimeSize  = Float()
+    let endgameTitleSize = Float()
+    let endgameTitleText = String()
 
     
     init() {
@@ -74,6 +81,14 @@ class Magic {
                 
                 mobSprite = dict["mobSprite"] as String
                 mobSize   = dict["mobSize"] as Float
+                
+                endgameScoreFont    = dict["endgameScoreFont"] as String
+                endgameScoreSize    = dict["endgameScoreSize"] as Float
+                endgameTimeFont     = dict["endgameTimeFont"] as String
+                endgameTimeSize     = dict["endgameTimeSize"] as Float
+                endgameTitleSize    = dict["endgameTitleSize"] as Float
+                endgameTitleText    = dict["endgameTitleText"] as String
+
             
             } else { fatalError("Failed to load \"Magic\" dictionary") }
         } else { fatalError("Failed to load \"Magic.plist\"") }

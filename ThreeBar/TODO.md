@@ -28,8 +28,7 @@
 * AI
 
 ## Score
-* calculate
-* show
+* 
 
 ## Pause
 * pause button
@@ -38,8 +37,6 @@
 * quit button
 
 ## Endgame
-* score
-* time
 * branding
 * psychedelic flashes
 

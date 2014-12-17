@@ -46,5 +46,17 @@
 	<integer>130</integer>
 	<key>controlImage</key>
 	<string>moveControl</string>
+	<key>endgameScoreFont</key>
+	<string>Masaaki</string>
+	<key>endgameScoreSize</key>
+	<integer>150</integer>
+	<key>endgameTimeFont</key>
+	<string>Masaaki</string>
+	<key>endgameTimeSize</key>
+	<integer>150</integer>
+	<key>endgameTitleSize</key>
+	<integer>75</integer>
+	<key>endgameTitleText</key>
+	<string>4BAR4BAR4BAR4BAR4BAR4BAR4BAR4BAR</string>
 </dict>
 </plist>

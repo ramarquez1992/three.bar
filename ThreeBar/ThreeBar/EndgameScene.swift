@@ -9,18 +9,59 @@
 import SpriteKit
 
 class EndgameScene: SKScene {
+    var score: Int!
+    var startTime: NSDate!
+    
     override func didMoveToView(view: SKView) {
         addTitle()
+        addScore()
+        addTime()
     }
     
     func addTitle() {
         let titleLabel = SKLabelNode(fontNamed: _magic.titleFont)
         titleLabel.name = "titleLabel"
-        titleLabel.text = _magic.titleText
-        titleLabel.fontSize = CGFloat(_magic.titleSize)
-        titleLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 70)
+        titleLabel.text = _magic.endgameTitleText
+        titleLabel.fontSize = CGFloat(_magic.endgameTitleSize)
+        titleLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         
         self.addChild(titleLabel)
+    }
+    
+    
+    func addScore() {
+        let scoreLabel = SKLabelNode(fontNamed: _magic.endgameScoreFont)
+        scoreLabel.name = "scoreLabel"
+        scoreLabel.text = String(score)
+        scoreLabel.fontSize = CGFloat(_magic.endgameScoreSize)
+        scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 200)
+        
+        self.addChild(scoreLabel)
+    }
+    
+    
+    func addTime() {
+        let timeLabel = SKLabelNode(fontNamed: _magic.endgameTimeFont)
+        timeLabel.name = "timeLabel"
+        
+        var currentTime = NSDate()
+        var difference = currentTime.timeIntervalSince1970 - startTime.timeIntervalSince1970
+        
+        var minutesRaw = Int(difference / 60)
+        var secondsRaw = Int(difference % 60)
+        
+        var minutes = String()
+        var seconds = String()
+        
+        if minutesRaw < 10 { minutes = "0\(minutesRaw)" }
+        if secondsRaw < 10 { seconds = "0\(secondsRaw)" }
+        
+        timeLabel.text = "\(minutes):\(seconds)"
+        
+        timeLabel.fontSize = CGFloat(_magic.endgameTimeSize)
+        timeLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 150)
+        
+        self.addChild(timeLabel)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

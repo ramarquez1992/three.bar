@@ -9,10 +9,11 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    let hero = Hero()
-    var mobs = [Mob]()
+    let hero       = Hero()
+    var mobs       = [Mob]()
     var score: Int = 0
     let scoreLabel = SKLabelNode()
+    let startTime  = NSDate()
     
     override func didMoveToView(view: SKView) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMotionShake:", name:"MotionShake", object: nil)
@@ -187,6 +188,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func endgame() {
         if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
             let skView = self.view! as SKView
+            
+            scene.score = score
+            scene.startTime = startTime
             
             skView.ignoresSiblingOrder = true
             scene.scaleMode = .AspectFill
