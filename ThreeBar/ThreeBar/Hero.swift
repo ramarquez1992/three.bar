@@ -12,6 +12,7 @@ import SpriteKit
 class Hero: Actor {
     var moving:CGPoint? = nil  // Direction moving, or nil if not moving
     var canTeleport = false
+    var teleportTimer = NSTimer()
     
     init() {
         super.init(texture: SKTexture(imageNamed: _magic.get("heroSprite") as String),
@@ -22,7 +23,7 @@ class Hero: Actor {
         name = "heroNode"
         physicsBody?.categoryBitMask = PhysicsCategory.Hero
         
-        let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.get("heroTeleportTime") as Float), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
+        teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.get("heroTeleportTime") as Float), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
 
     }
     
@@ -72,6 +73,10 @@ class Hero: Actor {
     
     func allowTeleport() {
         canTeleport = true
+    }
+    
+    func kill() {
+        teleportTimer.invalidate()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -192,6 +192,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endgame() {
+        hero.kill()
+        
         if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
             let skView = self.view! as SKView
             
