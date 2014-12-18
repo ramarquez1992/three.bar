@@ -3,7 +3,7 @@
 ---
 
 ## Miscellaneous
-* rotate screen either way
+* 
 
 ## LaunchScene
 * color

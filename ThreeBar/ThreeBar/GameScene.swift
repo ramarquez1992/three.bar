@@ -215,6 +215,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     println("No matches for mob contact")
                 }
                 
+            case PhysicsCategory.Wall:
+                switch secondBody.categoryBitMask {
+                case PhysicsCategory.Projectile:
+                    projectileDidCollideWithWall(secondNode as Projectile)
+                    
+                default:
+                    println("No matches for projectile contact")
+                }
+                
             default:
                 break
             }

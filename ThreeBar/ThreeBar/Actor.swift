@@ -31,7 +31,8 @@ class Actor: SKSpriteNode {
         physicsBody?.contactTestBitMask = PhysicsCategory.Projectile +
                                           PhysicsCategory.Actor +
                                           PhysicsCategory.Hero +
-                                          PhysicsCategory.Mob
+                                          PhysicsCategory.Mob +
+                                          PhysicsCategory.Wall
         physicsBody?.collisionBitMask   = PhysicsCategory.All   -
                                           PhysicsCategory.Actor -
                                           PhysicsCategory.Hero -
