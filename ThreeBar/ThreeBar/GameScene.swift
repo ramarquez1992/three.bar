@@ -188,39 +188,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        if (firstBody.categoryBitMask & PhysicsCategory.Hero) != 0 {
+        // First, ensure both nodes are valid
+        switch (firstBody.node?, secondBody.node?) {
+        case let (.Some(firstNode), .Some(secondNode)):
             
-            if (secondBody.categoryBitMask & PhysicsCategory.Mob) != 0 {
-                if let m = secondBody.node {
-                    heroDidCollideWithMob(m as Mob)
+            switch firstBody.categoryBitMask {
+                
+            case PhysicsCategory.Hero:
+                switch secondBody.categoryBitMask {
+                case PhysicsCategory.Mob:
+                    heroDidCollideWithMob(secondNode as Mob)
+                    
+                case PhysicsCategory.Projectile:
+                    projectileDidCollideWithHero(secondNode as Projectile)
+                    
+                default:
+                    println("No matches for hero contact")
                 }
-            }
-            
-            if (secondBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
-                if let p = secondBody.node {
-                    projectileDidCollideWithHero(p as Projectile)
+                
+            case PhysicsCategory.Mob:
+                switch secondBody.categoryBitMask {
+                case PhysicsCategory.Projectile:
+                    projectileDidCollideWithMob(secondNode as Projectile, mob: firstNode as Mob)
+                    
+                default:
+                    println("No matches for mob contact")
                 }
+                
+            default:
+                break
             }
 
-        }
-        
-        if (firstBody.categoryBitMask & PhysicsCategory.Mob) != 0 {
-            if (secondBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
-                if let m = firstBody.node {
-                    if let p = secondBody.node {
-                        projectileDidCollideWithMob(p as Projectile, mob: m as Mob)
-                    }
-                }
-            }
-        }
-        
-        
-        if (firstBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
-            if (secondBody.categoryBitMask & PhysicsCategory.Wall) != 0 {
-                if let p = firstBody.node {
-                    projectileDidCollideWithWall(p as Projectile)
-                }
-            }
+            
+        default:
+            break
         }
         
     }
