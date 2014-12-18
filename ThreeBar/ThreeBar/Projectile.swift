@@ -12,9 +12,9 @@ import SpriteKit
 class Projectile: Actor {
     
     init() {
-        super.init(texture: SKTexture(imageNamed: _magic.projectileSprite),
+        super.init(texture: SKTexture(imageNamed: _magic.get("projectileSprite") as String),
             color: UIColor.greenColor(),
-            size: CGSize(width: CGFloat(_magic.projectileSize), height: CGFloat(_magic.projectileSize)))
+            size: CGSize(width: _magic.get("projectileSize") as CGFloat, height: _magic.get("projectileSize") as CGFloat))
         
         zPosition = 1000
         name = "projectileNode"
@@ -25,14 +25,14 @@ class Projectile: Actor {
     func move(location: CGPoint, map: GameScene) {
         // Get center point of left side of screen
         //let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
-        let controlCenter = CGPoint(x: CGFloat(_magic.controlCenter), y: CGFloat(_magic.controlCenter))
+        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
         // Calculate azimuth of location from center
         let magicDistance = CGFloat(500)
         let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
         
         // Using moveTo() rather than manually updating position for smoother animation
-        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.projectileSpeed))
+        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.get("projectileSpeed") as Float))
         runAction(moveAction)
     }
 

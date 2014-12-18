@@ -34,10 +34,10 @@ class EndgameScene: SKScene {
     }
     
     func addTitle() {
-        titleLabel.fontName = _magic.titleFont
+        titleLabel.fontName = _magic.get("titleFont") as String
         titleLabel.name = "titleLabel"
-        titleLabel.text = _magic.endgameTitleText
-        titleLabel.fontSize = CGFloat(_magic.endgameTitleSize)
+        titleLabel.text = _magic.get("endgameTitleText") as String
+        titleLabel.fontSize = _magic.get("endgameTitleSize") as CGFloat
         titleLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         
         self.addChild(titleLabel)
@@ -45,10 +45,10 @@ class EndgameScene: SKScene {
     
     
     func addScore() {
-        let scoreLabel = SKLabelNode(fontNamed: _magic.endgameScoreFont)
+        let scoreLabel = SKLabelNode(fontNamed: _magic.get("endgameScoreFont") as String)
         scoreLabel.name = "scoreLabel"
         scoreLabel.text = String(score)
-        scoreLabel.fontSize = CGFloat(_magic.endgameScoreSize)
+        scoreLabel.fontSize = _magic.get("endgameScoreSize") as CGFloat
         scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 200)
         
         self.addChild(scoreLabel)
@@ -56,7 +56,7 @@ class EndgameScene: SKScene {
     
     
     func addTime() {
-        let timeLabel = SKLabelNode(fontNamed: _magic.endgameTimeFont)
+        let timeLabel = SKLabelNode(fontNamed: _magic.get("endgameTimeFont") as String)
         timeLabel.name = "timeLabel"
         
         var currentTime = NSDate()
@@ -73,7 +73,7 @@ class EndgameScene: SKScene {
         
         timeLabel.text = "\(minutes):\(seconds)"
         
-        timeLabel.fontSize = CGFloat(_magic.endgameTimeSize)
+        timeLabel.fontSize = _magic.get("endgameTimeSize") as CGFloat
         timeLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 150)
         
         self.addChild(timeLabel)

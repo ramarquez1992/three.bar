@@ -29,11 +29,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addMoveControl() {
-        let moveControl = SKSpriteNode(texture: SKTexture(imageNamed: _magic.controlImage),
+        let moveControl = SKSpriteNode(texture: SKTexture(imageNamed: _magic.get("controlImage") as String),
             color: UIColor.yellowColor(),
-            size: CGSize(width: CGFloat(_magic.heroSize), height: CGFloat(_magic.heroSize)))
+            size: CGSize(width: _magic.get("heroSize") as CGFloat, height: _magic.get("heroSize") as CGFloat))
         
-        moveControl.position = CGPoint(x: CGFloat(_magic.controlCenter), y: CGFloat(_magic.controlCenter))
+        moveControl.position = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
         addChild(moveControl)
     }
@@ -64,13 +64,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func populateWithMobs() {
         let m1 = Mob()
-        m1.position = getRandomPosition(fromPoint: hero.position, minDistance: CGFloat(_magic.mobMinDistance))
+        m1.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
         
         let m2 = Mob()
-        m2.position = getRandomPosition(fromPoint: hero.position, minDistance: CGFloat(_magic.mobMinDistance))
+        m2.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
         
         let m3 = Mob()
-        m3.position = getRandomPosition(fromPoint: hero.position, minDistance: CGFloat(_magic.mobMinDistance))
+        m3.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
         
         mobs.append(m1)
         mobs.append(m2)
@@ -88,10 +88,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addScoreLabel() {
-        scoreLabel.fontName = _magic.scoreFont
+        scoreLabel.fontName = _magic.get("scoreFont") as String
         scoreLabel.name     = "scoreLabel"
         scoreLabel.text     = String(score)
-        scoreLabel.fontSize = CGFloat(_magic.scoreSize)
+        scoreLabel.fontSize = _magic.get("scoreSize") as CGFloat
         scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
         
         self.addChild(scoreLabel)

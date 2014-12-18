@@ -19,7 +19,7 @@
 	<key>projectileSize</key>
 	<integer>20</integer>
 	<key>projectileSpeed</key>
-	<integer>1</integer>
+	<real>0.5</real>
 	<key>flashDuration</key>
 	<real>0.03</real>
 	<key>scoreFont</key>

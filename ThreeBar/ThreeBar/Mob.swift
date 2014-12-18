@@ -11,10 +11,10 @@ import SpriteKit
 
 class Mob: Actor {    
     init() {
-        super.init(texture: SKTexture(imageNamed: _magic.mobSprite),
+        super.init(texture: SKTexture(imageNamed: _magic.get("mobSprite") as String),
         //super.init(texture: nil,
             color: UIColor.purpleColor(),
-            size: CGSize(width: CGFloat(_magic.mobSize), height: CGFloat(_magic.mobSize)))
+            size: CGSize(width: _magic.get("mobSize") as CGFloat, height: _magic.get("mobSize") as CGFloat))
         
         zPosition = 800  // Below hero
         name = "mobNode"

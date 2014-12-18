@@ -14,36 +14,36 @@ class Hero: Actor {
     var canTeleport = false
     
     init() {
-        super.init(texture: SKTexture(imageNamed: _magic.heroSprite),
+        super.init(texture: SKTexture(imageNamed: _magic.get("heroSprite") as String),
             color: UIColor.yellowColor(),
-            size: CGSize(width: CGFloat(_magic.heroSize), height: CGFloat(_magic.heroSize)))
+            size: CGSize(width: _magic.get("heroSize") as CGFloat, height: _magic.get("heroSize") as CGFloat))
         
         zPosition = 1000  // Hero is always visible
         name = "heroNode"
         physicsBody?.categoryBitMask = PhysicsCategory.Hero
         
-        let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.heroTeleportTime), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
+        let teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.get("heroTeleportTime") as Float), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
 
     }
     
     func move(location: CGPoint, map: GameScene) {
         // Get center point of left side of screen
         //let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
-        let controlCenter = CGPoint(x: CGFloat(_magic.controlCenter), y: CGFloat(_magic.controlCenter))
+        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
         // Calculate azimuth of location from center
-        let magicDistance = CGFloat(_magic.heroMoveDistance)
+        let magicDistance = _magic.get("heroMoveDistance") as CGFloat
         let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
         
         // Using moveTo() rather than manually updating position for smoother animation
-        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.heroMoveSpeed))
+        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.get("heroMoveSpeed") as Float))
         runAction(moveAction)
     }
     
     func teleport(map: GameScene) {
         //
         if canTeleport {
-            position = map.getRandomPosition(fromPoint: position, minDistance: CGFloat(_magic.heroTeleportMinDistance))
+            position = map.getRandomPosition(fromPoint: position, minDistance: _magic.get("heroTeleportMinDistance") as CGFloat)
             canTeleport = false
         }
     }
@@ -65,7 +65,7 @@ class Hero: Actor {
         
         runAction(SKAction.sequence([
             SKAction.runBlock({ screen.addChild(flash) }),
-            SKAction.waitForDuration(NSTimeInterval(_magic.flashDuration)),
+            SKAction.waitForDuration(NSTimeInterval(_magic.get("flashDuration") as Float)),
             SKAction.runBlock({ flash.removeFromParent() })
             ]))
     }

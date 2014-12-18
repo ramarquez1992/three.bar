@@ -16,10 +16,10 @@ class OnboardingScene: SKScene {
     }
     
     func addMoveLabel() {
-        let moveLabel = SKLabelNode(fontNamed:_magic.onboardingFont)
+        let moveLabel = SKLabelNode(fontNamed: _magic.get("onboardingFont") as String)
         moveLabel.name = "moveLabel"
-        moveLabel.text = _magic.onboardingMoveText
-        moveLabel.fontSize = CGFloat(_magic.onboardingSize)
+        moveLabel.text = _magic.get("onboardingMoveText") as String
+        moveLabel.fontSize = _magic.get("onboardingSize") as CGFloat
         moveLabel.position = CGPoint(x:CGRectGetMidX(self.frame) / 2,
             y:CGRectGetMidY(self.frame))
         
@@ -27,10 +27,10 @@ class OnboardingScene: SKScene {
     }
     
     func addShootLabel() {
-        let shootLabel = SKLabelNode(fontNamed:_magic.onboardingFont)
+        let shootLabel = SKLabelNode(fontNamed: _magic.get("onboardingFont") as String)
         shootLabel.name = "shootLabel"
-        shootLabel.text = _magic.onboardingShootText
-        shootLabel.fontSize = CGFloat(_magic.onboardingSize)
+        shootLabel.text = _magic.get("onboardingShootText") as String
+        shootLabel.fontSize = _magic.get("onboardingSize") as CGFloat
         shootLabel.position = CGPoint(x:CGRectGetMidX(self.frame) + CGRectGetMidX(self.frame) / 2,
             y:CGRectGetMidY(self.frame))
         
