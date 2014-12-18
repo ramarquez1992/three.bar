@@ -28,7 +28,7 @@ class Projectile: Actor {
         let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
         // Calculate azimuth of location from center
-        let magicDistance = CGFloat(500)
+        let magicDistance = CGFloat(1000)
         let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
         
         // Using moveTo() rather than manually updating position for smoother animation

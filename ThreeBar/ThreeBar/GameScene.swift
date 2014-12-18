@@ -139,6 +139,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func heroDidCollideWithMob(mob: Mob) {
+        killMob(mob)
+    }
+    
+    func mobDidCollideWithProjectile(mob: Mob, projectile: Projectile) {
+        killMob(mob)
+        projectile.removeFromParent()
+    }
+    
+    func projectileDidCollideWithWall(projectile: Projectile) {
+        projectile.removeFromParent()
+    }
+    
+    func killMob(mob: Mob) {
         mob.removeFromParent()
         
         var i = 0
@@ -153,7 +166,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             ++i
         }
-        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -179,6 +191,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
 
+        }
+        
+        if (firstBody.categoryBitMask & PhysicsCategory.Mob) != 0 {
+            if (secondBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
+                if let m = firstBody.node {
+                    if let p = secondBody.node {
+                        mobDidCollideWithProjectile(m as Mob, projectile: p as Projectile)
+                    }
+                }
+            }
+        }
+        
+        
+        if (firstBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
+            if (secondBody.categoryBitMask & PhysicsCategory.Wall) != 0 {
+                if let p = firstBody.node {
+                    projectileDidCollideWithWall(p as Projectile)
+                }
+            }
         }
         
     }

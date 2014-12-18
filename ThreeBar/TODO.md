@@ -14,13 +14,16 @@
 * change level
 
 ## Actor
-* projectile
 * health (or one-hit zap e.g. Berzerk)
 * can pass over each other?
 
 ## Hero
 * strengthen on death
 * regain health on ?combo?
+
+## Projectile
+* Disc: Projectile for hero (bounce back)
+* collide with walls
 
 ## Mobs
 * hive
