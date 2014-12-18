@@ -139,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func heroDidCollideWithMob(mob: Mob) {
-        killMob(mob)
+        endgame()
     }
     
     func mobDidCollideWithProjectile(mob: Mob, projectile: Projectile) {
@@ -158,6 +158,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for inArray in mobs {
             if inArray == mob {
                 mobs.removeAtIndex(i)
+                
+                changeScore(100)
                 
                 if mobs.count == 0 {
                     endgame()
@@ -226,15 +228,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero.kill()
         
         if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
-            let skView = self.view! as SKView
-            
-            scene.score = score
-            scene.startTime = startTime
-            
-            skView.ignoresSiblingOrder = true
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
+            if let skView = self.view {
+                scene.score = score
+                scene.startTime = startTime
+                
+                skView.ignoresSiblingOrder = true
+                scene.scaleMode = .AspectFill
+                
+                skView.presentScene(scene)
+            }
         }
     }
 

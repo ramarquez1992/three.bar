@@ -37,7 +37,7 @@ class OnboardingScene: SKScene {
         self.addChild(shootLabel)
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             let node = self.nodeAtPoint(touch.locationInNode(self))
             

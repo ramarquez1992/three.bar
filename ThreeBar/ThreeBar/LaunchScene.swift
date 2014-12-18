@@ -35,7 +35,7 @@ class LaunchScene: SKScene {
         self.addChild(startButton)
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             // Start new game if start button is pressed
             let node = self.nodeAtPoint(touch.locationInNode(self))
