@@ -23,12 +23,10 @@ class Projectile: Actor {
     }
     
     func move(location: CGPoint, map: GameScene) {
-        // Get center point of left side of screen
-        //let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
         let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
         // Calculate azimuth of location from center
-        let magicDistance = CGFloat(1000)
+        let magicDistance = _magic.get("projectileDistance") as CGFloat // Make sure projectile goes as far as it can
         let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
         
         // Using moveTo() rather than manually updating position for smoother animation

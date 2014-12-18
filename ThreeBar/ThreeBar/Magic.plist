@@ -18,8 +18,10 @@
 	<string>projectile</string>
 	<key>projectileSize</key>
 	<integer>20</integer>
+	<key>projectileDistance</key>
+	<integer>3000</integer>
 	<key>projectileSpeed</key>
-	<real>0.8</real>
+	<integer>3</integer>
 	<key>flashDuration</key>
 	<real>0.03</real>
 	<key>scoreFont</key>

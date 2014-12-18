@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Hero: Actor {
-    var moving:CGPoint? = nil  // Direction moving, or nil if not moving
+    var moving = false  // Direction moving, or nil if not moving
     var canTeleport = false
     var teleportTimer = NSTimer()
     
@@ -28,8 +28,6 @@ class Hero: Actor {
     }
     
     func move(location: CGPoint, map: GameScene) {
-        // Get center point of left side of screen
-        //let controlCenter = CGPoint(x: (map.size.width / 2) / 2, y: map.size.height / 2)
         let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
         // Calculate azimuth of location from center
@@ -49,8 +47,9 @@ class Hero: Actor {
         }
     }
 
-    func shoot(direction: CGPoint, map: GameScene) {
+    func shoot(map: GameScene) {
         let disc = Projectile()
+        //disc.position = position + facing.normalized() + (_magic.get("heroSize") / 2)
         disc.position = position
         map.addChild(disc)
         disc.move(facing, map: map)

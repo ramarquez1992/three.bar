@@ -103,10 +103,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Move if left side touched
             if location.x < size.width / 2 {
-                hero.moving = location
+                hero.moving = true
+                hero.facing = location
             } else {
                 // Shoot if right side touched
-                hero.shoot(location, map: self)
+                hero.shoot(self)
             }
         }
     }
@@ -117,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Stop moving hero when control no longer held
             if location.x < size.width / 2 {
-                hero.moving = nil
+                hero.moving = false
             }
         }
     }
@@ -128,7 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Continuously move hero if touch is held on left side
             if location.x < size.width / 2 {
-                hero.moving = location
+                hero.facing = location
             }
         }
     }
@@ -142,7 +143,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         endgame()
     }
     
-    func mobDidCollideWithProjectile(mob: Mob, projectile: Projectile) {
+    func projectileDidCollideWithHero(projectile: Projectile) {
+        //projectile.removeFromParent()
+    }
+    
+    func projectileDidCollideWithMob(projectile: Projectile, mob: Mob) {
         killMob(mob)
         projectile.removeFromParent()
     }
@@ -186,10 +191,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask & PhysicsCategory.Hero) != 0 {
             
             if (secondBody.categoryBitMask & PhysicsCategory.Mob) != 0 {
-                //!! why did I not have to do this check when 
-                //   testing on physical device??
-                if let n = secondBody.node {
-                    heroDidCollideWithMob(n as Mob)
+                if let m = secondBody.node {
+                    heroDidCollideWithMob(m as Mob)
+                }
+            }
+            
+            if (secondBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
+                if let p = secondBody.node {
+                    projectileDidCollideWithHero(p as Projectile)
                 }
             }
 
@@ -199,7 +208,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (secondBody.categoryBitMask & PhysicsCategory.Projectile) != 0 {
                 if let m = firstBody.node {
                     if let p = secondBody.node {
-                        mobDidCollideWithProjectile(m as Mob, projectile: p as Projectile)
+                        projectileDidCollideWithMob(p as Projectile, mob: m as Mob)
                     }
                 }
             }
@@ -218,9 +227,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        if let location = hero.moving {
-            hero.facing = location
-            hero.move(location, map: self)
+        if hero.moving {
+            hero.move(hero.facing, map: self)
         }
     }
     

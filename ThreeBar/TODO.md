@@ -3,7 +3,7 @@
 ---
 
 ## Miscellaneous
-* 
+* move didBeginContact tests into switch??
 
 ## LaunchScene
 * color
