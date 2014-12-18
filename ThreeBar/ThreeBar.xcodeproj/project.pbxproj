@@ -13,6 +13,7 @@
 		201DA1921A3E89E3002486FA /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DA1911A3E89E3002486FA /* Physics.swift */; };
 		2040F6621A3EAAA300799366 /* OnboardingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2040F6611A3EAAA300799366 /* OnboardingScene.sks */; };
 		2040F6641A3EAAB600799366 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040F6631A3EAAB600799366 /* OnboardingScene.swift */; };
+		204772001A42632200C9D224 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204771FF1A42632200C9D224 /* Projectile.swift */; };
 		209786241A3E4D9F002CC759 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209786231A3E4D9F002CC759 /* GameKit.framework */; };
 		209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209786251A3E4EB0002CC759 /* LaunchScene.swift */; };
 		209786281A3E4F3E002CC759 /* LaunchScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 209786271A3E4F3E002CC759 /* LaunchScene.sks */; };
@@ -51,6 +52,7 @@
 		201DA1911A3E89E3002486FA /* Physics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 		2040F6611A3EAAA300799366 /* OnboardingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OnboardingScene.sks; sourceTree = "<group>"; };
 		2040F6631A3EAAB600799366 /* OnboardingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
+		204771FF1A42632200C9D224 /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		209786231A3E4D9F002CC759 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		209786251A3E4EB0002CC759 /* LaunchScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
 		209786271A3E4F3E002CC759 /* LaunchScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaunchScene.sks; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				209C60551A3D5AC5009BA5D1 /* GameViewController.swift */,
 				201DA18F1A3E854E002486FA /* Actor.swift */,
 				20D386AD1A3E811600DAE896 /* Hero.swift */,
+				204771FF1A42632200C9D224 /* Projectile.swift */,
 				20FAB9411A40E6020003970C /* Mob.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
 				20FAB93D1A40D5430003970C /* Magic.swift */,
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204772001A42632200C9D224 /* Projectile.swift in Sources */,
 				20D386AE1A3E811600DAE896 /* Hero.swift in Sources */,
 				2040F6641A3EAAB600799366 /* OnboardingScene.swift in Sources */,
 				209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */,

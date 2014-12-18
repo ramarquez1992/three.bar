@@ -39,6 +39,10 @@ class Magic {
     let heroMoveSpeed           = Float()
     let flashDuration           = Float()
     
+    let projectileSprite = String()
+    let projectileSize   = Float()
+    let projectileSpeed  = Float()
+    
     let mobSprite      = String()
     let mobSize        = Float()
     let mobMinDistance = Float()
@@ -51,10 +55,12 @@ class Magic {
     let endgameTitleText  = String()
     let endgameBlinkSpeed = Float()
 
+    var plist: [String:AnyObject]
     
     init() {
         if let path = NSBundle.mainBundle().pathForResource("Magic", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? [String:AnyObject] {
+                plist = dict
                 
                 titleFont = dict["titleFont"] as String
                 titleSize = dict["titleSize"] as Float
@@ -83,6 +89,10 @@ class Magic {
                 heroMoveSpeed           = dict["heroMoveSpeed"] as Float
                 flashDuration           = dict["flashDuration"] as Float
                 
+                projectileSprite = dict["projectileSprite"] as String
+                projectileSize   = dict["projectileSize"] as Float
+                projectileSpeed  = dict["projectileSpeed"] as Float
+
                 mobSprite      = dict["mobSprite"] as String
                 mobSize        = dict["mobSize"] as Float
                 mobMinDistance = dict["mobMinDistance"] as Float
@@ -98,5 +108,9 @@ class Magic {
             
             } else { fatalError("Failed to load \"Magic\" dictionary") }
         } else { fatalError("Failed to load \"Magic.plist\"") }
+    }
+    
+    func get(key: String) -> AnyObject? {
+        return plist[key]
     }
 }

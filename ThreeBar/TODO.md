@@ -3,7 +3,7 @@
 ---
 
 ## Miscellaneous
-* MEMORY LEAK
+* hero teleport timer memory leak
 
 ## LaunchScene
 * color

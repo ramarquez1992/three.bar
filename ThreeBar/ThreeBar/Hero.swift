@@ -49,9 +49,10 @@ class Hero: Actor {
     }
 
     func shoot(direction: CGPoint, map: GameScene) {
-        //TODO: fire projectile
-        
-        //TODO: Play sound effect
+        let disc = Projectile()
+        disc.position = position
+        map.addChild(disc)
+        disc.move(facing, map: map)
         
         flashScreen(UIColor.redColor(), screen: map)
     }
