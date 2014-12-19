@@ -11,10 +11,10 @@ import SpriteKit
 
 class Projectile: Actor {
     
-    init() {
-        super.init(texture: SKTexture(imageNamed: _magic.get("projectileSprite") as String),
+    init(sprite: String = _magic.get("projectileSprite") as String, size: CGFloat = _magic.get("projectileSize") as CGFloat) {
+        super.init(texture: SKTexture(imageNamed: sprite),
             color: UIColor.greenColor(),
-            size: CGSize(width: _magic.get("projectileSize") as CGFloat, height: _magic.get("projectileSize") as CGFloat))
+            size: CGSize(width: size, height: size))
         
         zPosition = 1000
         name = "projectileNode"

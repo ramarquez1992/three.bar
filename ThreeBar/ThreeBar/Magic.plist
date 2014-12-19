@@ -22,6 +22,10 @@
 	<integer>3000</integer>
 	<key>projectileSpeed</key>
 	<integer>3</integer>
+	<key>laserSprite</key>
+	<string>laser</string>
+	<key>laserSize</key>
+	<integer>100</integer>
 	<key>flashDuration</key>
 	<real>0.03</real>
 	<key>scoreFont</key>

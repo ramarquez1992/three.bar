@@ -17,6 +17,7 @@ struct PhysicsCategory {
     static let Mob       : UInt32 = 0b100
     static let Wall      : UInt32 = 0b1000
     static let Projectile: UInt32 = 0b10000
+    static let Laser     : UInt32 = 0b100000
 }
 
 

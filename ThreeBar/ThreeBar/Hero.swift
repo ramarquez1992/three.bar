@@ -48,11 +48,11 @@ class Hero: Actor {
     }
 
     func shoot(map: GameScene) {
-        let disc = Projectile()
+        let laser = Laser()
         //disc.position = position + facing.normalized() + (_magic.get("heroSize") / 2)
-        disc.position = position
-        map.addChild(disc)
-        disc.move(facing, map: map)
+        laser.position = position
+        map.addChild(laser)
+        laser.move(facing, map: map)
         
         flashScreen(UIColor.redColor(), screen: map)
     }
