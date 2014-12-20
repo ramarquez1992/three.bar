@@ -212,7 +212,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     laserDidCollideWithHero(secondNode as Laser)
                     
                 default:
-                    println("No matches for hero contact")
+                    break
                 }
                 
             case PhysicsCategory.Mob:
@@ -221,7 +221,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     laserDidCollideWithMob(secondNode as Laser, mob: firstNode as Mob)
                     
                 default:
-                    println("No matches for mob contact")
+                    break
                 }
                 
             case PhysicsCategory.Wall:
@@ -230,7 +230,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     laserDidCollideWithWall(secondNode as Laser)
                     
                 default:
-                    println("No matches for laser contact")
+                    break
                 }
                 
             default:

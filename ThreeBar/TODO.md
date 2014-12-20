@@ -24,7 +24,7 @@
 * regain health on ?combo?
 
 ## Projectile
-* Laser: bounce back on collide
+* 
 
 ## Mobs
 * hive

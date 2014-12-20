@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Actor: SKSpriteNode {
-    var facing = CGPoint(x: 0, y: 0)
+    var facing = CGPoint(x: 1, y: 1)  // Default of 1 ensures projectiles move even if hero has not yet
     
     override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -38,7 +38,8 @@ class Actor: SKSpriteNode {
                                           PhysicsCategory.Hero -
                                           PhysicsCategory.Mob -
                                           PhysicsCategory.Projectile -
-                                          PhysicsCategory.Laser
+                                          PhysicsCategory.Laser -
+                                          PhysicsCategory.ReturnLaser
     }
     
     func moveActionInDirection(direction: CGPoint, distance: CGFloat, speed: NSTimeInterval) -> SKAction {
