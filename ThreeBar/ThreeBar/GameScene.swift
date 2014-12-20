@@ -104,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // Move if left side touched
             if location.x < size.width / 2 {
                 hero.moving = true
-                hero.facing = location
+                hero.facing = getFacingDirection(location)
             } else {
                 // Shoot if right side touched
                 hero.shoot(self)
@@ -129,7 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Continuously move hero if touch is held on left side
             if location.x < size.width / 2 {
-                hero.facing = location
+                hero.facing = getFacingDirection(location)
             }
         }
     }
@@ -139,21 +139,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero.teleport(self)
     }
     
+    func getFacingDirection(touchLocation: CGPoint) -> CGPoint {
+        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
+        
+        let facingDirection = (touchLocation - controlCenter).normalized()
+        
+        return facingDirection
+    }
+    
     func heroDidCollideWithMob(mob: Mob) {
         endgame()
     }
     
-    func projectileDidCollideWithHero(projectile: Projectile) {
-        //projectile.removeFromParent()
+    func laserDidCollideWithHero(laser: Laser) {
+        laser.removeFromParent()
     }
     
-    func projectileDidCollideWithMob(projectile: Projectile, mob: Mob) {
+    func laserDidCollideWithMob(laser: Laser, mob: Mob) {
         killMob(mob)
-        projectile.removeFromParent()
+        laser.removeFromParent()
     }
     
-    func projectileDidCollideWithWall(projectile: Projectile) {
-        projectile.removeFromParent()
+    func laserDidCollideWithWall(laser: Laser) {
+        laser.physicsBody?.categoryBitMask = PhysicsCategory.ReturnLaser
+        laser.comeBack(hero, map: self)
     }
     
     func killMob(mob: Mob) {
@@ -199,8 +208,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case PhysicsCategory.Mob:
                     heroDidCollideWithMob(secondNode as Mob)
                     
-                case PhysicsCategory.Projectile:
-                    projectileDidCollideWithHero(secondNode as Projectile)
+                case PhysicsCategory.ReturnLaser:
+                    laserDidCollideWithHero(secondNode as Laser)
                     
                 default:
                     println("No matches for hero contact")
@@ -208,8 +217,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
             case PhysicsCategory.Mob:
                 switch secondBody.categoryBitMask {
-                case PhysicsCategory.Projectile:
-                    projectileDidCollideWithMob(secondNode as Projectile, mob: firstNode as Mob)
+                case PhysicsCategory.Laser:
+                    laserDidCollideWithMob(secondNode as Laser, mob: firstNode as Mob)
                     
                 default:
                     println("No matches for mob contact")
@@ -217,11 +226,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
             case PhysicsCategory.Wall:
                 switch secondBody.categoryBitMask {
-                case PhysicsCategory.Projectile:
-                    projectileDidCollideWithWall(secondNode as Projectile)
+                case PhysicsCategory.Laser:
+                    laserDidCollideWithWall(secondNode as Laser)
                     
                 default:
-                    println("No matches for projectile contact")
+                    println("No matches for laser contact")
                 }
                 
             default:
@@ -238,7 +247,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if hero.moving {
-            hero.move(hero.facing, map: self)
+            hero.move(self)
         }
     }
     

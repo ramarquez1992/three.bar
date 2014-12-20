@@ -22,18 +22,17 @@ class Projectile: Actor {
         
     }
     
-    func move(location: CGPoint, map: GameScene) {
-        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
+    func shoot(direction: CGPoint, map: GameScene) {
+        //let magicDistance = _magic.get("projectileDistance") as CGFloat
+        //let magicSpeed = NSTimeInterval(_magic.get("projectileSpeed") as Float)
+        let magicDistance = CGFloat(100)
+        let magicSpeed = NSTimeInterval(0.3)
         
-        // Calculate azimuth of location from center
-        let magicDistance = _magic.get("projectileDistance") as CGFloat // Make sure projectile goes as far as it can
-        let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
-        
-        // Using moveTo() rather than manually updating position for smoother animation
-        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.get("projectileSpeed") as Float))
-        runAction(moveAction)
+        let moveAction = moveActionInDirection(direction, distance: magicDistance, speed: magicSpeed)
+        let moveForeverAction = SKAction.repeatActionForever(moveAction)
+        runAction(moveForeverAction)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

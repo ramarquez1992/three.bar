@@ -14,6 +14,8 @@
 * change level
 
 ## Actor
+* change sprite based on direction
+* moving animation
 * health (or one-hit zap e.g. Berzerk)
 * can pass over each other?
 
@@ -22,8 +24,7 @@
 * regain health on ?combo?
 
 ## Projectile
-* Disc: Projectile for hero (bounce back)
-* collide with walls
+* Laser: bounce back on collide
 
 ## Mobs
 * hive

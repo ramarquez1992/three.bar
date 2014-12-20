@@ -37,9 +37,17 @@ class Actor: SKSpriteNode {
                                           PhysicsCategory.Actor -
                                           PhysicsCategory.Hero -
                                           PhysicsCategory.Mob -
-                                          PhysicsCategory.Projectile
+                                          PhysicsCategory.Projectile -
+                                          PhysicsCategory.Laser
     }
     
+    func moveActionInDirection(direction: CGPoint, distance: CGFloat, speed: NSTimeInterval) -> SKAction {
+        let newLocation = (direction * distance) + position
+        
+        // Using moveTo() rather than manually updating position for smoother animation
+        return SKAction.moveTo(newLocation, duration: speed)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

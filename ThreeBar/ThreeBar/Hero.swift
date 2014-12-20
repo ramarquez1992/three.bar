@@ -27,15 +27,11 @@ class Hero: Actor {
 
     }
     
-    func move(location: CGPoint, map: GameScene) {
-        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
-        
-        // Calculate azimuth of location from center
+    func move(map: GameScene) {
         let magicDistance = _magic.get("heroMoveDistance") as CGFloat
-        let newLocation = ((location - controlCenter).normalized() * magicDistance) + position
+        let magicSpeed = NSTimeInterval(_magic.get("heroMoveSpeed") as CGFloat)
         
-        // Using moveTo() rather than manually updating position for smoother animation
-        let moveAction = SKAction.moveTo(newLocation, duration: NSTimeInterval(_magic.get("heroMoveSpeed") as Float))
+        let moveAction = moveActionInDirection(facing, distance: magicDistance, speed: magicSpeed)
         runAction(moveAction)
     }
     
@@ -49,10 +45,10 @@ class Hero: Actor {
 
     func shoot(map: GameScene) {
         let laser = Laser()
-        //disc.position = position + facing.normalized() + (_magic.get("heroSize") / 2)
+        //laser.position = position + (facing.normalized() * ((_magic.get("heroSize") as CGFloat / 2) + 20))
         laser.position = position
         map.addChild(laser)
-        laser.move(facing, map: map)
+        laser.shoot(facing, map: map)
         
         flashScreen(UIColor.redColor(), screen: map)
     }

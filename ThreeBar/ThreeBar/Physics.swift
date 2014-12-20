@@ -10,14 +10,15 @@ import Foundation
 import SpriteKit
 
 struct PhysicsCategory {
-    static let None      : UInt32 = 0
-    static let All       : UInt32 = UInt32.max
-    static let Actor     : UInt32 = 0b1
-    static let Hero      : UInt32 = 0b10
-    static let Mob       : UInt32 = 0b100
-    static let Wall      : UInt32 = 0b1000
-    static let Projectile: UInt32 = 0b10000
-    static let Laser     : UInt32 = 0b100000
+    static let None       : UInt32 = 0
+    static let All        : UInt32 = UInt32.max
+    static let Actor      : UInt32 = 0b1
+    static let Hero       : UInt32 = 0b10
+    static let Mob        : UInt32 = 0b100
+    static let Wall       : UInt32 = 0b1000
+    static let Projectile : UInt32 = 0b10000
+    static let Laser      : UInt32 = 0b100000
+    static let ReturnLaser: UInt32 = 0b1000000
 }
 
 
