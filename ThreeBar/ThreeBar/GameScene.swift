@@ -153,16 +153,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func laserDidCollideWithHero(laser: Laser) {
         laser.removeFromParent()
+        hero.laser = nil
     }
     
     func laserDidCollideWithMob(laser: Laser, mob: Mob) {
         killMob(mob)
-        laser.removeFromParent()
+        laser.comeBack(hero)
     }
     
     func laserDidCollideWithWall(laser: Laser) {
-        laser.physicsBody?.categoryBitMask = PhysicsCategory.ReturnLaser
-        laser.comeBack(hero, map: self)
+        laser.comeBack(hero)
     }
     
     func killMob(mob: Mob) {
@@ -248,6 +248,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Called before each frame is rendered */
         if hero.moving {
             hero.move(self)
+        }
+        
+        if let heroLaser = hero.laser {
+            switch heroLaser.physicsBody!.categoryBitMask {
+            case PhysicsCategory.Laser:
+                heroLaser.move()
+                
+            case PhysicsCategory.ReturnLaser:
+                heroLaser.moveBack(hero)
+                
+            default:
+                break
+            }
         }
     }
     

@@ -22,17 +22,6 @@ class Projectile: Actor {
         
     }
     
-    func shoot(direction: CGPoint, map: GameScene) {
-        //let magicDistance = _magic.get("projectileDistance") as CGFloat
-        //let magicSpeed = NSTimeInterval(_magic.get("projectileSpeed") as Float)
-        let magicDistance = CGFloat(100)
-        let magicSpeed = NSTimeInterval(0.3)
-        
-        let moveAction = moveActionInDirection(direction, distance: magicDistance, speed: magicSpeed)
-        let moveForeverAction = SKAction.repeatActionForever(moveAction)
-        runAction(moveForeverAction)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

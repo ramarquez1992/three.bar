@@ -13,15 +13,15 @@
 	<key>heroMoveDistance</key>
 	<integer>30</integer>
 	<key>heroMoveSpeed</key>
-	<real>0.05</real>
+	<real>0.1</real>
 	<key>projectileSprite</key>
 	<string>projectile</string>
 	<key>projectileSize</key>
 	<integer>20</integer>
 	<key>projectileDistance</key>
-	<integer>3000</integer>
+	<integer>100</integer>
 	<key>projectileSpeed</key>
-	<integer>8</integer>
+	<real>0.17</real>
 	<key>laserSprite</key>
 	<string>laser</string>
 	<key>laserBackSprite</key>

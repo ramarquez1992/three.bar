@@ -13,6 +13,7 @@ class Hero: Actor {
     var moving = false  // Direction moving, or nil if not moving
     var canTeleport = false
     var teleportTimer = NSTimer()
+    var laser: Laser? = nil
     
     init() {
         super.init(texture: SKTexture(imageNamed: _magic.get("heroSprite") as String),
@@ -44,13 +45,18 @@ class Hero: Actor {
     }
 
     func shoot(map: GameScene) {
-        let laser = Laser()
-        //laser.position = position + (facing.normalized() * ((_magic.get("heroSize") as CGFloat / 2) + 20))
-        laser.position = position
-        map.addChild(laser)
-        laser.shoot(facing, map: map)
-        
-        flashScreen(UIColor.redColor(), screen: map)
+        if laser == nil {
+            laser = Laser()
+            //laser.position = position + (facing.normalized() * ((_magic.get("heroSize") as CGFloat / 2) + 20))
+            laser?.position = position
+            map.addChild(laser!)
+            
+            laser?.facing = facing
+            
+            flashScreen(UIColor.redColor(), screen: map)
+            
+            laser?.move()
+        }
     }
     
     // Flash the screen with color

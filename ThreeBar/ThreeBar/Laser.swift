@@ -20,36 +20,27 @@ class Laser: Projectile {
         
     }
     
-    func comeBack(hero: Hero, map: GameScene) {
-        texture = SKTexture(imageNamed: _magic.get("laserBackSprite") as String)
+    
+    func move() {
+        let magicDistance = _magic.get("projectileDistance") as CGFloat
+        let magicSpeed = NSTimeInterval(_magic.get("projectileSpeed") as Float)
         
-        let moveAction = moveBack(hero, map: map)
-        let removeAction = SKAction.runBlock({
-            //self.removeFromParent()
-            println("removeAction")
-        })
-        
-        runAction(
-            SKAction.sequence([
-                moveAction,
-                removeAction
-                ]))
+        let moveAction = moveActionInDirection(facing, distance: magicDistance, speed: magicSpeed)
+        runAction(moveAction)
     }
     
-    func moveBack(hero: Hero, map: GameScene) -> SKAction {
-        let magicDistance = _magic.get("projectileDistance") as CGFloat // Make sure projectile goes as far as it can
-        let newLocation = (hero.position.normalized() * magicDistance) + position
+    func comeBack(hero: Hero) {
+        physicsBody?.categoryBitMask = PhysicsCategory.ReturnLaser
+        texture = SKTexture(imageNamed: _magic.get("laserBackSprite") as String)
         
-        let moveAction = SKAction.runBlock({
-            self.position = CGPoint(x: 50, y: 50) + self.position
-        })
-        
-        //let repeatMoveAction = SKAction.repeatActionForever(moveAction)
-        
-        return moveAction
-        //return repeatMoveAction
+        moveBack(hero)
     }
-
+    
+    func moveBack(hero: Hero) {
+        facing = (hero.position - position).normalized()
+        
+        move()
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
