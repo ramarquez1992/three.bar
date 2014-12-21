@@ -75,9 +75,8 @@ class Hero: Actor {
     }
 
     func shoot(map: GameScene) {
-        if laser == nil {
+        if laser == nil && self.parent != nil {
             laser = Laser()
-            //laser.position = position + (facing.normalized() * ((_magic.get("heroSize") as CGFloat / 2) + 20))
             laser?.position = position
             map.addChild(laser!)
             

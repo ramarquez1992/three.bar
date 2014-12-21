@@ -168,13 +168,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func heroDidCollideWithMob(mob: Mob) {        
-        let explosion = Explosion(size: hero.size)
-        explosion.position = hero.position
+        let explosion = Explosion(node: hero)
         
-        hero.removeFromParent()
+        killHero()
         addChild(explosion)
         
         let endAction = SKAction.runBlock({
+            explosion.removeFromParent()
             --self.lives
             self.endgame()
         })
@@ -189,19 +189,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func laserDidCollideWithMob(laser: Laser, mob: Mob) {
-        let explosion = Explosion(size: mob.size)
-        explosion.position = mob.position
+        let explosion = Explosion(node: mob)
         
         killMob(mob)
         
         addChild(explosion)
-        explosion.runAction(explosion.getAnimation())
+        
+        let endExplosionAction = SKAction.runBlock({
+            explosion.removeFromParent()
+        })
+        
+        explosion.runAction(SKAction.sequence([ explosion.getAnimation(), endExplosionAction ]))
         
         laser.comeBack(hero)
     }
     
     func laserDidCollideWithWall(laser: Laser) {
         laser.comeBack(hero)
+    }
+    
+    func killHero() {
+        hero.removeFromParent()
     }
     
     func killMob(mob: Mob) {

@@ -6,34 +6,26 @@
 //  Copyright (c) 2014 Richard Marquez. All rights reserved.
 //
 
-//
-//  Actor.swift
-//  ThreeBar
-//
-//  Created by Marquez, Richard A on 12/14/14.
-//  Copyright (c) 2014 Richard Marquez. All rights reserved.
-//
-
 import Foundation
 import SpriteKit
 
 class Explosion: SKSpriteNode {
     let animationFrames = [SKTexture]()
     
-    init(size: CGSize) {
-        let magicMultiplier: CGFloat = 0.7
-        var newSize = size
-        newSize.height = size.height * magicMultiplier
-        newSize.width = size.width * magicMultiplier
-        
-        println(newSize)
+    init(node: SKSpriteNode) {
+        let magicMultiplier = _magic.get("explosionSize") as CGFloat
+        var newSize = node.size
+        newSize.height = node.size.height * magicMultiplier
+        newSize.width = node.size.width * magicMultiplier
         
         super.init(texture: nil, color: nil, size: newSize)
+        
+        position = node.position
         zPosition = 1100
         
         //TODO: get name from magic plist???
         let animationAtlas = SKTextureAtlas(named: "ExplosionImages")
-        for i in 1...animationAtlas.textureNames.count {    // Skip first forward facing image
+        for i in 1...animationAtlas.textureNames.count {
             let texture = animationAtlas.textureNamed("explosion\(i)")
             
             animationFrames.append(texture)
@@ -41,10 +33,11 @@ class Explosion: SKSpriteNode {
     }
 
     func getAnimation() -> SKAction {
-        let animationAction = SKAction.animateWithTextures(animationFrames, timePerFrame: 0.2, resize: false, restore: true)
-        let endAction = SKAction.runBlock({ self.removeFromParent() })
+        let duration = NSTimeInterval(_magic.get("explosionDuration") as CGFloat)
         
-        return SKAction.sequence([ animationAction, endAction ])
+        let animationAction = SKAction.animateWithTextures(animationFrames, timePerFrame: duration)
+        
+        return animationAction
     }
     
     required init?(coder aDecoder: NSCoder) {

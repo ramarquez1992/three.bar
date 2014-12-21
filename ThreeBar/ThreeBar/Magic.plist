@@ -20,6 +20,10 @@
 	<integer>30</integer>
 	<key>heroMoveSpeed</key>
 	<real>0.1</real>
+	<key>explosionDuration</key>
+	<real>0.3</real>
+	<key>explosionSize</key>
+	<real>0.7</real>
 	<key>projectileSprite</key>
 	<string>projectile</string>
 	<key>projectileSize</key>
