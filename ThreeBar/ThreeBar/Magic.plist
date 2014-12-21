@@ -17,9 +17,9 @@
 	<key>heroSprite</key>
 	<string>hero</string>
 	<key>heroMoveDistance</key>
-	<integer>30</integer>
+	<integer>15</integer>
 	<key>heroMoveSpeed</key>
-	<real>0.1</real>
+	<real>0.05</real>
 	<key>explosionDuration</key>
 	<real>0.3</real>
 	<key>explosionSize</key>
@@ -69,9 +69,9 @@
 	<key>mobSize</key>
 	<integer>125</integer>
 	<key>mobMoveDistance</key>
-	<integer>15</integer>
+	<integer>5</integer>
 	<key>mobMoveSpeed</key>
-	<real>0.1</real>
+	<real>0.05</real>
 	<key>mobMinDistance</key>
 	<integer>250</integer>
 	<key>controlCenter</key>

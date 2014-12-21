@@ -61,6 +61,11 @@ class Hero: Unit {
         canTeleport = true
     }
     
+    func killLaser() {
+        laser?.removeFromParent()
+        laser = nil
+    }
+    
     func kill() {
         teleportTimer.invalidate()
     }

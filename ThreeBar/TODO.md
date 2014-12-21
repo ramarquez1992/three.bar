@@ -3,7 +3,8 @@
 ---
 
 ## Miscellaneous
-* 
+* motionShake is fatal
+* random mob positions sometimes overlap
 
 ## LaunchScene
 * colorful?

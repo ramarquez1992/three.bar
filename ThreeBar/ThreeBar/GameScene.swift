@@ -185,9 +185,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    func laserDidCollideWithHero(laser: Laser) {
-        laser.removeFromParent()
-        hero.laser = nil
+    func laserDidCollideWithHero() {
+        hero.killLaser()
     }
     
     func laserDidCollideWithMob(laser: Laser, mob: Mob) {
@@ -211,6 +210,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func killHero() {
+        hero.laser?.removeFromParent()
+        hero.laser = nil
         hero.removeFromParent()
     }
     
@@ -258,7 +259,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     heroDidCollideWithMob(secondNode as Mob)
                     
                 case PhysicsCategory.ReturnLaser:
-                    laserDidCollideWithHero(secondNode as Laser)
+                    laserDidCollideWithHero()
                     
                 default:
                     break
