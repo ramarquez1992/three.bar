@@ -110,7 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         livesLabel.fontSize = _magic.get("livesSize") as CGFloat
-        livesLabel.position = CGPoint(x: 100, y: 15)
+        livesLabel.position = CGPoint(x: size.width - 100, y: 15)
         
         self.addChild(livesLabel)
     }

@@ -3,7 +3,7 @@
 ---
 
 ## Miscellaneous
-* move life indicators to opposite side so thumb doesn't obscure
+* 
 
 ## LaunchScene
 * colorful?
