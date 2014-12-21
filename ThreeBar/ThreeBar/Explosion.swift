@@ -24,7 +24,7 @@ class Explosion: SKSpriteNode {
         zPosition = 1100
         
         //TODO: get name from magic plist???
-        let animationAtlas = SKTextureAtlas(named: "ExplosionImages")
+        let animationAtlas = SKTextureAtlas(named: "explosionFrames")
         for i in 1...animationAtlas.textureNames.count {
             let texture = animationAtlas.textureNamed("explosion\(i)")
             

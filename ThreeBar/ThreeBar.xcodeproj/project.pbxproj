@@ -29,6 +29,9 @@
 		209C605B1A3D5AC5009BA5D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209C605A1A3D5AC5009BA5D1 /* Images.xcassets */; };
 		209C605E1A3D5AC5009BA5D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */; };
 		209C606A1A3D5AC6009BA5D1 /* ThreeBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */; };
+		20A51E661A47618F000E86E9 /* heroFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20A51E651A47618F000E86E9 /* heroFrames.atlas */; };
+		20A51E681A476198000E86E9 /* explosionFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20A51E671A476198000E86E9 /* explosionFrames.atlas */; };
+		20A51E711A4763E1000E86E9 /* mobFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20A51E701A4763E1000E86E9 /* mobFrames.atlas */; };
 		20B653B81A4734340018E99B /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B653B71A4734340018E99B /* Explosion.swift */; };
 		20B653BC1A475A3A0018E99B /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B653BB1A475A3A0018E99B /* Unit.swift */; };
 		20CB320D1A43B38000495427 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB320C1A43B38000495427 /* Laser.swift */; };
@@ -75,6 +78,9 @@
 		209C60631A3D5AC6009BA5D1 /* ThreeBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		209C60681A3D5AC6009BA5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBarTests.swift; sourceTree = "<group>"; };
+		20A51E651A47618F000E86E9 /* heroFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = heroFrames.atlas; sourceTree = "<group>"; };
+		20A51E671A476198000E86E9 /* explosionFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = explosionFrames.atlas; sourceTree = "<group>"; };
+		20A51E701A4763E1000E86E9 /* mobFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = mobFrames.atlas; sourceTree = "<group>"; };
 		20B653B71A4734340018E99B /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
 		20B653BB1A475A3A0018E99B /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		20CB320C1A43B38000495427 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
@@ -179,10 +185,10 @@
 				201DA18F1A3E854E002486FA /* Actor.swift */,
 				20B653BB1A475A3A0018E99B /* Unit.swift */,
 				20D386AD1A3E811600DAE896 /* Hero.swift */,
+				20FAB9411A40E6020003970C /* Mob.swift */,
 				204771FF1A42632200C9D224 /* Projectile.swift */,
 				20CB320C1A43B38000495427 /* Laser.swift */,
 				20B653B71A4734340018E99B /* Explosion.swift */,
-				20FAB9411A40E6020003970C /* Mob.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
 				20FAB93D1A40D5430003970C /* Magic.swift */,
 				20FAB93F1A40D64C0003970C /* Magic.plist */,
@@ -200,6 +206,9 @@
 		209C604D1A3D5AC5009BA5D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20A51E701A4763E1000E86E9 /* mobFrames.atlas */,
+				20A51E671A476198000E86E9 /* explosionFrames.atlas */,
+				20A51E651A47618F000E86E9 /* heroFrames.atlas */,
 				209C604E1A3D5AC5009BA5D1 /* Info.plist */,
 				209C605A1A3D5AC5009BA5D1 /* Images.xcassets */,
 				2097862B1A3E59A4002CC759 /* fonts */,
@@ -314,14 +323,17 @@
 				20FAB9401A40D64C0003970C /* Magic.plist in Resources */,
 				2040F6621A3EAAA300799366 /* OnboardingScene.sks in Resources */,
 				209786311A3E5B77002CC759 /* OXYGENE1.ttf in Resources */,
+				20A51E661A47618F000E86E9 /* heroFrames.atlas in Resources */,
 				209786301A3E5B77002CC759 /* Masaaki-Regular.otf in Resources */,
 				209C605E1A3D5AC5009BA5D1 /* LaunchScreen.xib in Resources */,
 				20134CC91A41018700885569 /* EndgameScene.sks in Resources */,
 				209786281A3E4F3E002CC759 /* LaunchScene.sks in Resources */,
+				20A51E711A4763E1000E86E9 /* mobFrames.atlas in Resources */,
 				209C605B1A3D5AC5009BA5D1 /* Images.xcassets in Resources */,
 				209C60521A3D5AC5009BA5D1 /* GameScene.sks in Resources */,
 				209C60591A3D5AC5009BA5D1 /* Main.storyboard in Resources */,
 				209786321A3E5B77002CC759 /* WayBeyondBlue.ttf in Resources */,
+				20A51E681A476198000E86E9 /* explosionFrames.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

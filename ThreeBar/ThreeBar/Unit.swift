@@ -16,7 +16,7 @@ class Unit: Actor {
     let stillFrame = SKTexture()
     
     init(named: String) {
-        let animationAtlas = SKTextureAtlas(named: "\(named)Images")
+        let animationAtlas = SKTextureAtlas(named: "\(named)Frames")
         
         stillFrame = animationAtlas.textureNamed("\(named)1")
         
@@ -47,8 +47,8 @@ class Unit: Actor {
     func move() {
         faceSprite()
         
-        let magicDistance = _magic.get("\(name)MoveDistance") as CGFloat
-        let magicSpeed = NSTimeInterval(_magic.get("\(name)MoveSpeed") as CGFloat)
+        let magicDistance = _magic.get("\(name!)MoveDistance") as CGFloat
+        let magicSpeed = NSTimeInterval(_magic.get("\(name!)MoveSpeed") as CGFloat)
         
         let moveAction = moveActionInDirection(facing, distance: magicDistance, speed: magicSpeed)
         runAction(moveAction)

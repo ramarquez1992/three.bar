@@ -14,9 +14,6 @@
 * doors
 * change level
 
-## Actor
-* make movement animations more generic
-
 ## Hero
 * regain lives on ?combo?
 

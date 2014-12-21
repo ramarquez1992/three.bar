@@ -24,7 +24,6 @@ class Hero: Unit {
     }
     
     func teleport(map: GameScene) {
-        //
         if canTeleport {
             position = map.getRandomPosition(fromPoint: position, minDistance: _magic.get("heroTeleportMinDistance") as CGFloat)
             canTeleport = false
