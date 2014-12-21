@@ -105,6 +105,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if location.x < size.width / 2 {
                 hero.moving = true
                 hero.facing = getFacingDirection(location)
+                hero.startMoving()
             } else {
                 // Shoot if right side touched
                 hero.shoot(self)
@@ -119,6 +120,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // Stop moving hero when control no longer held
             if location.x < size.width / 2 {
                 hero.moving = false
+                hero.stopMoving()
             }
         }
     }
@@ -247,7 +249,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if hero.moving {
-            hero.move(self)
+            hero.move()
         }
         
         if let heroLaser = hero.laser {

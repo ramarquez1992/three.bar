@@ -29,6 +29,7 @@
 		209C605B1A3D5AC5009BA5D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209C605A1A3D5AC5009BA5D1 /* Images.xcassets */; };
 		209C605E1A3D5AC5009BA5D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */; };
 		209C606A1A3D5AC6009BA5D1 /* ThreeBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */; };
+		20B316281A46578B001E313B /* HeroImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20B316271A46578B001E313B /* HeroImages.atlas */; };
 		20CB320D1A43B38000495427 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB320C1A43B38000495427 /* Laser.swift */; };
 		20D386AE1A3E811600DAE896 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D386AD1A3E811600DAE896 /* Hero.swift */; };
 		20FAB93E1A40D5430003970C /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB93D1A40D5430003970C /* Magic.swift */; };
@@ -73,6 +74,7 @@
 		209C60631A3D5AC6009BA5D1 /* ThreeBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		209C60681A3D5AC6009BA5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209C60691A3D5AC6009BA5D1 /* ThreeBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBarTests.swift; sourceTree = "<group>"; };
+		20B316271A46578B001E313B /* HeroImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = HeroImages.atlas; sourceTree = "<group>"; };
 		20CB320C1A43B38000495427 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		20D386AD1A3E811600DAE896 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		20EC54AE1A3D7B410057A928 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				209C604E1A3D5AC5009BA5D1 /* Info.plist */,
+				20B316271A46578B001E313B /* HeroImages.atlas */,
 				209C605A1A3D5AC5009BA5D1 /* Images.xcassets */,
 				2097862B1A3E59A4002CC759 /* fonts */,
 			);
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				209786331A3E5B77002CC759 /* ygrid.ttf in Resources */,
+				20B316281A46578B001E313B /* HeroImages.atlas in Resources */,
 				20FAB9401A40D64C0003970C /* Magic.plist in Resources */,
 				2040F6621A3EAAA300799366 /* OnboardingScene.sks in Resources */,
 				209786311A3E5B77002CC759 /* OXYGENE1.ttf in Resources */,

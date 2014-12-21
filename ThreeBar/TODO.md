@@ -6,41 +6,34 @@
 * 
 
 ## LaunchScene
-* color
+* colorful?
 * procedurally generated bg (e.g. stars)
+* choose level (swipe)
 
 ## Level
 * doors
 * change level
 
 ## Actor
-* change sprite based on direction
-* moving animation
-* health (or one-hit zap e.g. Berzerk)
-* can pass over each other?
+* make movement animations more generic
 
 ## Hero
-* strengthen on death
-* regain health on ?combo?
-
-## Projectile
-* 
+* regain lives on ?combo?
+* lives
 
 ## Mobs
 * hive
 * AI
+* bosses
 
 ## Score
 * destroy mob
-* beat room
+* beat room (time multiplier)
 
 ## Pause
 * pause button (GameScene.paused)
 * click anywhere to resume
 * quit button
-
-## Endgame
-* 
 
 ## Game Center
 * high scores
