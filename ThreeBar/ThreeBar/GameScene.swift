@@ -167,9 +167,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return facingDirection
     }
     
-    func heroDidCollideWithMob(mob: Mob) {
-        --lives
-        endgame()
+    func heroDidCollideWithMob(mob: Mob) {        
+        let explosion = Explosion(size: hero.size)
+        explosion.position = hero.position
+        
+        hero.removeFromParent()
+        addChild(explosion)
+        
+        let endAction = SKAction.runBlock({
+            --self.lives
+            self.endgame()
+        })
+        
+        explosion.runAction(SKAction.sequence([ explosion.getAnimation(), endAction ]))
+
     }
     
     func laserDidCollideWithHero(laser: Laser) {
@@ -178,7 +189,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func laserDidCollideWithMob(laser: Laser, mob: Mob) {
+        let explosion = Explosion(size: mob.size)
+        explosion.position = mob.position
+        
         killMob(mob)
+        
+        addChild(explosion)
+        explosion.runAction(explosion.getAnimation())
+        
         laser.comeBack(hero)
     }
     
