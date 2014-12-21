@@ -35,11 +35,15 @@ class Unit: Actor {
     }
     
     func startMoving() {
+        moving = true
+        
         let animationAction = SKAction.animateWithTextures(animationFrames, timePerFrame: 0.2, resize: false, restore: true)
         runAction(SKAction.repeatActionForever(animationAction), withKey: "moveAnimation")
     }
     
     func stopMoving() {
+        moving = false
+        
         removeActionForKey("moveAnimation")
         texture = stillFrame
     }

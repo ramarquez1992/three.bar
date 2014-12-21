@@ -18,6 +18,20 @@ class Mob: Unit {
 
     }
     
+    func nextAction(map: GameScene) {
+        moveTowardsHero(map)
+    }
+    
+    func moveTowardsHero(map: GameScene) {
+        facing = map.getRelativeDirection(position, destination: map.hero.position)
+        
+        if !moving {
+            startMoving()
+        }
+        
+        move()
+    }
+    
     func shoot(direction: CGPoint, map: GameScene) {
         //TODO: fire projectile
         

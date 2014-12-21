@@ -121,8 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Move if left side touched
             if location.x < size.width / 2 {
-                hero.moving = true
-                hero.facing = getFacingDirection(location)
+                hero.facing = getControlRelativeDirection(location)
                 hero.startMoving()
             } else {
                 // Shoot if right side touched
@@ -137,7 +136,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Stop moving hero when control no longer held
             if location.x < size.width / 2 {
-                hero.moving = false
                 hero.stopMoving()
             }
         }
@@ -149,7 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // Continuously move hero if touch is held on left side
             if location.x < size.width / 2 {
-                hero.facing = getFacingDirection(location)
+                hero.facing = getControlRelativeDirection(location)
             }
         }
     }
@@ -159,10 +157,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero.teleport(self)
     }
     
-    func getFacingDirection(touchLocation: CGPoint) -> CGPoint {
+    func getControlRelativeDirection(touchLocation: CGPoint) -> CGPoint {
         let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
-        let facingDirection = (touchLocation - controlCenter).normalized()
+        return getRelativeDirection(controlCenter, destination: touchLocation)
+    }
+    
+    func getRelativeDirection(origin: CGPoint, destination: CGPoint) -> CGPoint {
+        let facingDirection = (destination - origin).normalized()
         
         return facingDirection
     }
@@ -292,7 +294,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+        for mob in mobs {
+            mob.nextAction(self)
+        }
+        
         if hero.moving {
             hero.move()
         }

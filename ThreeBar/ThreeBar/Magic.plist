@@ -68,6 +68,10 @@
 	<string>mob</string>
 	<key>mobSize</key>
 	<integer>125</integer>
+	<key>mobMoveDistance</key>
+	<integer>15</integer>
+	<key>mobMoveSpeed</key>
+	<real>0.1</real>
 	<key>mobMinDistance</key>
 	<integer>250</integer>
 	<key>controlCenter</key>
