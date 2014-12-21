@@ -9,61 +9,18 @@
 import Foundation
 import SpriteKit
 
-class Hero: Actor {
-    var moving = false  // Direction moving, or nil if not moving
+class Hero: Unit {
     var canTeleport = false
     var teleportTimer = NSTimer()
     var laser: Laser? = nil
     
-    let animationFrames = [SKTexture]()
-    
     init() {
-        super.init(texture: SKTexture(imageNamed: _magic.get("heroSprite") as String),
-            color: UIColor.yellowColor(),
-            size: CGSize(width: _magic.get("heroSize") as CGFloat, height: _magic.get("heroSize") as CGFloat))
+        super.init(named: "hero")
         
         zPosition = 1000  // Hero is always visible
-        name = "heroNode"
         physicsBody?.categoryBitMask = PhysicsCategory.Hero
         
         teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.get("heroTeleportTime") as Float), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)
-
-        //TODO: get name from magic plist???
-        let animationAtlas = SKTextureAtlas(named: "HeroImages")
-        for i in 2...animationAtlas.textureNames.count {    // Skip first forward facing image
-            let texture = animationAtlas.textureNamed("hero\(i)")
-            
-            animationFrames.append(texture)
-        }
-    }
-    
-    func startMoving() {
-        let animationAction = SKAction.animateWithTextures(animationFrames, timePerFrame: 0.2, resize: false, restore: true)
-        runAction(SKAction.repeatActionForever(animationAction), withKey: "heroAnimation")
-    }
-    
-    func stopMoving() {
-        removeActionForKey("heroAnimation")
-        texture = SKTexture(imageNamed: _magic.get("heroSprite") as String)
-    }
-    
-    func move() {
-        faceSprite()
-        
-        let magicDistance = _magic.get("heroMoveDistance") as CGFloat
-        let magicSpeed = NSTimeInterval(_magic.get("heroMoveSpeed") as CGFloat)
-        
-        let moveAction = moveActionInDirection(facing, distance: magicDistance, speed: magicSpeed)
-        runAction(moveAction)
-    }
-    
-    // Point sprite in the correct direction
-    func faceSprite() {
-        if facing.x > 0 && xScale != -1 {
-            xScale = -1
-        } else if facing.x <= 0 && xScale != 1 {
-            xScale = 1
-        }
     }
     
     func teleport(map: GameScene) {

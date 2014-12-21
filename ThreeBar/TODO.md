@@ -26,7 +26,6 @@
 * bosses
 
 ## Score
-* destroy mob
 * beat room (time multiplier)
 
 ## Pause
