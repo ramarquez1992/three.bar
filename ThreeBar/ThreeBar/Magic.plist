@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>numLives</key>
+	<integer>2</integer>
+	<key>livesFont</key>
+	<string>Way beyond blue</string>
+	<key>livesSize</key>
+	<integer>35</integer>
 	<key>heroSize</key>
 	<integer>100</integer>
 	<key>heroTeleportTime</key>

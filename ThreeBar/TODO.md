@@ -18,8 +18,8 @@
 * make movement animations more generic
 
 ## Hero
+* death animation
 * regain lives on ?combo?
-* lives
 
 ## Mobs
 * hive

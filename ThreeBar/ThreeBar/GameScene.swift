@@ -9,11 +9,13 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var lives: Int = 0
     let hero       = Hero()
     var mobs       = [Mob]()
     var score: Int = 0
     let scoreLabel = SKLabelNode()
-    let startTime  = NSDate()
+    let livesLabel = SKLabelNode()
+    var startTime  = NSDate()
     
     override func didMoveToView(view: SKView) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMotionShake:", name:"MotionShake", object: nil)
@@ -23,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addHero()
         addScoreLabel()
+        addLivesLabel()
         addMoveControl()
         
         populateWithMobs()
@@ -97,6 +100,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
     }
     
+    func addLivesLabel() {
+        livesLabel.fontName = _magic.get("livesFont") as String
+        livesLabel.name     = "livesLabel"
+        
+        livesLabel.text     = ""
+        for var i = 0; i < lives; ++i {
+            livesLabel.text = "\(livesLabel.text)_"
+        }
+        
+        livesLabel.fontSize = _magic.get("livesSize") as CGFloat
+        livesLabel.position = CGPoint(x: 100, y: 15)
+        
+        self.addChild(livesLabel)
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch in touches {
             let location = touch.locationInNode(self)
@@ -150,6 +168,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func heroDidCollideWithMob(mob: Mob) {
+        --lives
         endgame()
     }
     
@@ -269,15 +288,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func endgame() {
         hero.kill()
         
-        if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
-            if let skView = self.view {
-                scene.score = score
-                scene.startTime = startTime
-                
-                skView.ignoresSiblingOrder = true
-                scene.scaleMode = .AspectFill
-                
-                skView.presentScene(scene)
+        if lives >= 0 {
+            if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+                if let skView = self.view {
+                    scene.score = score
+                    scene.lives = lives
+                    scene.startTime = startTime
+                    
+                    skView.ignoresSiblingOrder = true
+                    scene.scaleMode = .AspectFill
+                    
+                    skView.presentScene(scene)
+                }
+            }
+        } else {
+            if let scene = EndgameScene.unarchiveFromFile("EndgameScene") as? EndgameScene {
+                if let skView = self.view {
+                    scene.score = score
+                    scene.startTime = startTime
+                    
+                    skView.ignoresSiblingOrder = true
+                    scene.scaleMode = .AspectFill
+                    
+                    skView.presentScene(scene)
+                }
             }
         }
     }

@@ -62,6 +62,9 @@ class LaunchScene: SKScene {
                 } else if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
                     // GameScene
                     scene.scaleMode = .AspectFill
+                    
+                    scene.lives = _magic.get("numLives") as Int
+                    
                     skView.presentScene(scene)
                 }
             }

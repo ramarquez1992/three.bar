@@ -48,6 +48,8 @@ class OnboardingScene: SKScene {
                 skView.ignoresSiblingOrder = true
                 scene.scaleMode = .AspectFill
                 
+                scene.lives = _magic.get("numLives") as Int
+                
                 skView.presentScene(scene)
             }
         }

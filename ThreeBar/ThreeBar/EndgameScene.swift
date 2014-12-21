@@ -84,7 +84,7 @@ class EndgameScene: SKScene {
             let node = self.nodeAtPoint(touch.locationInNode(self))
             
             // Start new game
-            if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+            if let scene = LaunchScene.unarchiveFromFile("LaunchScene") as? LaunchScene {
                 let skView = self.view! as SKView
                 
                 skView.ignoresSiblingOrder = true
