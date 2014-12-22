@@ -25,9 +25,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVectorMake(0, 0)
         
-        addHero()
-        addScoreLabel()
         addLivesLabel()
+        addScoreLabel()
+        
+        addHero()
         addMoveControl()
         
         addHive()
@@ -35,38 +36,45 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         populateWithLocks()
     }
     
-    func addMoveControl() {
-        let moveControl = SKSpriteNode(texture: SKTexture(imageNamed: _magic.get("controlImage") as String),
-            color: UIColor.yellowColor(),
-            size: CGSize(width: _magic.get("heroSize") as CGFloat, height: _magic.get("heroSize") as CGFloat))
+    func addLivesLabel() {
+        livesLabel.fontName = _magic.get("livesFont") as String
+        livesLabel.name     = "livesLabel"
         
-        moveControl.position = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
+        livesLabel.text     = ""
+        for var i = 0; i < lives; ++i {
+            livesLabel.text = "\(livesLabel.text)_"
+        }
         
-        addChild(moveControl)
+        livesLabel.fontSize = _magic.get("livesSize") as CGFloat
+        livesLabel.position = CGPoint(x: size.width - 100, y: 15)
+        
+        self.addChild(livesLabel)
     }
     
-
-    func getRandomPosition(fromPoint: CGPoint = CGPoint(), minDistance: CGFloat = 0.0) -> CGPoint {
-        var possiblePosition: CGPoint
-        var possibleLength: CGFloat
-        var currentLength = fromPoint.length()
-        var distance: CGFloat = 0.0
+    func addScoreLabel() {
+        scoreLabel.fontName = _magic.get("scoreFont") as String
+        scoreLabel.name     = "scoreLabel"
+        scoreLabel.text     = String(score)
+        scoreLabel.fontSize = _magic.get("scoreSize") as CGFloat
+        scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
         
-        do {
-            possiblePosition = CGPoint(x: CGFloat(size.width) * (CGFloat(arc4random()) / CGFloat(UInt32.max)),
-                y: CGFloat(size.height) * (CGFloat(arc4random()) / CGFloat(UInt32.max)))
-            
-            possibleLength = possiblePosition.length()
-            distance = abs(currentLength - possibleLength)
-        } while distance < CGFloat(minDistance)
-        
-        return possiblePosition
+        self.addChild(scoreLabel)
+    }
+    
+    func changeScore(changeBy: Int) {
+        score += changeBy
+        scoreLabel.text = String(score)
     }
     
     func addHero() {
         hero.position = getRandomPosition()
         
         addChild(hero)
+    }
+    
+    func killHero() {
+        hero.killLaser()
+        hero.removeFromParent()
     }
     
     func addHive() {
@@ -104,6 +112,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         runAction(SKAction.sequence([ beforeSpawnAction, waitAction, spawnAction, afterSpawnAction ]))
     }
     
+    func killMob(mob: Mob) {
+        mob.removeFromParent()
+        
+        var i = 0
+        for inArray in mobs {
+            if inArray == mob {
+                mobs.removeAtIndex(i)
+                
+                changeScore(100)
+            }
+            
+            ++i
+        }
+        
+    }
+    
     func populateWithLocks() {
         let l1 = Lock()
         l1.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
@@ -115,34 +139,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func changeScore(changeBy: Int) {
-        score += changeBy
-        scoreLabel.text = String(score)
-    }
-    
-    func addScoreLabel() {
-        scoreLabel.fontName = _magic.get("scoreFont") as String
-        scoreLabel.name     = "scoreLabel"
-        scoreLabel.text     = String(score)
-        scoreLabel.fontSize = _magic.get("scoreSize") as CGFloat
-        scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
-        
-        self.addChild(scoreLabel)
-    }
-    
-    func addLivesLabel() {
-        livesLabel.fontName = _magic.get("livesFont") as String
-        livesLabel.name     = "livesLabel"
-        
-        livesLabel.text     = ""
-        for var i = 0; i < lives; ++i {
-            livesLabel.text = "\(livesLabel.text)_"
+    func checkLocksAreOpen() -> Bool {
+        for lock in locks {
+            if !lock.open {
+                return false
+            }
         }
         
-        livesLabel.fontSize = _magic.get("livesSize") as CGFloat
-        livesLabel.position = CGPoint(x: size.width - 100, y: 15)
+        return true
+    }
+    
+    func addMoveControl() {
+        let moveControl = SKSpriteNode(texture: SKTexture(imageNamed: _magic.get("controlImage") as String),
+            color: UIColor.yellowColor(),
+            size: CGSize(width: _magic.get("heroSize") as CGFloat, height: _magic.get("heroSize") as CGFloat))
         
-        self.addChild(livesLabel)
+        moveControl.position = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
+        
+        addChild(moveControl)
+    }
+    
+    func getControlRelativeDirection(touchLocation: CGPoint) -> CGPoint {
+        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
+        
+        return getRelativeDirection(controlCenter, destination: touchLocation)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -185,18 +205,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Teleport hero on shake
     func onMotionShake(notification: NSNotification) {
         hero.teleport(self)
-    }
-    
-    func getControlRelativeDirection(touchLocation: CGPoint) -> CGPoint {
-        let controlCenter = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
-        
-        return getRelativeDirection(controlCenter, destination: touchLocation)
-    }
-    
-    func getRelativeDirection(origin: CGPoint, destination: CGPoint) -> CGPoint {
-        let facingDirection = (destination - origin).normalized()
-        
-        return facingDirection
     }
     
     func heroDidCollideWithMob(mob: Mob) {        
@@ -248,37 +256,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if checkLocksAreOpen() {
             endgame()
         }
-    }
-    
-    func checkLocksAreOpen() -> Bool {
-        for lock in locks {
-            if !lock.open {
-                return false
-            }
-        }
-        
-        return true
-    }
-    
-    func killHero() {
-        hero.killLaser()
-        hero.removeFromParent()
-    }
-    
-    func killMob(mob: Mob) {
-        mob.removeFromParent()
-        
-        var i = 0
-        for inArray in mobs {
-            if inArray == mob {
-                mobs.removeAtIndex(i)
-                
-                changeScore(100)
-            }
-            
-            ++i
-        }
-        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -386,9 +363,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     skView.ignoresSiblingOrder = true
                     scene.scaleMode = .AspectFill
-                    
-                    skView.showsFPS = true
-                    skView.showsNodeCount = true
                     
                     skView.presentScene(scene)
                 }
