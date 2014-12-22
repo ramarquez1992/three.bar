@@ -19,6 +19,21 @@ class Lock: SKSpriteNode {
         
         super.init(texture: nil, color: color, size: CGSize(width: width, height: height))
 
+        setPhysics()
+    }
+    
+    func setPhysics() {
+        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+
+        physicsBody?.categoryBitMask = PhysicsCategory.Lock
+        
+        physicsBody?.dynamic = true
+        physicsBody?.allowsRotation = true
+        physicsBody?.usesPreciseCollisionDetection = true
+        
+        physicsBody?.contactTestBitMask = PhysicsCategory.Laser
+        physicsBody?.collisionBitMask = 0
+    
     }
     
     func unlock() {

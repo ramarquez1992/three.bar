@@ -32,14 +32,16 @@ class Actor: SKSpriteNode {
                                           PhysicsCategory.Actor +
                                           PhysicsCategory.Hero +
                                           PhysicsCategory.Mob +
-                                          PhysicsCategory.Wall
+                                          PhysicsCategory.Wall +
+                                          PhysicsCategory.Lock
         physicsBody?.collisionBitMask   = PhysicsCategory.All   -
                                           PhysicsCategory.Actor -
                                           PhysicsCategory.Hero -
                                           PhysicsCategory.Mob -
                                           PhysicsCategory.Projectile -
                                           PhysicsCategory.Laser -
-                                          PhysicsCategory.ReturnLaser
+                                          PhysicsCategory.ReturnLaser -
+                                          PhysicsCategory.Lock
     }
     
     func moveActionInDirection(direction: CGPoint, distance: CGFloat, speed: NSTimeInterval) -> SKAction {

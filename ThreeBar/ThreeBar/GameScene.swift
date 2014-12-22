@@ -12,6 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lives: Int = 0
     let hero       = Hero()
     var mobs       = [Mob]()
+    var locks      = [Lock]()
     var score: Int = 0
     let scoreLabel = SKLabelNode()
     let livesLabel = SKLabelNode()
@@ -29,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addMoveControl()
         
         populateWithMobs()
+        populateWithLocks()
     }
     
     func addMoveControl() {
@@ -66,23 +68,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func populateWithMobs() {
-        let m1 = Mob()
-        m1.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
-        
-        let m2 = Mob()
-        m2.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
-        
-        let m3 = Mob()
-        m3.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
-        
-        mobs.append(m1)
-        mobs.append(m2)
-        mobs.append(m3)
-        
-        for mob in mobs {
-            addChild(mob)
+        for i in 1...3 {
+            spawnMob()
         }
         
+    }
+    
+    func spawnMob() {
+        let mob = Mob()
+        mob.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
+
+        mobs.append(mob)
+        addChild(mob)
+    }
+    
+    func populateWithLocks() {
+        let l1 = Lock()
+        l1.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
+        
+        locks.append(l1)
+        
+        for lock in locks {
+            addChild(lock)
+        }
     }
     
     func changeScore(changeBy: Int) {
@@ -193,6 +201,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let explosion = Explosion(node: mob)
         
         killMob(mob)
+        spawnMob()
         
         addChild(explosion)
         
@@ -209,6 +218,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         laser.comeBack(hero)
     }
     
+    func laserDidCollideWithLock(laser: Laser, lock: Lock) {
+        laser.comeBack(hero)
+        lock.unlock()
+        
+        if checkLocksAreOpen() {
+            endgame()
+        }
+    }
+    
+    func checkLocksAreOpen() -> Bool {
+        for lock in locks {
+            if !lock.open {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     func killHero() {
         hero.killLaser()
         hero.removeFromParent()
@@ -223,14 +251,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 mobs.removeAtIndex(i)
                 
                 changeScore(100)
-                
-                if mobs.count == 0 {
-                    endgame()
-                }
             }
             
             ++i
         }
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -282,6 +307,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     break
                 }
                 
+            case PhysicsCategory.Laser:
+                switch secondBody.categoryBitMask {
+                case PhysicsCategory.Lock:
+                    laserDidCollideWithLock(firstNode as Laser, lock: secondNode as Lock)
+                    
+                default:
+                    break
+                }
+                
             default:
                 break
             }
@@ -295,7 +329,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func update(currentTime: CFTimeInterval) {
         for mob in mobs {
-            mob.nextAction(self)
+            //mob.nextAction(self)
         }
         
         if hero.moving {
