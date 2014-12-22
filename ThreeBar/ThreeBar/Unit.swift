@@ -15,7 +15,7 @@ class Unit: Actor {
     let animationFrames = [SKTexture]()
     let stillFrame = SKTexture()
     
-    init(named: String) {
+    init(named: String, position: CGPoint = CGPointZero) {
         let animationAtlas = SKTextureAtlas(named: "\(named)Frames")
         
         stillFrame = animationAtlas.textureNamed("\(named)1")
@@ -28,7 +28,7 @@ class Unit: Actor {
         
         super.init(texture: stillFrame,
             color: nil,
-            size: CGSize(width: _magic.get("\(named)Size") as CGFloat, height: _magic.get("\(named)Size") as CGFloat))
+        size: CGSize(width: _magic.get("\(named)Size") as CGFloat, height: _magic.get("\(named)Size") as CGFloat), position: position)
         
         
         name = named

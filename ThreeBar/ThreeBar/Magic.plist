@@ -69,9 +69,9 @@
 	<key>mobSize</key>
 	<integer>125</integer>
 	<key>mobMoveDistance</key>
-	<integer>5</integer>
+	<integer>15</integer>
 	<key>mobMoveSpeed</key>
-	<real>0.05</real>
+	<real>0.5</real>
 	<key>mobMinDistance</key>
 	<integer>250</integer>
 	<key>controlCenter</key>
@@ -81,7 +81,9 @@
 	<key>lockWidth</key>
 	<integer>150</integer>
 	<key>lockHeight</key>
-	<integer>50</integer>
+	<integer>150</integer>
+	<key>hiveSize</key>
+	<integer>75</integer>
 	<key>endgameScoreFont</key>
 	<string>Masaaki</string>
 	<key>endgameScoreSize</key>

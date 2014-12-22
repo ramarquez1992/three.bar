@@ -12,8 +12,11 @@
 * choose level (swipe)
 
 ## Level
-* doors
-* change level
+* levels.plist
+* change level animation
+
+## Locks
+* place on edge of map (move physics body by 1)
 
 ## Hero
 * regain lives on ?combo?

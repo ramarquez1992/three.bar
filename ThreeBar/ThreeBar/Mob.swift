@@ -10,8 +10,8 @@ import Foundation
 import SpriteKit
 
 class Mob: Unit {
-    init() {
-        super.init(named: "mob")
+    init(position: CGPoint) {
+        super.init(named: "mob", position: position)
         
         zPosition = 800  // Below hero
         physicsBody?.categoryBitMask = PhysicsCategory.Mob

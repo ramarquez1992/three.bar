@@ -11,6 +11,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var lives: Int = 0
     let hero       = Hero()
+    let hive       = Hive()
     var mobs       = [Mob]()
     var locks      = [Lock]()
     var score: Int = 0
@@ -29,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addLivesLabel()
         addMoveControl()
         
+        addHive()
         populateWithMobs()
         populateWithLocks()
     }
@@ -67,6 +69,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(hero)
     }
     
+    func addHive() {
+        hive.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        
+        addChild(hive)
+    }
+    
     func populateWithMobs() {
         for i in 1...3 {
             spawnMob()
@@ -74,12 +82,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func spawnMob() {
-        let mob = Mob()
-        mob.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
+    func spawnMob(spawnPosition: CGPoint) {
+        let mob = Mob(position: spawnPosition)
 
         mobs.append(mob)
         addChild(mob)
+    }
+    
+    func spawnMob() {
+        let mobPosition = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
+
+        spawnMob(mobPosition)
     }
     
     func populateWithLocks() {
@@ -198,11 +211,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func laserDidCollideWithMob(laser: Laser, mob: Mob) {
+        laser.comeBack(hero)
+
         let explosion = Explosion(node: mob)
         
         killMob(mob)
-        spawnMob()
-        
         addChild(explosion)
         
         let endExplosionAction = SKAction.runBlock({
@@ -211,7 +224,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         explosion.runAction(SKAction.sequence([ explosion.getAnimation(), endExplosionAction ]))
         
-        laser.comeBack(hero)
+        spawnMob(hive.position)
+
     }
     
     func laserDidCollideWithWall(laser: Laser) {
@@ -328,8 +342,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
+        
         for mob in mobs {
-            //mob.nextAction(self)
+            mob.nextAction(self)
         }
         
         if hero.moving {
@@ -362,6 +377,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     skView.ignoresSiblingOrder = true
                     scene.scaleMode = .AspectFill
+                    
+                    skView.showsFPS = true
+                    skView.showsNodeCount = true
                     
                     skView.presentScene(scene)
                 }

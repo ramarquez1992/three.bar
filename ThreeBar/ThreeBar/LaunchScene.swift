@@ -46,8 +46,8 @@ class LaunchScene: SKScene {
                 let skView = self.view! as SKView
                 skView.ignoresSiblingOrder = true
 
-                //skView.showsFPS = true
-                //skView.showsNodeCount = true
+                skView.showsFPS = true
+                skView.showsNodeCount = true
                 
                 // Present onboarding scene on first run
                 //NSUserDefaults.standardUserDefaults().removeObjectForKey("firstRun")

@@ -12,10 +12,11 @@ import SpriteKit
 class Actor: SKSpriteNode {
     var facing = CGPoint(x: 1, y: 1)  // Default of 1 ensures projectiles move even if hero has not yet
     
-    override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
+    init(texture: SKTexture!, color: UIColor!, size: CGSize, position: CGPoint = CGPoint(x: 0, y: 0)) {
         super.init(texture: texture, color: color, size: size)
         
         zPosition = 900
+        self.position = position
         setPhysics()
         
     }
