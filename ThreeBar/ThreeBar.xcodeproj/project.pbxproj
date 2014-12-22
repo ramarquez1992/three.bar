@@ -32,6 +32,7 @@
 		20A51E661A47618F000E86E9 /* heroFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20A51E651A47618F000E86E9 /* heroFrames.atlas */; };
 		20A51E681A476198000E86E9 /* explosionFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20A51E671A476198000E86E9 /* explosionFrames.atlas */; };
 		20A51E711A4763E1000E86E9 /* mobFrames.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 20A51E701A4763E1000E86E9 /* mobFrames.atlas */; };
+		20A51E731A479438000E86E9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A51E721A479437000E86E9 /* Lock.swift */; };
 		20B653B81A4734340018E99B /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B653B71A4734340018E99B /* Explosion.swift */; };
 		20B653BC1A475A3A0018E99B /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B653BB1A475A3A0018E99B /* Unit.swift */; };
 		20CB320D1A43B38000495427 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB320C1A43B38000495427 /* Laser.swift */; };
@@ -81,6 +82,7 @@
 		20A51E651A47618F000E86E9 /* heroFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = heroFrames.atlas; sourceTree = "<group>"; };
 		20A51E671A476198000E86E9 /* explosionFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = explosionFrames.atlas; sourceTree = "<group>"; };
 		20A51E701A4763E1000E86E9 /* mobFrames.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = mobFrames.atlas; sourceTree = "<group>"; };
+		20A51E721A479437000E86E9 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		20B653B71A4734340018E99B /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
 		20B653BB1A475A3A0018E99B /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		20CB320C1A43B38000495427 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				20FAB9411A40E6020003970C /* Mob.swift */,
 				204771FF1A42632200C9D224 /* Projectile.swift */,
 				20CB320C1A43B38000495427 /* Laser.swift */,
+				20A51E721A479437000E86E9 /* Lock.swift */,
 				20B653B71A4734340018E99B /* Explosion.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
 				20FAB93D1A40D5430003970C /* Magic.swift */,
@@ -365,6 +368,7 @@
 				209C60561A3D5AC5009BA5D1 /* GameViewController.swift in Sources */,
 				201DA1921A3E89E3002486FA /* Physics.swift in Sources */,
 				20134CC71A41017500885569 /* EndgameScene.swift in Sources */,
+				20A51E731A479438000E86E9 /* Lock.swift in Sources */,
 				209C60501A3D5AC5009BA5D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

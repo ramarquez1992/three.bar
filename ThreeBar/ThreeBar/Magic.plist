@@ -78,6 +78,10 @@
 	<integer>130</integer>
 	<key>controlImage</key>
 	<string>moveControl</string>
+	<key>lockWidth</key>
+	<integer>150</integer>
+	<key>lockHeight</key>
+	<integer>50</integer>
 	<key>endgameScoreFont</key>
 	<string>Masaaki</string>
 	<key>endgameScoreSize</key>

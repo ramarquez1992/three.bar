@@ -210,8 +210,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func killHero() {
-        hero.laser?.removeFromParent()
-        hero.laser = nil
+        hero.killLaser()
         hero.removeFromParent()
     }
     
