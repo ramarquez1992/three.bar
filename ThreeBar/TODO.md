@@ -15,7 +15,7 @@
 * change level animation
 
 ## Locks
-* place on edge of map (move physics body by 1)
+* place on edges of map
 
 ## Hero
 * regain lives on ?combo?
@@ -37,6 +37,6 @@
 * high scores
 * achievements
 
-## Bugs
+## Issues
 * motionShake is fatal
 * random mob positions sometimes overlap

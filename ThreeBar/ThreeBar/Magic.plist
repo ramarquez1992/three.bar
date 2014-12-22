@@ -81,8 +81,10 @@
 	<key>controlImage</key>
 	<string>moveControl</string>
 	<key>lockWidth</key>
-	<integer>150</integer>
+	<integer>100</integer>
 	<key>lockHeight</key>
+	<integer>100</integer>
+	<key>lockMinDistance</key>
 	<integer>150</integer>
 	<key>hiveSize</key>
 	<integer>75</integer>

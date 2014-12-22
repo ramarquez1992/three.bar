@@ -129,14 +129,45 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func populateWithLocks() {
-        let l1 = Lock()
-        l1.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
-        
-        locks.append(l1)
-        
-        for lock in locks {
-            addChild(lock)
+        for i in 1...2 {
+            addLock()
         }
+    }
+    
+    func addLock() {
+        let lock = Lock(position: getValidLockPosition())
+
+        locks.append(lock)
+        addChild(lock)
+    }
+    
+    func getValidLockPosition() -> CGPoint {
+        var possiblePosition: CGPoint
+        var farEnough = true
+        var distance:CGFloat = 0
+        
+        do {
+            possiblePosition = getPossibleLockPosition()
+            farEnough = true
+            
+            for lock in locks {
+                distance = (lock.position - possiblePosition).length()
+                
+                if distance <= (_magic.get("lockMinDistance") as CGFloat) {
+                    farEnough = false
+                }
+            }
+        
+        } while !farEnough
+        
+        return possiblePosition
+    }
+    
+    func getPossibleLockPosition() -> CGPoint {
+        let randomPosition = getRandomPosition()
+        let possiblePosition = CGPoint(x: randomPosition.x, y: 0)
+        
+        return possiblePosition
     }
     
     func checkLocksAreOpen() -> Bool {
@@ -330,7 +361,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         for mob in mobs {
-            mob.nextAction(self)
+            //mob.nextAction(self)
         }
         
         if hero.moving {

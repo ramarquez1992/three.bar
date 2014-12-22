@@ -152,7 +152,7 @@
 			name = LaunchScene;
 			sourceTree = "<group>";
 		};
-		2097862B1A3E59A4002CC759 /* fonts */ = {
+		2097862B1A3E59A4002CC759 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				2097862C1A3E5B77002CC759 /* Masaaki-Regular.otf */,
@@ -160,7 +160,7 @@
 				2097862E1A3E5B77002CC759 /* WayBeyondBlue.ttf */,
 				2097862F1A3E5B77002CC759 /* ygrid.ttf */,
 			);
-			name = fonts;
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		209C60411A3D5AC5009BA5D1 = {
@@ -188,6 +188,7 @@
 			children = (
 				209C604F1A3D5AC5009BA5D1 /* AppDelegate.swift */,
 				209C60551A3D5AC5009BA5D1 /* GameViewController.swift */,
+				20CA115E1A48CE630073680F /* SKSceneExtension.swift */,
 				201DA18F1A3E854E002486FA /* Actor.swift */,
 				20B653BB1A475A3A0018E99B /* Unit.swift */,
 				20D386AD1A3E811600DAE896 /* Hero.swift */,
@@ -198,15 +199,12 @@
 				20A51E721A479437000E86E9 /* Lock.swift */,
 				20B653B71A4734340018E99B /* Explosion.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
-				20FAB93D1A40D5430003970C /* Magic.swift */,
-				20CA115E1A48CE630073680F /* SKSceneExtension.swift */,
-				20FAB93F1A40D64C0003970C /* Magic.plist */,
 				209786291A3E51F4002CC759 /* GameScene */,
 				20134CCA1A41018E00885569 /* EndgameScene */,
 				2040F6651A3EAABF00799366 /* OnboardingScene */,
 				2097862A1A3E51FD002CC759 /* LaunchScene */,
-				209C60571A3D5AC5009BA5D1 /* Main.storyboard */,
 				209C605C1A3D5AC5009BA5D1 /* LaunchScreen.xib */,
+				209C60571A3D5AC5009BA5D1 /* Main.storyboard */,
 				209C604D1A3D5AC5009BA5D1 /* Supporting Files */,
 			);
 			path = ThreeBar;
@@ -215,12 +213,11 @@
 		209C604D1A3D5AC5009BA5D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				20A51E701A4763E1000E86E9 /* mobFrames.atlas */,
-				20A51E671A476198000E86E9 /* explosionFrames.atlas */,
-				20A51E651A47618F000E86E9 /* heroFrames.atlas */,
 				209C604E1A3D5AC5009BA5D1 /* Info.plist */,
+				20CA11611A48D1BA0073680F /* Config */,
+				20CA11601A48D1860073680F /* Sprites */,
 				209C605A1A3D5AC5009BA5D1 /* Images.xcassets */,
-				2097862B1A3E59A4002CC759 /* fonts */,
+				2097862B1A3E59A4002CC759 /* Fonts */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -240,6 +237,25 @@
 				209C60681A3D5AC6009BA5D1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20CA11601A48D1860073680F /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				20A51E651A47618F000E86E9 /* heroFrames.atlas */,
+				20A51E701A4763E1000E86E9 /* mobFrames.atlas */,
+				20A51E671A476198000E86E9 /* explosionFrames.atlas */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		20CA11611A48D1BA0073680F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				20FAB93D1A40D5430003970C /* Magic.swift */,
+				20FAB93F1A40D64C0003970C /* Magic.plist */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

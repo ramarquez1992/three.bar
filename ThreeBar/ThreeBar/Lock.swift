@@ -12,18 +12,20 @@ import SpriteKit
 class Lock: SKSpriteNode {
     var open = false
     
-    override init() {
+    init(position: CGPoint) {
         let width = _magic.get("lockWidth") as CGFloat
         let height = _magic.get("lockHeight") as CGFloat
         let color = UIColor.purpleColor()
         
         super.init(texture: nil, color: color, size: CGSize(width: width, height: height))
 
+        self.position = position
         setPhysics()
     }
     
     func setPhysics() {
-        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        let buffer: CGFloat = 15    // Make sure lock can be hit though placed on wall
+        physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width + buffer, height: size.height + buffer))
 
         physicsBody?.categoryBitMask = PhysicsCategory.Lock
         
