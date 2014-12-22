@@ -74,6 +74,8 @@
 	<real>0.5</real>
 	<key>mobMinDistance</key>
 	<integer>250</integer>
+	<key>mobRespawnTime</key>
+	<integer>1</integer>
 	<key>controlCenter</key>
 	<integer>130</integer>
 	<key>controlImage</key>

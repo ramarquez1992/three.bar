@@ -14,7 +14,7 @@ class Hive: SKSpriteNode {
         let width = _magic.get("hiveSize") as CGFloat
         let height = _magic.get("hiveSize") as CGFloat
         
-        let color = UIColor.whiteColor()
+        let color = UIColor.blackColor()
         
         super.init(texture: nil, color: color, size: CGSize(width: width, height: height))
         

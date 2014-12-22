@@ -3,8 +3,7 @@
 ---
 
 ## Miscellaneous
-* motionShake is fatal
-* random mob positions sometimes overlap
+* animate hive
 
 ## LaunchScene
 * colorful?
@@ -37,3 +36,7 @@
 ## Game Center
 * high scores
 * achievements
+
+## Bugs
+* motionShake is fatal
+* random mob positions sometimes overlap

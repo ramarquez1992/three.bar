@@ -95,6 +95,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         spawnMob(mobPosition)
     }
     
+    func respawnMob(spawnPosition: CGPoint) {
+        let beforeSpawnAction = SKAction.runBlock({ self.hive.color = UIColor.whiteColor() })
+        let spawnAction = SKAction.runBlock({ self.spawnMob(spawnPosition) })
+        let afterSpawnAction = SKAction.runBlock({ self.hive.color = UIColor.blackColor() })
+        let waitAction = SKAction.waitForDuration(NSTimeInterval(_magic.get("mobRespawnTime") as Float))
+        
+        runAction(SKAction.sequence([ beforeSpawnAction, waitAction, spawnAction, afterSpawnAction ]))
+    }
+    
     func populateWithLocks() {
         let l1 = Lock()
         l1.position = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
@@ -224,7 +233,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         explosion.runAction(SKAction.sequence([ explosion.getAnimation(), endExplosionAction ]))
         
-        spawnMob(hive.position)
+        respawnMob(hive.position)
 
     }
     
