@@ -9,6 +9,22 @@
 import Foundation
 import SpriteKit
 
+enum ZIndex: Int {
+    case Bottom = 0
+    case Wall
+    case Lock
+    case Hive
+    case Actor
+    case Unit
+    case Mob
+    case Projectile
+    case Laser
+    case Hero
+    case Explosion
+    case HUD
+    case Top
+}
+
 struct PhysicsCategory {
     static let None       : UInt32 = 0
     static let All        : UInt32 = UInt32.max

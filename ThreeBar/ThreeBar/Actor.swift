@@ -15,7 +15,7 @@ class Actor: SKSpriteNode {
     init(texture: SKTexture!, color: UIColor!, size: CGSize, position: CGPoint = CGPoint(x: 0, y: 0)) {
         super.init(texture: texture, color: color, size: size)
         
-        zPosition = 900
+        zPosition = CGFloat(ZIndex.Actor.rawValue)
         self.position = position
         setPhysics()
         

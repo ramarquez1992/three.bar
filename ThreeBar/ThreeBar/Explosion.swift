@@ -21,7 +21,7 @@ class Explosion: SKSpriteNode {
         super.init(texture: nil, color: nil, size: newSize)
         
         position = node.position
-        zPosition = 1100
+        zPosition = CGFloat(ZIndex.Explosion.rawValue)
         
         //TODO: get name from magic plist???
         let animationAtlas = SKTextureAtlas(named: "explosionFrames")

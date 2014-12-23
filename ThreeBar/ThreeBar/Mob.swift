@@ -13,7 +13,7 @@ class Mob: Unit {
     init(position: CGPoint) {
         super.init(named: "mob", position: position)
         
-        zPosition = 800  // Below hero
+        zPosition = CGFloat(ZIndex.Mob.rawValue)
         physicsBody?.categoryBitMask = PhysicsCategory.Mob
 
         //let tolerance = _magic.get("mobContactTolerance") as CGFloat

@@ -18,6 +18,7 @@ class Hive: SKSpriteNode {
         
         super.init(texture: nil, color: color, size: CGSize(width: width, height: height))
         
+        zPosition = CGFloat(ZIndex.Hive.rawValue)
         //start timer
     
     }

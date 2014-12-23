@@ -45,18 +45,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             livesLabel.text = "\(livesLabel.text)_"
         }
         
-        livesLabel.fontSize = _magic.get("livesSize") as CGFloat
-        livesLabel.position = CGPoint(x: size.width - 100, y: 15)
+        livesLabel.fontSize  = _magic.get("livesSize") as CGFloat
+        livesLabel.position  = CGPoint(x: size.width - 100, y: 15)
+        livesLabel.zPosition = CGFloat(ZIndex.HUD.rawValue)
         
         self.addChild(livesLabel)
     }
     
     func addScoreLabel() {
-        scoreLabel.fontName = _magic.get("scoreFont") as String
-        scoreLabel.name     = "scoreLabel"
-        scoreLabel.text     = String(score)
-        scoreLabel.fontSize = _magic.get("scoreSize") as CGFloat
-        scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
+        scoreLabel.fontName  = _magic.get("scoreFont") as String
+        scoreLabel.name      = "scoreLabel"
+        scoreLabel.text      = String(score)
+        scoreLabel.fontSize  = _magic.get("scoreSize") as CGFloat
+        scoreLabel.position  = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
+        scoreLabel.zPosition = CGFloat(ZIndex.HUD.rawValue)
+
         
         self.addChild(scoreLabel)
     }
@@ -390,7 +393,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         for mob in mobs {
-            //mob.nextAction(self)
+            mob.nextAction(self)
         }
         
         if hero.moving {

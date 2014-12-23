@@ -17,7 +17,7 @@ class Hero: Unit {
     init() {
         super.init(named: "hero")
         
-        zPosition = 1000  // Hero is always visible
+        zPosition = CGFloat(ZIndex.Hero.rawValue)
         physicsBody?.categoryBitMask = PhysicsCategory.Hero
         
         teleportTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(_magic.get("heroTeleportTime") as Float), target: self, selector:Selector("allowTeleport"), userInfo: nil, repeats: true)

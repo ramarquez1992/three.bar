@@ -14,7 +14,7 @@ class Laser: Projectile {
     init() {
         super.init(sprite: _magic.get("laserSprite") as String, size: _magic.get("laserSize") as CGFloat)
         
-        zPosition = 999
+        zPosition = CGFloat(ZIndex.Laser.rawValue)
         name = "laserNode"
         physicsBody?.categoryBitMask = PhysicsCategory.Laser
         

@@ -16,7 +16,7 @@ class Projectile: Actor {
             color: UIColor.greenColor(),
             size: CGSize(width: size, height: size))
         
-        zPosition = 1000
+        zPosition = CGFloat(ZIndex.Projectile.rawValue)
         name = "projectileNode"
         physicsBody?.categoryBitMask = PhysicsCategory.Projectile
         

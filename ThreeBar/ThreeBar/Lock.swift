@@ -20,6 +20,7 @@ class Lock: SKSpriteNode {
         super.init(texture: nil, color: color, size: CGSize(width: width, height: height))
 
         self.position = position
+        zPosition = CGFloat(ZIndex.Lock.rawValue)
         setPhysics()
     }
     
