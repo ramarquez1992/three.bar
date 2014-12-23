@@ -143,31 +143,60 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func getValidLockPosition() -> CGPoint {
         var possiblePosition: CGPoint
-        var farEnough = true
+        var valid = true
         var distance:CGFloat = 0
         
         do {
             possiblePosition = getPossibleLockPosition()
-            farEnough = true
+            valid = true
             
             for lock in locks {
                 distance = (lock.position - possiblePosition).length()
                 
-                if distance <= (_magic.get("lockMinDistance") as CGFloat) {
-                    farEnough = false
+                if (distance <= (_magic.get("lockMinDistance") as CGFloat)) {
+                    valid = false
                 }
             }
         
-        } while !farEnough
+        } while !valid
         
         return possiblePosition
     }
     
     func getPossibleLockPosition() -> CGPoint {
         let randomPosition = getRandomPosition()
-        let possiblePosition = CGPoint(x: randomPosition.x, y: 0)
+        var possiblePosition = CGPoint()
+        
+        let random = arc4random_uniform(4) + 1
+        if random == 1 {             // Place on top
+            possiblePosition = CGPoint(x: randomPosition.x, y: size.height)
+        } else if random == 2 {      // Place on right
+            possiblePosition = CGPoint(x: size.width, y: randomPosition.y)
+        } else if random == 3 {      // Place on bottom
+            possiblePosition = CGPoint(x: randomPosition.x, y: 0)
+        } else {                    // Place on left
+            possiblePosition = CGPoint(x: 0, y: randomPosition.y)
+        }
+        
+        if checkIfInCorner(possiblePosition) {
+            possiblePosition = getPossibleLockPosition()
+        }
         
         return possiblePosition
+    }
+    
+    func checkIfInCorner(possiblePosition: CGPoint) -> Bool {
+        var inCorner = false
+        var lockSize = _magic.get("lockWidth") as CGFloat
+        
+        let leftSide  = (possiblePosition.x < lockSize) && ((possiblePosition.y > (size.height - lockSize)) || (possiblePosition.y < lockSize))
+        let rightSide = (possiblePosition.x > size.width - lockSize) && ((possiblePosition.y > (size.height - lockSize)) || (possiblePosition.y < lockSize))
+        
+        if leftSide || rightSide {
+            inCorner = true
+        }
+        
+        return inCorner
     }
     
     func checkLocksAreOpen() -> Bool {

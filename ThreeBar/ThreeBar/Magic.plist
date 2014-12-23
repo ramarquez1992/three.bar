@@ -76,6 +76,8 @@
 	<integer>250</integer>
 	<key>mobRespawnTime</key>
 	<integer>1</integer>
+	<key>mobContactTolerance</key>
+	<integer>5</integer>
 	<key>controlCenter</key>
 	<integer>130</integer>
 	<key>controlImage</key>
@@ -86,6 +88,8 @@
 	<integer>100</integer>
 	<key>lockMinDistance</key>
 	<integer>150</integer>
+	<key>lockContactTolerance</key>
+	<integer>15</integer>
 	<key>hiveSize</key>
 	<integer>75</integer>
 	<key>endgameScoreFont</key>

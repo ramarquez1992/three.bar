@@ -4,6 +4,7 @@
 
 ## Miscellaneous
 * animate hive
+* mob contact tolerance
 
 ## LaunchScene
 * colorful?
@@ -15,13 +16,12 @@
 * change level animation
 
 ## Locks
-* place on edges of map
+* don't cover score or lives
 
 ## Hero
 * regain lives on ?combo?
 
 ## Mobs
-* hive
 * AI
 * bosses
 

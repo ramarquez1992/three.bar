@@ -24,8 +24,8 @@ class Lock: SKSpriteNode {
     }
     
     func setPhysics() {
-        let buffer: CGFloat = 15    // Make sure lock can be hit though placed on wall
-        physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width + buffer, height: size.height + buffer))
+        let tolerance = _magic.get("lockContactTolerance") as CGFloat
+        physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width + tolerance, height: size.height + tolerance))
 
         physicsBody?.categoryBitMask = PhysicsCategory.Lock
         

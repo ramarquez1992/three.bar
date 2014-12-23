@@ -16,6 +16,8 @@ class Mob: Unit {
         zPosition = 800  // Below hero
         physicsBody?.categoryBitMask = PhysicsCategory.Mob
 
+        //let tolerance = _magic.get("mobContactTolerance") as CGFloat
+        //physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width + tolerance, height: size.height + tolerance))
     }
     
     func nextAction(map: GameScene) {
