@@ -5,6 +5,8 @@
 ## Miscellaneous
 * animate hive
 * mob contact tolerance
+* mobs shouldn't 'contact' each other
+* mob minDistance from each other
 
 ## LaunchScene
 * colorful?
@@ -14,9 +16,6 @@
 ## Level
 * levels.plist
 * change level animation
-
-## Locks
-* don't cover score or lives
 
 ## Hero
 * regain lives on ?combo?
@@ -39,4 +38,3 @@
 
 ## Issues
 * motionShake is fatal
-* random mob positions sometimes overlap

@@ -39,6 +39,7 @@
 		20CA115F1A48CE630073680F /* SKSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA115E1A48CE630073680F /* SKSceneExtension.swift */; };
 		20CB320D1A43B38000495427 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB320C1A43B38000495427 /* Laser.swift */; };
 		20D386AE1A3E811600DAE896 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D386AD1A3E811600DAE896 /* Hero.swift */; };
+		20E9A29F1A4A64E000D98353 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E9A29E1A4A64E000D98353 /* Door.swift */; };
 		20FAB93E1A40D5430003970C /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB93D1A40D5430003970C /* Magic.swift */; };
 		20FAB9401A40D64C0003970C /* Magic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20FAB93F1A40D64C0003970C /* Magic.plist */; };
 		20FAB9421A40E6020003970C /* Mob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB9411A40E6020003970C /* Mob.swift */; };
@@ -91,6 +92,7 @@
 		20CA115E1A48CE630073680F /* SKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSceneExtension.swift; sourceTree = "<group>"; };
 		20CB320C1A43B38000495427 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		20D386AD1A3E811600DAE896 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		20E9A29E1A4A64E000D98353 /* Door.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		20EC54AE1A3D7B410057A928 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		20FAB93D1A40D5430003970C /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		20FAB93F1A40D64C0003970C /* Magic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Magic.plist; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				20CB320C1A43B38000495427 /* Laser.swift */,
 				20CA115C1A47CDB00073680F /* Hive.swift */,
 				20A51E721A479437000E86E9 /* Lock.swift */,
+				20E9A29E1A4A64E000D98353 /* Door.swift */,
 				20B653B71A4734340018E99B /* Explosion.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
 				209786291A3E51F4002CC759 /* GameScene */,
@@ -392,6 +395,7 @@
 				209C60561A3D5AC5009BA5D1 /* GameViewController.swift in Sources */,
 				201DA1921A3E89E3002486FA /* Physics.swift in Sources */,
 				20134CC71A41017500885569 /* EndgameScene.swift in Sources */,
+				20E9A29F1A4A64E000D98353 /* Door.swift in Sources */,
 				20A51E731A479438000E86E9 /* Lock.swift in Sources */,
 				209C60501A3D5AC5009BA5D1 /* AppDelegate.swift in Sources */,
 			);

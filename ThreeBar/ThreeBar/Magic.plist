@@ -82,6 +82,10 @@
 	<integer>130</integer>
 	<key>controlImage</key>
 	<string>moveControl</string>
+	<key>doorWidth</key>
+	<integer>250</integer>
+	<key>doorHeight</key>
+	<integer>100</integer>
 	<key>lockWidth</key>
 	<integer>100</integer>
 	<key>lockHeight</key>

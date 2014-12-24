@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let hero       = Hero()
     let hive       = Hive()
     var mobs       = [Mob]()
+    let door       = Door()
     var locks      = [Lock]()
     var score: Int = 0
     let scoreLabel = SKLabelNode()
@@ -33,6 +34,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addHive()
         populateWithMobs()
+        
+        addDoor()
         populateWithLocks()
     }
     
@@ -129,6 +132,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             ++i
         }
         
+    }
+    
+    func addDoor() {
+        door.position = CGPoint(x: size.width / 2, y: size.height)
+        
+        addChild(door)
     }
     
     func populateWithLocks() {
@@ -286,6 +295,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    func heroDidCollideWithDoor() {
+        if door.open {
+            endgame()
+        }
+    }
+    
     func laserDidCollideWithHero() {
         hero.killLaser()
     }
@@ -317,7 +332,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         lock.unlock()
         
         if checkLocksAreOpen() {
-            endgame()
+            door.unlock()
+        }
+    }
+    
+    func laserDidCollideWithDoor(laser: Laser, door: Door) {
+        if !checkLocksAreOpen() {
+            door.blink()
         }
     }
     
@@ -348,6 +369,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case PhysicsCategory.ReturnLaser:
                     laserDidCollideWithHero()
                     
+                case PhysicsCategory.Door:
+                    heroDidCollideWithDoor()
+                    
                 default:
                     break
                 }
@@ -374,6 +398,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 switch secondBody.categoryBitMask {
                 case PhysicsCategory.Lock:
                     laserDidCollideWithLock(firstNode as Laser, lock: secondNode as Lock)
+                    
+                case PhysicsCategory.Door:
+                    laserDidCollideWithDoor(firstNode as Laser, door: secondNode as Door)
                     
                 default:
                     break

@@ -13,6 +13,7 @@ enum ZIndex: Int {
     case Bottom = 0
     case Wall
     case Lock
+    case Door
     case Hive
     case Actor
     case Unit
@@ -36,6 +37,7 @@ struct PhysicsCategory {
     static let Laser      : UInt32 = 0b100000
     static let ReturnLaser: UInt32 = 0b1000000
     static let Lock       : UInt32 = 0b10000000
+    static let Door       : UInt32 = 0b100000000
 }
 
 
