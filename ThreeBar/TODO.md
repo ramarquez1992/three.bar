@@ -5,7 +5,6 @@
 ## Miscellaneous
 * animate hive
 * mob contact tolerance
-* mobs shouldn't 'contact' each other
 * mob minDistance from each other
 
 ## LaunchScene
@@ -38,3 +37,4 @@
 
 ## Issues
 * motionShake is fatal
+* door physicsBody sticks out too far (locks don't???)
