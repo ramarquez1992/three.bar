@@ -5,7 +5,6 @@
 ## Miscellaneous
 * animate hive
 * mob contact tolerance
-* mob minDistance from each other
 
 ## LaunchScene
 * colorful?

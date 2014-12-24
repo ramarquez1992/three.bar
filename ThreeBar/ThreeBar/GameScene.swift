@@ -104,10 +104,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func spawnMob() {
-        let mobPosition = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
-
-        spawnMob(mobPosition)
+        spawnMob(getValidMobPosition())
     }
+    
+    func getValidMobPosition() -> CGPoint {
+        var possiblePosition: CGPoint
+        var valid = true
+        var distance:CGFloat = 0
+        
+        do {
+            possiblePosition = getRandomPosition(fromPoint: hero.position, minDistance: _magic.get("mobMinDistance") as CGFloat)
+            valid = true
+            
+            for mob in mobs {
+                distance = (mob.position - possiblePosition).length()
+                
+                if (distance <= (_magic.get("mobMinDistance") as CGFloat)) {
+                    valid = false
+                }
+            }
+            
+        } while !valid
+        
+        return possiblePosition
+    }
+
     
     func respawnMob(spawnPosition: CGPoint) {
         let beforeSpawnAction = SKAction.runBlock({ self.hive.color = UIColor.whiteColor() })
@@ -190,7 +211,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             possiblePosition = CGPoint(x: 0, y: randomPosition.y)
         }
         
-        if checkIfInCorner(possiblePosition) {
+        if checkIfInCorner(possiblePosition) || checkIfNearDoor(possiblePosition) {
             possiblePosition = getPossibleLockPosition()
         }
         
@@ -199,7 +220,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func checkIfInCorner(possiblePosition: CGPoint) -> Bool {
         var inCorner = false
-        var lockSize = _magic.get("lockWidth") as CGFloat
+        let lockSize = _magic.get("lockWidth") as CGFloat
         
         let leftSide  = (possiblePosition.x < lockSize) && ((possiblePosition.y > (size.height - lockSize)) || (possiblePosition.y < lockSize))
         let rightSide = (possiblePosition.x > size.width - lockSize) && ((possiblePosition.y > (size.height - lockSize)) || (possiblePosition.y < lockSize))
@@ -209,6 +230,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         return inCorner
+    }
+    
+    func checkIfNearDoor(possiblePosition: CGPoint) -> Bool {
+        var nearDoor = false
+        let distance = (door.position - possiblePosition).length()
+        
+        if (distance <= (_magic.get("lockMinDistance") as CGFloat)) {
+            nearDoor = true
+        }
+        
+        return nearDoor
     }
     
     func checkLocksAreOpen() -> Bool {

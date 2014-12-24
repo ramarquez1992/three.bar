@@ -40,14 +40,14 @@ class Door: SKSpriteNode {
     
     func unlock() {
         open = true
-        color = UIColor.grayColor()
+        color = UIColor.lightGrayColor()
     }
     
     func blink() {
         let originalColor = color
         
         let setColorAction = SKAction.runBlock({ self.color = UIColor.yellowColor() })
-        let waitAction = SKAction.waitForDuration(NSTimeInterval(0.2))
+        let waitAction = SKAction.waitForDuration(NSTimeInterval(0.1))
         let resetColorAction = SKAction.runBlock({ self.color = originalColor })
         
         runAction(SKAction.sequence([ setColorAction, waitAction, resetColorAction ]))
