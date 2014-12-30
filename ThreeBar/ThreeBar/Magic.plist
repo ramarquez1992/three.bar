@@ -86,6 +86,8 @@
 	<integer>250</integer>
 	<key>doorHeight</key>
 	<integer>100</integer>
+	<key>doorMinDistance</key>
+	<integer>200</integer>
 	<key>lockWidth</key>
 	<integer>100</integer>
 	<key>lockHeight</key>

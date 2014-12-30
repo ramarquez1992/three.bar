@@ -236,7 +236,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var nearDoor = false
         let distance = (door.position - possiblePosition).length()
         
-        if (distance <= (_magic.get("lockMinDistance") as CGFloat)) {
+        if (distance <= (_magic.get("doorMinDistance") as CGFloat)) {
             nearDoor = true
         }
         
