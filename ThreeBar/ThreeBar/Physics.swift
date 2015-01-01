@@ -14,6 +14,7 @@ enum ZIndex: Int {
     case Wall
     case Lock
     case Door
+    case MoveControl
     case Hive
     case Actor
     case Unit

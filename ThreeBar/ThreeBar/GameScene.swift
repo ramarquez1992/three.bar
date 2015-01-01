@@ -260,6 +260,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         moveControl.position = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         
+        moveControl.zPosition = CGFloat(ZIndex.MoveControl.rawValue)
+
+        
         addChild(moveControl)
     }
     

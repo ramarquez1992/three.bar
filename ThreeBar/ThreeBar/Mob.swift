@@ -19,8 +19,10 @@ class Mob: Unit {
         UIGraphicsBeginImageContext(size)
         var context = UIGraphicsGetCurrentContext()
         
-        physicsBody?.categoryBitMask = PhysicsCategory.Mob
-        physicsBody?.contactTestBitMask = physicsBody!.contactTestBitMask - PhysicsCategory.Mob
+        if let physicsBody = self.physicsBody {
+            physicsBody.categoryBitMask = PhysicsCategory.Mob
+            physicsBody.contactTestBitMask = physicsBody.contactTestBitMask - PhysicsCategory.Mob
+        }
 
         //let tolerance = _magic.get("mobContactTolerance") as CGFloat
         //physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width + tolerance, height: size.height + tolerance))
