@@ -256,7 +256,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addMoveControl() {
         let moveControl = SKSpriteNode(texture: SKTexture(imageNamed: _magic.get("controlImage") as String),
             color: UIColor.yellowColor(),
-            size: CGSize(width: _magic.get("heroSize") as CGFloat, height: _magic.get("heroSize") as CGFloat))
+            size: CGSize(width: _magic.get("controlSize") as CGFloat, height: _magic.get("controlSize") as CGFloat))
         
         moveControl.position = CGPoint(x: _magic.get("controlCenter") as CGFloat, y: _magic.get("controlCenter") as CGFloat)
         

@@ -9,7 +9,7 @@
 	<key>livesSize</key>
 	<integer>35</integer>
 	<key>heroSize</key>
-	<integer>100</integer>
+	<integer>120</integer>
 	<key>heroTeleportTime</key>
 	<integer>3</integer>
 	<key>heroTeleportMinDistance</key>
@@ -80,6 +80,8 @@
 	<integer>5</integer>
 	<key>controlCenter</key>
 	<integer>130</integer>
+	<key>controlSize</key>
+	<integer>100</integer>
 	<key>controlImage</key>
 	<string>moveControl</string>
 	<key>doorWidth</key>
