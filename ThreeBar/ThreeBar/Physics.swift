@@ -69,3 +69,17 @@ extension CGPoint {
     }
 }
 
+enum Direction: Int {
+    case Up = 0
+    case Right
+    case Down
+    case Left
+}
+
+func RADIANS_TO_DEGREES(radians: CGFloat) -> CGFloat {
+    return CGFloat((Double(radians) / (2 * M_PI)) * 360)
+}
+
+func DEGREES_TO_RADIANS(degrees: CGFloat) -> CGFloat {
+    return CGFloat((Double(degrees) / 360) * (2 * M_PI))
+}
