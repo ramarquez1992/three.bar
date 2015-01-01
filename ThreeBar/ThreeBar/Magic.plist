@@ -64,6 +64,10 @@
 	<integer>700</integer>
 	<key>titleBgHeight</key>
 	<integer>180</integer>
+	<key>titleBgRotation</key>
+	<integer>-4</integer>
+	<key>titleBgRotationDuration</key>
+	<integer>5</integer>
 	<key>titleRotation</key>
 	<integer>3</integer>
 	<key>startButtonFont</key>
@@ -72,6 +76,10 @@
 	<integer>75</integer>
 	<key>startButtonText</key>
 	<string>Tap to Start</string>
+	<key>startButtonScale</key>
+	<integer>2</integer>
+	<key>startButtonScaleDuration</key>
+	<real>0.08</real>
 	<key>mobSprite</key>
 	<string>mob</string>
 	<key>mobSize</key>

@@ -29,8 +29,14 @@ class LaunchScene: SKScene {
         self.addChild(titleBg)
         
         var rotateSequence = SKAction.sequence([
-            SKAction.rotateByAngle(DEGREES_TO_RADIANS(-4), duration: 4),
-            SKAction.rotateByAngle(DEGREES_TO_RADIANS(4), duration: 4)
+            SKAction.rotateByAngle(
+                DEGREES_TO_RADIANS(_magic.get("titleBgRotation") as CGFloat),
+                duration: NSTimeInterval(_magic.get("titleBgRotationDuration") as CGFloat)
+            ),
+            SKAction.rotateByAngle(
+                DEGREES_TO_RADIANS(_magic.get("titleBgRotation") as CGFloat * -1),
+                duration: NSTimeInterval(_magic.get("titleBgRotationDuration") as CGFloat)
+            )
             ])
         var rotateForever = SKAction.repeatActionForever(rotateSequence)
         titleBg.runAction(rotateForever)
@@ -54,6 +60,16 @@ class LaunchScene: SKScene {
         startButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 200)
         
         self.addChild(startButton)
+        
+        var scaleSequence = SKAction.sequence([
+            SKAction.waitForDuration(5),
+            SKAction.scaleTo(_magic.get("startButtonScale") as CGFloat,
+                duration: NSTimeInterval(_magic.get("startButtonScaleDuration") as CGFloat)
+            ),
+            SKAction.scaleTo(1, duration: NSTimeInterval(_magic.get("startButtonScaleDuration") as CGFloat))
+            ])
+        var scaleForever = SKAction.repeatActionForever(scaleSequence)
+        startButton.runAction(scaleForever)
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
