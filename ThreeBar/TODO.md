@@ -6,11 +6,6 @@
 * animate hive
 * mob contact tolerance
 
-## LaunchScene
-* colorful?
-* procedurally generated bg (e.g. stars)
-* choose level (swipe)
-
 ## Level
 * levels.plist
 * change level animation
@@ -20,7 +15,6 @@
 
 ## Mobs
 * AI
-* bosses
 
 ## Score
 * beat room (time multiplier)
