@@ -40,6 +40,8 @@
 		20CB320D1A43B38000495427 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB320C1A43B38000495427 /* Laser.swift */; };
 		20D386AE1A3E811600DAE896 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D386AD1A3E811600DAE896 /* Hero.swift */; };
 		20E9A29F1A4A64E000D98353 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E9A29E1A4A64E000D98353 /* Door.swift */; };
+		20E9A2A11A54FDB000D98353 /* CharcoalScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20E9A2A01A54FDB000D98353 /* CharcoalScript.ttf */; };
+		20E9A2A31A54FDC100D98353 /* Red Fish.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20E9A2A21A54FDC100D98353 /* Red Fish.otf */; };
 		20FAB93E1A40D5430003970C /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB93D1A40D5430003970C /* Magic.swift */; };
 		20FAB9401A40D64C0003970C /* Magic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20FAB93F1A40D64C0003970C /* Magic.plist */; };
 		20FAB9421A40E6020003970C /* Mob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB9411A40E6020003970C /* Mob.swift */; };
@@ -93,6 +95,8 @@
 		20CB320C1A43B38000495427 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		20D386AD1A3E811600DAE896 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		20E9A29E1A4A64E000D98353 /* Door.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
+		20E9A2A01A54FDB000D98353 /* CharcoalScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CharcoalScript.ttf; sourceTree = "<group>"; };
+		20E9A2A21A54FDC100D98353 /* Red Fish.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Red Fish.otf"; sourceTree = "<group>"; };
 		20EC54AE1A3D7B410057A928 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		20FAB93D1A40D5430003970C /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		20FAB93F1A40D64C0003970C /* Magic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Magic.plist; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		2097862B1A3E59A4002CC759 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				20E9A2A21A54FDC100D98353 /* Red Fish.otf */,
+				20E9A2A01A54FDB000D98353 /* CharcoalScript.ttf */,
 				2097862C1A3E5B77002CC759 /* Masaaki-Regular.otf */,
 				2097862D1A3E5B77002CC759 /* OXYGENE1.ttf */,
 				2097862E1A3E5B77002CC759 /* WayBeyondBlue.ttf */,
@@ -347,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E9A2A11A54FDB000D98353 /* CharcoalScript.ttf in Resources */,
 				209786331A3E5B77002CC759 /* ygrid.ttf in Resources */,
 				20FAB9401A40D64C0003970C /* Magic.plist in Resources */,
 				2040F6621A3EAAA300799366 /* OnboardingScene.sks in Resources */,
@@ -362,6 +369,7 @@
 				209C60591A3D5AC5009BA5D1 /* Main.storyboard in Resources */,
 				209786321A3E5B77002CC759 /* WayBeyondBlue.ttf in Resources */,
 				20A51E681A476198000E86E9 /* explosionFrames.atlas in Resources */,
+				20E9A2A31A54FDC100D98353 /* Red Fish.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

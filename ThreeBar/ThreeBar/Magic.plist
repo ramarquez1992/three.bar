@@ -53,17 +53,17 @@
 	<key>onboardingMoveText</key>
 	<string>MOVE</string>
 	<key>titleFont</key>
-	<string>Way beyond blue</string>
+	<string>Red Fish</string>
 	<key>titleSize</key>
 	<integer>200</integer>
 	<key>titleText</key>
-	<string>4BAR</string>
+	<string>fre.ac</string>
 	<key>startButtonFont</key>
-	<string>Masaaki</string>
+	<string>CharcoalScript</string>
 	<key>startButtonSize</key>
 	<integer>65</integer>
 	<key>startButtonText</key>
-	<string>START</string>
+	<string>Tap to Start</string>
 	<key>mobSprite</key>
 	<string>mob</string>
 	<key>mobSize</key>

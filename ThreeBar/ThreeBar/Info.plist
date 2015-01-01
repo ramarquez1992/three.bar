@@ -25,7 +25,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Masaaki-Regular.otf</string>
+		<string>Red Fish.otf</string>
 		<string>OXYGENE1.ttf</string>
+		<string>CharcoalScript.ttf</string>
 		<string>WayBeyondBlue.ttf</string>
 		<string>ygrid.ttf</string>
 	</array>
