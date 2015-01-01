@@ -45,6 +45,7 @@
 		20FAB93E1A40D5430003970C /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB93D1A40D5430003970C /* Magic.swift */; };
 		20FAB9401A40D64C0003970C /* Magic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20FAB93F1A40D64C0003970C /* Magic.plist */; };
 		20FAB9421A40E6020003970C /* Mob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FAB9411A40E6020003970C /* Mob.swift */; };
+		20FB06851A5531E100CE6F2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB06841A5531E100CE6F2C /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		20FAB93D1A40D5430003970C /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		20FAB93F1A40D64C0003970C /* Magic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Magic.plist; sourceTree = "<group>"; };
 		20FAB9411A40E6020003970C /* Mob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mob.swift; sourceTree = "<group>"; };
+		20FB06841A5531E100CE6F2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				20E9A29E1A4A64E000D98353 /* Door.swift */,
 				20B653B71A4734340018E99B /* Explosion.swift */,
 				201DA1911A3E89E3002486FA /* Physics.swift */,
+				20FB06841A5531E100CE6F2C /* UIColorExtension.swift */,
 				209786291A3E51F4002CC759 /* GameScene */,
 				20134CCA1A41018E00885569 /* EndgameScene */,
 				2040F6651A3EAABF00799366 /* OnboardingScene */,
@@ -394,6 +397,7 @@
 				20CA115F1A48CE630073680F /* SKSceneExtension.swift in Sources */,
 				20D386AE1A3E811600DAE896 /* Hero.swift in Sources */,
 				2040F6641A3EAAB600799366 /* OnboardingScene.swift in Sources */,
+				20FB06851A5531E100CE6F2C /* UIColorExtension.swift in Sources */,
 				209C60541A3D5AC5009BA5D1 /* GameScene.swift in Sources */,
 				209786261A3E4EB0002CC759 /* LaunchScene.swift in Sources */,
 				20FAB9421A40E6020003970C /* Mob.swift in Sources */,

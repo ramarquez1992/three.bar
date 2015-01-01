@@ -16,27 +16,28 @@ class LaunchScene: SKScene {
     }
     
     func addTitle() {
+        var bgSize = CGSize()
+        bgSize.width = _magic.get("titleBgWidth") as CGFloat
+        bgSize.height = _magic.get("titleBgHeight") as CGFloat
+        
+        let bgColor = UIColor(hex: _magic.get("titleBgColor") as String)
+        
+        let titleBg = SKSpriteNode(color: bgColor, size: bgSize)
+        titleBg.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 95)
+        titleBg.zRotation = DEGREES_TO_RADIANS(_magic.get("titleRotation") as CGFloat)
+        titleBg.zPosition = 9998
+        self.addChild(titleBg)
+
+        
         let titleLabel = SKLabelNode(fontNamed: _magic.get("titleFont") as String)
         titleLabel.name = "titleLabel"
         titleLabel.text = _magic.get("titleText") as String
         titleLabel.fontSize = _magic.get("titleSize") as CGFloat
-        titleLabel.color = UIColor.whiteColor()
-        
-        var bgSize = CGSize()
-        //bgSize.width = titleLabel.frame.width * 1.3
-        //bgSize.height = titleLabel.frame.width * 1.1
-        bgSize.width = 300
-        bgSize.height = 100
-        
-        let titleBg = SKSpriteNode(color: UIColor.orangeColor(), size: bgSize)
-        
-        titleBg.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 70)
-        titleBg.zPosition = 9998
-        self.addChild(titleBg)
-
-        titleLabel.position = CGPoint(x: CGRectGetMidX(titleBg.frame), y: CGRectGetMidY(titleBg.frame))
+        titleLabel.fontColor = UIColor.blackColor()
+        titleLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 45)
         titleLabel.zPosition = 9999
-        titleBg.addChild(titleLabel)
+        self.addChild(titleLabel)
+
     }
     
     func addStartButton() {
@@ -44,7 +45,7 @@ class LaunchScene: SKScene {
         startButton.name = "startButton"
         startButton.text = _magic.get("startButtonText") as String
         startButton.fontSize = _magic.get("startButtonSize") as CGFloat
-        startButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 175)
+        startButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 200)
         
         self.addChild(startButton)
     }
