@@ -8,18 +8,23 @@
 
 import Foundation
 import SpriteKit
+import QuartzCore
 
 class Mob: Unit {
     init(position: CGPoint) {
         super.init(named: "mob", position: position)
         
         zPosition = CGFloat(ZIndex.Mob.rawValue)
+        
+        UIGraphicsBeginImageContext(size)
+        var context = UIGraphicsGetCurrentContext()
+        
         physicsBody?.categoryBitMask = PhysicsCategory.Mob
+        physicsBody?.contactTestBitMask = physicsBody!.contactTestBitMask - PhysicsCategory.Mob
 
         //let tolerance = _magic.get("mobContactTolerance") as CGFloat
         //physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width + tolerance, height: size.height + tolerance))
         
-        physicsBody?.contactTestBitMask = physicsBody!.contactTestBitMask - PhysicsCategory.Mob
     }
     
     func nextAction(map: GameScene) {

@@ -17,6 +17,15 @@ class Actor: SKSpriteNode {
         
         zPosition = CGFloat(ZIndex.Actor.rawValue)
         self.position = position
+        
+        /*UIGraphicsBeginImageContext(size)
+        var context: CGContextRef = UIGraphicsGetCurrentContext()
+        
+        if size.width <= 0 || size.height <= 0 {
+            println("too small...")
+            self.size = CGSize(width: texture!.size().width, height: texture!.size().height)
+        }*/
+        
         setPhysics()
         
     }

@@ -27,7 +27,13 @@ class LaunchScene: SKScene {
         titleBg.zRotation = DEGREES_TO_RADIANS(_magic.get("titleRotation") as CGFloat)
         titleBg.zPosition = 9998
         self.addChild(titleBg)
-
+        
+        var rotateSequence = SKAction.sequence([
+            SKAction.rotateByAngle(DEGREES_TO_RADIANS(-4), duration: 4),
+            SKAction.rotateByAngle(DEGREES_TO_RADIANS(4), duration: 4)
+            ])
+        var rotateForever = SKAction.repeatActionForever(rotateSequence)
+        titleBg.runAction(rotateForever)
         
         let titleLabel = SKLabelNode(fontNamed: _magic.get("titleFont") as String)
         titleLabel.name = "titleLabel"
