@@ -120,6 +120,8 @@
 	<integer>100</integer>
 	<key>lockHeight</key>
 	<integer>100</integer>
+	<key>lockRotation</key>
+	<integer>2</integer>
 	<key>lockMinDistance</key>
 	<integer>150</integer>
 	<key>lockContactTolerance</key>
