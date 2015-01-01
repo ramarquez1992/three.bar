@@ -20,9 +20,23 @@ class LaunchScene: SKScene {
         titleLabel.name = "titleLabel"
         titleLabel.text = _magic.get("titleText") as String
         titleLabel.fontSize = _magic.get("titleSize") as CGFloat
-        titleLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 70)
+        titleLabel.color = UIColor.whiteColor()
         
-        self.addChild(titleLabel)
+        var bgSize = CGSize()
+        //bgSize.width = titleLabel.frame.width * 1.3
+        //bgSize.height = titleLabel.frame.width * 1.1
+        bgSize.width = 300
+        bgSize.height = 100
+        
+        let titleBg = SKSpriteNode(color: UIColor.orangeColor(), size: bgSize)
+        
+        titleBg.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 70)
+        titleBg.zPosition = 9998
+        self.addChild(titleBg)
+
+        titleLabel.position = CGPoint(x: CGRectGetMidX(titleBg.frame), y: CGRectGetMidY(titleBg.frame))
+        titleLabel.zPosition = 9999
+        titleBg.addChild(titleLabel)
     }
     
     func addStartButton() {

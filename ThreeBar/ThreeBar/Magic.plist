@@ -41,11 +41,11 @@
 	<key>flashDuration</key>
 	<real>0.03</real>
 	<key>scoreFont</key>
-	<string>Masaaki</string>
+	<string>CharcoalScript</string>
 	<key>scoreSize</key>
 	<integer>55</integer>
 	<key>onboardingFont</key>
-	<string>Masaaki</string>
+	<string>Red Fish</string>
 	<key>onboardingSize</key>
 	<integer>150</integer>
 	<key>onboardingShootText</key>
@@ -61,7 +61,7 @@
 	<key>startButtonFont</key>
 	<string>CharcoalScript</string>
 	<key>startButtonSize</key>
-	<integer>65</integer>
+	<integer>75</integer>
 	<key>startButtonText</key>
 	<string>Tap to Start</string>
 	<key>mobSprite</key>

@@ -10,18 +10,25 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="cec-Yj-4Um">
-                    <rect key="frame" x="69" y="158" width="342" height="164"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="aGS-xj-Tfa">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="cec-Yj-4Um">
+                    <rect key="frame" x="176" y="225" width="129" height="29"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="164" id="zZM-fs-5xy"/>
+                        <constraint firstAttribute="height" constant="29" id="BR6-HW-5MT"/>
+                        <constraint firstAttribute="width" constant="129" id="HIS-j0-wf8"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="cec-Yj-4Um" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WiA-mn-Nfy"/>
-                <constraint firstItem="cec-Yj-4Um" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="69" id="bYY-uw-aQD"/>
-                <constraint firstItem="cec-Yj-4Um" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xAl-18-HuZ"/>
+                <constraint firstItem="aGS-xj-Tfa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3tl-cx-bOY"/>
+                <constraint firstAttribute="bottom" secondItem="aGS-xj-Tfa" secondAttribute="bottom" id="42W-di-Lmf"/>
+                <constraint firstItem="aGS-xj-Tfa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5z8-pl-Vle"/>
+                <constraint firstAttribute="trailing" secondItem="aGS-xj-Tfa" secondAttribute="trailing" id="K4m-qR-lNf"/>
+                <constraint firstItem="cec-Yj-4Um" firstAttribute="centerX" secondItem="aGS-xj-Tfa" secondAttribute="centerX" id="X87-RS-O7j"/>
+                <constraint firstItem="cec-Yj-4Um" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="225" id="upM-bC-5Sc"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -29,6 +36,7 @@
         </view>
     </objects>
     <resources>
-        <image name="loading" width="113" height="15"/>
+        <image name="loading" width="226" height="55"/>
+        <image name="stars" width="1136" height="640"/>
     </resources>
 </document>
