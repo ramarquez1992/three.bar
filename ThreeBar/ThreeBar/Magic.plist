@@ -42,8 +42,18 @@
 	<real>0.03</real>
 	<key>scoreFont</key>
 	<string>CharcoalScript</string>
+	<key>scoreColor</key>
+	<string>000000</string>
 	<key>scoreSize</key>
 	<integer>55</integer>
+	<key>scoreBgWidth</key>
+	<integer>250</integer>
+	<key>scoreBgHeight</key>
+	<integer>100</integer>
+	<key>scoreBgColor</key>
+	<string>e3d591</string>
+	<key>scoreBgRotation</key>
+	<integer>2</integer>
 	<key>onboardingFont</key>
 	<string>Red Fish</string>
 	<key>onboardingSize</key>

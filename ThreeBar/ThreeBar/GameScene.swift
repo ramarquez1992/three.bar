@@ -56,14 +56,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addScoreLabel() {
+        var bgSize = CGSize()
+        bgSize.width = _magic.get("scoreBgWidth") as CGFloat
+        bgSize.height = _magic.get("scoreBgHeight") as CGFloat
+        
+        let bgColor = UIColor(hex: _magic.get("scoreBgColor") as String)
+        
+        let scoreBg = SKSpriteNode(color: bgColor, size: bgSize)
+        scoreBg.position = CGPoint(x: CGRectGetMidX(self.frame), y: size.height - 10)
+        scoreBg.zRotation = DEGREES_TO_RADIANS(_magic.get("scoreBgRotation") as CGFloat)
+        scoreBg.zPosition = CGFloat(ZIndex.HUD.rawValue - 1)
+        self.addChild(scoreBg)
+        
+        
         scoreLabel.fontName  = _magic.get("scoreFont") as String
         scoreLabel.name      = "scoreLabel"
         scoreLabel.text      = String(score)
         scoreLabel.fontSize  = _magic.get("scoreSize") as CGFloat
-        scoreLabel.position  = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
+        scoreLabel.fontColor = UIColor(hex: _magic.get("scoreColor") as String)
+        scoreLabel.position  = CGPoint(x: CGRectGetMidX(self.frame), y: size.height - 50)
         scoreLabel.zPosition = CGFloat(ZIndex.HUD.rawValue)
-
-        
         self.addChild(scoreLabel)
     }
     
